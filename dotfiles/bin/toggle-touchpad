@@ -1,0 +1,16 @@
+#!/bin/bash
+
+timeout=500
+
+tpname='ETPS/2 Elantech Touchpad'
+icon='input-touchpad'
+tpid=$(xinput list --id-only "$tpname")
+tpstate=$(xinput list-props $tpid | awk '/Device Enabled/{print $4}')
+
+if [ "$tpstate" == "0" ]; then
+	xinput enable $tpid
+	notify-send -u low -t "$timeout" -i "$icon" -a toggle-touchpad "$tpname ($tpid) enabled"
+else
+	xinput disable $tpid
+	notify-send -u low -t "$timeout" -i "$icon" -a toggle-touchpad "$tpname ($tpid) disabled"
+fi

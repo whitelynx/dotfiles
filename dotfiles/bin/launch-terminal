@@ -1,0 +1,32 @@
+#!/bin/bash
+
+TERMINAL=urxvt
+#TERMINAL=st
+#TERMINAL=tilix
+#TERMINAL=gnome-terminal
+
+if [ -z "$RXVT_SOCKET" ]; then
+	export RXVT_SOCKET="$HOME/.rxvt-unicode-$(hostname)$DISPLAY"
+fi
+
+case $TERMINAL in
+	urxvt)
+		if ! fuser "$RXVT_SOCKET" >/dev/null 2>&1; then
+			urxvtd -q -o -f
+		fi
+		exec urxvtc "$@"
+		;;
+
+	st)
+		# Ignore '-e' if specified as the first option.
+		if [ "$1" == "-e" ]; then
+			shift
+		fi
+
+		exec ~/.local/bin/st -f 'Input Mono:pixelsize=14' -e tmux -f ~/.config/tmux/st.conf new-session "$@"
+		;;
+
+	*)
+		exec "$TERMINAL" "$@"
+		;;
+esac

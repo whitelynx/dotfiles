@@ -1,0 +1,175 @@
+#!/bin/bash
+# sabdc
+# Stupid awk-based diff colorizer
+
+# Licensed under the MIT license:
+# Copyright (c) 2011 David H. Bronke
+#
+#Permission is hereby granted, free of charge, to any person obtaining a copy
+#of this software and associated documentation files (the "Software"), to deal
+#in the Software without restriction, including without limitation the rights
+#to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#copies of the Software, and to permit persons to whom the Software is
+#furnished to do so, subject to the following conditions:
+#
+#The above copyright notice and this permission notice shall be included in
+#all copies or substantial portions of the Software.
+#
+#THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+#THE SOFTWARE.
+
+
+# The easiest way to use this is to create symlinks from sabdc to useful aliases, like 'word-diff' and 'line-diff'.
+#
+# The following patterns are searched for in the script name at runtime to determine what behavior we should default to:
+# - '*word*', '*wdiff*': Wordwise mode (uses `dwdiff` or `wdiff`)
+# - (default): Linewise mode (uses 'diff')
+
+
+######################
+## Default Settings ##
+# Copy this block to ~/.sabdcrc and customize as desired.
+
+DEFAULT_DIFF_OPTIONS=(-u -d)
+
+# Colors
+HEADER_COLOR='1;33' # bold yellow
+DIFF_HEADER_COLOR=$HEADER_COLOR
+FROM_FILE_COLOR='1;31' # bold red
+TO_FILE_COLOR='1;32' # bold green
+FOLD_COLOR='1;35' # bold magenta
+DELETE_MARKER_COLOR='31' # normal red
+ADD_MARKER_COLOR='32' # normal green
+DELETE_COLOR='91' # bright red
+ADD_COLOR='92' # bright green
+
+# Set to the wordwise diff command (with wdiff-compatible output) you would like to use.
+WORDWISE_COMMAND="dwdiff"
+
+# The command-line arguments you'd like to use with `dwdiff` or `wdiff` if we fall back to them
+DEFAULT_DWDIFF_ARGS=("-ce:\033[${DELETE_COLOR}m,e:\033[${ADD_COLOR}m" "-w[-" "-x-]" "-y{+" "-z+}" "--wdiff-output" "--diff-input" "-P")
+DEFAULT_WDIFF_ARGS=()
+
+# The command-line arguments you'd like to use with WORDWISE_COMMAND
+DEFAULT_WORDWISE_ARGS=( ${DEFAULT_DWDIFF_ARGS[@]} )
+
+## End Default Settings ##
+##########################
+
+
+# Load user's config, if it exists
+USERCONF=$HOME/.sabdcrc
+[ -e $USERCONF ] && . $USERCONF
+
+# Detect whether or not we should default to wordwise mode
+WORDWISE=0
+case "$0" in
+	*word*|*wdiff*) WORDWISE=1 ;;
+	*) WORDWISE=0 ;;
+esac
+
+# Parse our command-line options
+DIFF_ARGS=( )
+while [ $# -gt 0 ]
+do
+    case "$1" in
+		--no-word) WORDWISE=0;;
+		--word) WORDWISE=1;;
+		*) DIFF_ARGS=( "${DIFF_ARGS[@]}" "$1" );;
+    esac
+    shift
+done
+
+COLORSCRIPT_COMMON='
+/^=== / {print "\033['$HEADER_COLOR'm" $0 "\033[0m"; next}
+/^diff -u -d / {print "\033['$HEADER_COLOR'm=== " $0 "\033[0m"; next}
+/^--- / {print "\033['$FROM_FILE_COLOR'm" $0 "\033[0m"; next}
+/^\+\+\+ / {print "\033['$TO_FILE_COLOR'm" $0 "\033[0m"; next}
+/^@@ / {print "\033['$FOLD_COLOR'm" $0 "\033[0m"; next}'
+COLORSCRIPT_LINEWISE='
+/^[-<]/ {print "\033['$DELETE_MARKER_COLOR'm" substr($0, 1, 1) "\033['$DELETE_COLOR'm" substr($0, 2) "\033[0m"; next}
+/^[+>]/ {print "\033['$ADD_MARKER_COLOR'm" substr($0, 1, 1) "\033['$ADD_COLOR'm" substr($0, 2) "\033[0m"; next}'
+COLORSCRIPT_WORDWISE='
+{gsub(/\[-/, "\033['$DELETE_MARKER_COLOR'm&\033['$DELETE_COLOR'm"); gsub(/{\+/, "\033['$ADD_MARKER_COLOR'm&\033['$ADD_COLOR'm"); gsub(/\+}/, "\033['$ADD_MARKER_COLOR'm&\033[0m"); gsub(/-\]/, "\033['$DELETE_MARKER_COLOR'm&\033[0m")}'
+COLORSCRIPT_END='
+{print}'
+
+# Build the appropriate awk script
+if [[ $WORDWISE -ne 0 ]]; then
+	# Wordwise mode
+	COLORSCRIPT="$COLORSCRIPT_COMMON$COLORSCRIPT_WORDWISE$COLORSCRIPT_END"
+else
+	# Linewise mode
+	COLORSCRIPT="$COLORSCRIPT_COMMON$COLORSCRIPT_LINEWISE$COLORSCRIPT_END"
+fi
+
+if [[ ${#DIFF_ARGS[@]} -gt 1 ]]; then
+	# There's more than one diff arg, so let's assume we're diffing files.
+	if [[ $WORDWISE -ne 0 ]]; then
+		# We're in wordwise mode! Make sure we have a usable wordwise diff command.
+		WORDWISE_COMMAND=$(which $WORDWISE_COMMAND 2> /dev/null)
+		WORDWISE_ARGS=${DEFAULT_WORDWISE_ARGS[@]}
+
+		if [[ ! -x "$WORDWISE_COMMAND" ]]; then
+			# Fall back to dwdiff
+			WORDWISE_COMMAND=$(which dwdiff 2> /dev/null)
+			WORDWISE_ARGS=${DEFAULT_DWDIFF_ARGS[@]}
+
+			if [[ ! -x "$WORDWISE_COMMAND" ]]; then
+				# Fall back to wdiff
+				WORDWISE_COMMAND=$(which wdiff 2> /dev/null)
+				WORDWISE_ARGS=${DEFAULT_WDIFF_ARGS[@]}
+
+				if [[ ! -x "$WORDWISE_COMMAND" ]]; then
+					# FAIL
+					echo "Error: no wordwise diff command found!" >&2
+					exit 1
+				fi
+			fi
+		fi
+
+		diff ${DEFAULT_DIFF_OPTIONS[@]} "${DIFF_ARGS[@]}" | $WORDWISE_COMMAND ${WORDWISE_ARGS[@]} | awk "$COLORSCRIPT"
+
+	else
+		diff ${DEFAULT_DIFF_OPTIONS[@]} "${DIFF_ARGS[@]}" | awk "$COLORSCRIPT"
+	fi
+
+elif [[ ${#DIFF_ARGS[@]} -eq 1 ]]; then
+	# There's one diff arg; assume it's a patch or '-'. (which signifies diff-formatted or wdiff-formatted input on stdin)
+	cat ${#DIFF_ARGS[@]} | awk "$COLORSCRIPT"
+
+else
+	# There's no diff args; assume we're getting diff-formatted or wdiff-formatted input on stdin.
+	cat - | awk "$COLORSCRIPT"
+fi
+
+### Older Attempts ###
+
+# First attempt... not quite as pretty.
+#dwdiff -R -C3 --wdiff-output "$@" | colordiff
+
+# Second attempt... better, but kinda unwieldy.
+# Pull out '-u', since it's not supported by dwdiff.
+#ARGS=( )
+#while [ $# -gt 0 ]
+#do
+#    case "$1" in
+#		-u) ;;
+#		*)  ARGS=( ${ARGS[@]} $1 );;
+#    esac
+#    shift
+#done
+#
+#dwdiff -C3 -c --diff-option=-w "${ARGS[@]}" | awk '/^=== /{print "\033[1;33m" $0 "\033[0m"}; $0 !~ /^=== /{print}'
+
+# Third attempt... this is a bit better.
+#diff -u "$@" | dwdiff -c --diff-input | awk '/^=== /{print "\033[1;33m" $0 "\033[0m"; next}; /^--- /{print "\033[1;31m" $0 "\033[0m"; next}; /^+++ /{print "\033[1;32m" $0 "\033[0m"; next}; /^@@ /{print "\033[1;35m" $0 "\033[0m"; next}; {print}'
+
+# Fourth attempt...
+#TODO: Fix the fact that it likes to go from the first non-whitespace on an added/deleted line to the end of the leading whitespace on the following line, instead of highlighting the whole added/deleted line
+#diff -u -d "$@" | dwdiff -cred,blue -w '[-' -x '-]' -y '{+' -z '+}' --wdiff-output --diff-input | awk '/^=== /{print "\033[1;33m" $0 "\033[0m"; next}; /^diff -u -d /{print "\033[1;33m=== " $0 "\033[0m"; next}; /^--- /{print "\033[1;31m" $0 "\033[0m"; next}; /^+++ /{print "\033[1;34m" $0 "\033[0m"; next}; /^@@ /{print "\033[1;35m" $0 "\033[0m"; next}; {print}'

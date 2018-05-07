@@ -1,0 +1,13 @@
+#!/bin/sh
+
+revert() {
+    xset dpms 0 0 0
+}
+trap revert SIGHUP SIGINT SIGTERM
+
+xset +dpms dpms 600 1200 1800
+
+#i3lock -e -n -c 000000
+i3lock -e -n -c 3d3d3c -i "$HOME/Pictures/Wallpaper/NewStore/NewStore.png"
+
+revert

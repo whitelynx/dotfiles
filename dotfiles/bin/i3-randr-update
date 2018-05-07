@@ -1,0 +1,55 @@
+#!/bin/bash
+
+exec >~/.i3-randr-update.log 2>&1
+
+FORCE=false
+if [ "$1" == "-f" ]; then
+	FORCE=true
+fi
+
+if which autorandr; then
+	init_screen_config=$(autorandr)
+	autorandr -c
+	sleep 0.5
+	final_screen_config=$(autorandr)
+else
+	init_screen_config=$(randrctl show)
+	randrctl auto
+	sleep 0.5
+	final_screen_config=$(randrctl show)
+fi
+
+if $FORCE || ! cmp --quiet <(echo "$init_screen_config") <(echo "$final_screen_config"); then
+	# The screen profile changed! Update what needs updating.
+	echo "$(date --rfc-3339=seconds): Screen profile changed; updating things..."
+
+	# Restore our DPI setting:
+	#xrandr --dpi 96
+	xrandr --dpi 120
+	#xrandr --dpi 144
+	#xrandr --dpi 192
+
+	# Re-render the wallpaper:
+	nitrogen --restore
+	sleep 0.5
+
+	# Restart conky:
+	#pkill conky
+	#conky -c ~/.config/conky/maia.lua
+
+	# Restart i3:
+	i3-msg restart
+
+	# Restart synergys:
+	systemctl --user restart synergys@$DISPLAY
+
+	# Restart compton:
+	systemctl --user restart compton@$DISPLAY
+
+	# Restart powerline:
+	#pkill -f powerline-lemonbar.py
+	#python /usr/lib/python3.6/site-packages/powerline/bindings/lemonbar/powerline-lemonbar.py --i3 --height 20 -- -f Input Mono -b -o 1 &
+
+	# Reload compton:
+	#pkill -SIGUSR1 compton
+fi

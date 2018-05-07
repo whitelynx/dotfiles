@@ -1,0 +1,161 @@
+config:
+  backup: true
+  create: true
+  dotpath: dotfiles
+dotfiles:
+  d_alacritty:
+    dst: ~/.config/alacritty
+    src: config/alacritty
+  d_systemd:
+    dst: ~/.config/systemd
+    src: config/systemd
+  f_aoeu:
+    dst: ~/bin/aoeu
+    link: true
+    src: bin/aoeu
+  f_ar.g:
+    dst: ~/bin/ar.g
+    link: true
+    src: bin/aoeu
+  f_config.py:
+    dst: ~/.config/i3pystatus/config.py
+    src: config/i3pystatus/config.py
+  f_diffconflicts:
+    dst: ~/bin/diffconflicts
+    src: bin/diffconflicts
+  f_dotdrop:
+    dst: ~/bin/dotdrop
+    src: bin/dotdrop
+  f_dpms-lock:
+    dst: ~/bin/dpms-lock
+    src: bin/dpms-lock
+  f_extend.xresources:
+    dst: ~/.extend.Xresources
+    src: extend.Xresources
+  f_filetype.vim:
+    dst: ~/.config/nvim/filetype.vim
+    src: config/nvim/filetype.vim
+  f_fish_user_key_bindings.fish:
+    dst: ~/.config/fish/functions/fish_user_key_bindings.fish
+    src: config/fish/functions/fish_user_key_bindings.fish
+  f_fishfile:
+    dst: ~/.config/fish/fishfile
+    src: config/fish/fishfile
+  f_fonts.conf:
+    dst: ~/.config/fontconfig/fonts.conf
+    src: config/fontconfig/fonts.conf
+  f_fqvim:
+    dst: ~/bin/fqvim
+    src: bin/fqvim
+  f_git-diffcommit:
+    dst: ~/bin/git-diffcommit
+    src: bin/git-diffcommit
+  f_git-glog:
+    dst: ~/bin/git-glog
+    src: bin/git-glog
+  f_gitconfig:
+    dst: ~/.gitconfig
+    src: gitconfig
+  f_hyper.js:
+    dst: ~/.hyper.js
+    src: hyper.js
+  f_i3-randr-update:
+    dst: ~/bin/i3-randr-update
+    src: bin/i3-randr-update
+  f_i3_config:
+    dst: ~/.config/i3/config
+    src: config/i3/config
+  f_i3exit:
+    dst: ~/bin/i3exit
+    src: bin/i3exit
+  f_init.vim:
+    dst: ~/.config/nvim/init.vim
+    src: config/nvim/init.vim
+  f_launch-terminal:
+    dst: ~/bin/launch-terminal
+    src: bin/launch-terminal
+  f_line-diff:
+    dst: ~/bin/line-diff
+    link: true
+    src: bin/sabdc
+  f_notify-volume:
+    dst: ~/bin/notify-volume
+    src: bin/notify-volume
+  f_npmrc:
+    dst: ~/.npmrc
+    src: npmrc
+  f_pyg:
+    dst: ~/bin/pyg
+    src: bin/pyg
+  f_pygments-styles:
+    dst: ~/bin/pygments-styles
+    src: bin/pygments-styles
+  f_qvim:
+    dst: ~/bin/qvim
+    src: bin/qvim
+  f_rc.xsh:
+    dst: ~/.config/xonsh/rc.xsh
+    src: config/xonsh/rc.xsh
+  f_sabdc:
+    dst: ~/bin/sabdc
+    link: true
+    src: bin/sabdc
+  f_sterminalrc:
+    dst: ~/.sterminalrc
+    src: sterminalrc
+  f_synergy.conf:
+    dst: ~/.synergy.conf
+    src: synergy.conf
+  f_toggle-touchpad:
+    dst: ~/bin/toggle-touchpad
+    src: bin/toggle-touchpad
+  f_urlquote:
+    dst: ~/bin/urlquote
+    src: bin/urlquote
+  f_vars.fish:
+    dst: ~/.config/fish/conf.d/vars.fish
+    src: config/fish/conf.d/vars.fish
+  f_word-diff:
+    dst: ~/bin/word-diff
+    link: true
+    src: bin/sabdc
+profiles:
+  syl:
+    dotfiles:
+    - f_init.vim
+    - f_filetype.vim
+    - f_i3_config
+    - f_config.py
+    - f_fishfile
+    - f_fish_user_key_bindings.fish
+    - f_vars.fish
+    - f_rc.xsh
+    - f_fonts.conf
+    - f_hyper.js
+    - f_extend.xresources
+    - f_synergy.conf
+    - f_gitconfig
+    - f_sterminalrc
+    - f_npmrc
+    - d_systemd
+    - d_alacritty
+    - f_dpms-lock
+    - f_dotdrop
+    - f_git-diffcommit
+    - f_git-glog
+    - f_diffconflicts
+    - f_ar.g
+    - f_aoeu
+    - f_sabdc
+    - f_word-diff
+    - f_line-diff
+    - f_i3-randr-update
+    - f_i3exit
+    - f_launch-terminal
+    - f_notify-volume
+    - f_pyg
+    - f_pygments-styles
+    - f_qvim
+    - f_fqvim
+    - f_toggle-touchpad
+    - f_urlquote

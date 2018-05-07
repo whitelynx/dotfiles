@@ -1,0 +1,91 @@
+!cursors in /usr/share/cursors/xorg-x11
+!Xcursor.theme: Vanilla-DMZ-AA
+Xcursor.theme: Breeze
+Xcursor.size:  0
+
+!Xft.dpi: 75
+
+*background:             #272827
+*foreground:             #657b83
+*fading:                 15
+*fadeColor:              black
+*cursorColor:            #16A085
+*pointerColorBackground: #2B2C2B
+*pointerColorForeground: #16A085
+*pointerColor:           #2B2C2B
+*pointerColor2:          #16A085
+
+!!! black dark/light
+!*color0:                #282928
+!*color8:                #272827
+!
+!!! red dark/light
+!*color1:                #983133
+!*color9:                #985F31
+!
+!!! green dark/light
+!*color2:                #1D584D
+!*color10:               #16A085
+!
+!!! yellow dark/light
+!*color3:                #5CE022
+!*color11:               #63B93D
+!
+!!! blue dark/light
+!*color4:                #001B33
+!*color12:               #839496
+!
+!!! cyan dark/light
+!*color6:                #4F6A98
+!*color14:               #2269E0
+!
+!!! white dark/light
+!*color7:                #fdf6e3
+!*color15:               #fdf6e3
+
+!!! Make the "blue" color in terminals readable
+*color4: dodgerblue
+*color12: dodgerblue
+
+!URxvt.geometry: 105x63
+URxvt.font: xft:Input Mono:pixelsize=11
+!URxvt.font: xft:xos4 Terminess Powerline:size=10:antialias=false:rgba=none,9x15
+URxvt*background: black
+URxvt.background: [80]#000000
+URxvt*foreground: grey
+URxvt.jumpScroll: True
+URxvt.skipScroll: True
+!URxvt.transparent: True
+!URxvt.shading: 25
+URxvt.blurRadius: 8x1
+URxvt.scrollBar: False
+URxvt.scrollTtyOutput: False
+URxvt.scrollWithBuffer: True
+URxvt.scrollTtyKeypress: True
+URxvt*saveLines: 8192
+URxvt.pastableTabs: True
+URxvt.cursorBlink: True
+URxvt.pointerBlank: True
+URxvt.pointerBlankDelay: 60
+URxvt*urlLauncher: launch-browser
+URxvt.color4: dodgerblue
+URxvt.color12: dodgerblue
+URxvt.urgentOnBell: true
+
+Aterm.scrollBar: off
+Aterm.transparent: on
+Aterm.shading: 35
+Aterm.font: drift
+
+XTerm*background: #272827
+XTerm*foreground: #fdf6e3
+XTerm*reverseVideo: on
+!XTerm*faceName: Terminus:size=11:antialias=true
+XTerm*faceName: Input Mono:style=Regular:size=6.875
+!XTerm*faceName: Input Mono:style=Regular:size=5.5
+!XTerm*faceSize: 11
+XTerm*bellIsUrgent: true
+
+LynxWM.modewindow.font: drift
+
+! vim: ft=xdefaults

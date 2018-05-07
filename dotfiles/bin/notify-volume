@@ -1,0 +1,22 @@
+#!/bin/bash
+
+timeout=500
+
+device=$(ponymix --short | awk -F '\t' '$1 == "sink" {print $4}')
+volume=$(ponymix -t sink get-volume)
+if ponymix -t sink is-muted; then
+	#muted='<span color="red">[MUTE]</span> '
+	muted='[MUTE] '
+	icon='audio-volume-muted'
+else
+	muted=''
+	if [ "$volume" -ge 100 ]; then
+		icon='audio-volume-high'
+	elif [ "$volume" -lt 50 ]; then
+		icon='audio-volume-low'
+	else
+		icon='audio-volume-medium'
+	fi
+fi
+
+notify-send -u low -t "$timeout" -i "$icon" -a notify-volume "$device: $muted$volume%"

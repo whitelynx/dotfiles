@@ -1,0 +1,15 @@
+#!/usr/bin/env python
+
+import sys
+
+from pygments.styles import get_all_styles, get_style_by_name
+# from pygments.formatters import TerminalTrueColorFormatter
+from pygments.formatters import Terminal256Formatter
+
+for style in get_all_styles():
+    print(f'====== {style} ======')
+    # print(repr(get_style_by_name(style)))
+    tokens = ((tok, f'{str(tok)[6:] or "Token"}\n') for tok in get_style_by_name(style).styles)
+    # TerminalTrueColorFormatter(style=style).format(tokens, sys.stdout)
+    Terminal256Formatter(style=style).format(tokens, sys.stdout)
+    print()

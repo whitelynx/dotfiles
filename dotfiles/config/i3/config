@@ -1,0 +1,432 @@
+# i3 config file (v4)
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+set $mod Mod4
+
+set $mixer_control Master
+
+# Bar on top:
+set $bar_pos top
+set $dmenu_opts -i
+#set $dmenu_opts -i -fn lime -nb black -nf white -sb '#225588' -sf white
+#set $rofi_opts -font 'Input Sans Narrow 11' -color-window '#2b2c2b,#2b2c2b,#595b5b' -color-normal '#2b2c2b,#fdf6e3,#353836,#595b5b,#80FFF9' -location 2 -terminal ~/bin/launch-terminal
+set $rofi_opts -font 'Input Sans Narrow 11' -color-window '#222c33,#273238,#1e2529' -color-normal '#222c33,#c1c1c1,#273238,#394249,#ffffff' -color-active '#222c33,#80cbc4,#273238,#394249,#80cbc4' -color-urgent '#222c33,#ff1844,#273238,#394249,#ff1844' -location 2 -terminal ~/bin/launch-terminal
+#set $rofi_opts -font 'Input Sans Narrow 11' -color-window 'argb:ee333333,#1aa,#1aa' -color-normal 'argb:00000000,#1aa,argb:11FFFFFF,#1aa,#333' -color-urgent 'argb:00000000,#f99,argb:11FFFFFF,#f99,#333' -color-active 'argb:00000000,#aa1,argb:11FFFFFF,#aa1,#333' -location 2 -terminal ~/bin/launch-terminal
+
+# Bar on bottom:
+#set $bar_pos bottom
+#set $dmenu_opts -i -b
+##set $dmenu_opts -i -fn lime -b -nb black -nf white -sb '#225588' -sf white
+#set $rofi_opts -font 'Input Sans Narrow 11' -color-window '#222c33,#273238,#1e2529' -color-normal '#222c33,#c1c1c1,#273238,#394249,#ffffff' -color-active '#222c33,#80cbc4,#273238,#394249,#80cbc4' -color-urgent '#222c33,#ff1844,#273238,#394249,#ff1844' -location 6 -terminal ~/bin/launch-terminal
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+#font pango:monospace 8
+#font pango:lime 8
+#font pango:Input Sans Narrow,Icons 6.875
+font pango:Input Sans Narrow,Icons 8.25
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+#font pango:DejaVu Sans Mono 8
+
+# Before i3 v4.8, we used to recommend this one as the default:
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, its unicode glyph coverage is limited, the old
+# X core fonts rendering does not support right-to-left and this being a bitmap
+# font, it doesn’t scale on retina/hidpi displays.
+
+# Hide vertical borders at the edge of the screen
+hide_edge_borders both
+
+# Use Mouse+$mod to drag floating windows to the desired position
+floating_modifier $mod
+
+# New container tiling mode
+#workspace_layout stacking
+workspace_layout tabbed
+
+# Don't steal focus
+focus_on_window_activation urgent
+
+# Wrap focus around within containers
+force_focus_wrapping yes
+
+# Don't move the mouse pointer on me!
+mouse_warping none
+
+# Start a terminal
+bindsym $mod+Return exec ~/bin/launch-terminal
+
+# Kill focused window
+bindsym $mod+Shift+C kill
+
+# kill a window forcibly
+bindsym $mod+Ctrl+c --release exec --no-startup-id xkill
+
+# Start dmenu (a program launcher)
+#bindsym $mod+e exec dmenu_run
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+#bindsym $mod+p exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -p 'Start:' $dmenu_opts"
+#bindsym $mod+Shift+P exec --no-startup-id dmenu_run -p 'Run:' $dmenu_opts
+#bindsym $mod+p exec --no-startup-id j4-dmenu-desktop --dmenu="rofi -dmenu -p 'Start:' $dmenu_opts"
+bindsym $mod+p exec --no-startup-id "rofi $rofi_opts -sidebar-mode -modi drun,ssh,window -show drun"
+bindsym $mod+Shift+P exec --no-startup-id "rofi $rofi_opts -modi run -show run"
+
+# Screenshots
+bindsym Print exec --no-startup-id i3-scrot
+bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
+bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
+
+# Change focus
+bindsym $mod+h focus parent; focus left
+bindsym $mod+t focus parent; focus down
+bindsym $mod+n focus parent; focus up
+bindsym $mod+s focus parent; focus right
+
+bindsym $mod+o focus left
+bindsym $mod+u focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move focused window
+bindsym $mod+Shift+H move left
+bindsym $mod+Shift+T move down
+bindsym $mod+Shift+N move up
+bindsym $mod+Shift+S move right
+
+bindsym $mod+Shift+o move left
+bindsym $mod+Shift+u move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Read 1 character and mark the current window with this character
+bindsym $mod+m exec i3-input -F 'mark %s' -l 1 -P 'Mark: ' -f '-*-inputmono-medium-r-*-*-12-*-*-*-*-*-*-*'
+
+# Read 1 character and go to the window with the character
+bindsym $mod+apostrophe exec i3-input -F 'goto %s' -l 1 -P 'Goto: ' -f '-*-inputmono-medium-r-*-*-12-*-*-*-*-*-*-*'
+
+bindsym $mod+c mode "$mode_container"
+set $mode_container [container settings] focus (p)arent, focus (c)hild, (s)tacking, (t)abbed, toggle sp(l)it, (v)ertical split orientation, (h)orizontal split orientation, toggle stic(k)y
+mode "$mode_container" {
+    # focus the parent container
+    bindsym p focus parent; mode "default"
+    # focus the child container
+	bindsym c focus child; mode "default"
+
+    # split orientation
+    bindsym h split h; exec notify-send 'tile horizontally'; mode "default"
+    bindsym v split v; exec notify-send 'tile vertically'; mode "default"
+
+    # change container layout (stacked, tabbed, toggle split)
+    bindsym s layout stacking; mode "default"
+    bindsym t layout tabbed; mode "default"
+    bindsym l layout toggle split; mode "default"
+
+    # toggle sticky
+    bindsym k sticky toggle; mode "default"
+
+    # exit container mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# Toggle fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# Toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# Change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# move the currently focused window to the scratchpad
+bindsym $mod+Shift+grave move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+grave scratchpad show
+
+# navigate workspaces next / previous
+bindsym $mod+Ctrl+Right workspace next
+bindsym $mod+Ctrl+Left workspace prev
+
+# Lock the screen
+bindsym $mod+l exec --no-startup-id ~/bin/i3exit lock
+
+# Workspace names
+# to display names or symbols instead of plain workspace numbers you can use
+# something like: set $ws1 1:mail
+#                 set $ws2 2:
+set $ws1 1:alpha
+set $ws2 2:beta
+set $ws3 3:gamma
+set $ws4 4:delta
+set $ws5 5:epsilon
+set $ws6 6:pi
+set $ws7 7:omega
+set $ws8 8:phlange
+set $ws9 9:squirrelbacon
+set $ws10 10:operand
+set $ws11 [:clango
+set $ws12 "]:sadrobot"
+
+workspace $ws1 output eDP-1-1
+workspace $ws2 output eDP-1-1
+workspace $ws3 output eDP-1-1
+workspace $ws4 output eDP-1-1
+workspace $ws5 output eDP-1-1
+workspace $ws6 output DP-0
+workspace $ws7 output DP-0
+workspace $ws8 output DP-0
+workspace $ws9 output DP-0
+workspace $ws10 output DP-0
+workspace $ws11 output DP-0
+workspace $ws12 output DP-0
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+bindsym $mod+bracketleft workspace $ws11
+bindsym $mod+bracketright workspace $ws12
+
+# Move focused container to workspace
+bindsym $mod+Ctrl+1 move container to workspace $ws1
+bindsym $mod+Ctrl+2 move container to workspace $ws2
+bindsym $mod+Ctrl+3 move container to workspace $ws3
+bindsym $mod+Ctrl+4 move container to workspace $ws4
+bindsym $mod+Ctrl+5 move container to workspace $ws5
+bindsym $mod+Ctrl+6 move container to workspace $ws6
+bindsym $mod+Ctrl+7 move container to workspace $ws7
+bindsym $mod+Ctrl+8 move container to workspace $ws8
+bindsym $mod+Ctrl+9 move container to workspace $ws9
+bindsym $mod+Ctrl+0 move container to workspace $ws10
+bindsym $mod+Ctrl+bracketleft move container to workspace $ws11
+bindsym $mod+Ctrl+bracketright move container to workspace $ws12
+
+# Move to workspace with focused container
+bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
+bindsym $mod+Shift+bracketleft move container to workspace $ws11; workspace $ws11
+bindsym $mod+Shift+bracketright move container to workspace $ws12; workspace $ws12
+
+# Reload the configuration file
+#bindsym $mod+Shift+R reload
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+#bindsym $mod+Ctrl+r restart
+# Exit i3 (logs you out of your X session)
+#bindsym $mod+Shift+Q exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Ctrl+q exec --no-startup-id i3-end-session-menu $dmenu_opts
+
+# Volume controls
+#bindsym XF86AudioRaiseVolume exec "amixer sset $mixer_control 1%+"
+#bindsym XF86AudioLowerVolume exec "amixer sset $mixer_control 1%-"
+#bindsym XF86AudioMute exec "amixer sset $mixer_control toggle"
+bindsym $mod+Prior exec --no-startup-id ponymix -t sink increase 2; exec --no-startup-id ~/bin/notify-volume
+bindsym $mod+Next exec --no-startup-id ponymix -t sink decrease 2; exec --no-startup-id ~/bin/notify-volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id ponymix -t sink increase 2; exec --no-startup-id ~/bin/notify-volume
+bindsym XF86AudioLowerVolume exec --no-startup-id ponymix -t sink decrease 2; exec --no-startup-id ~/bin/notify-volume
+bindsym XF86AudioMute exec --no-startup-id ponymix -t sink toggle; exec --no-startup-id ~/bin/notify-volume
+
+# Other special keys
+bindsym XF86Sleep exec "sudo systemctl hybrid-sleep"
+bindsym XF86TouchpadToggle exec ~/bin/toggle-touchpad
+
+# Set shut down, restart and locking features
+set $mode_system [system] (l)ock, (e)xit i3, reload i3 (c)onfiguration, (r)estart i3, toggle status (b)ar, switch (Shift+U)ser, (Shift+S)uspend, (Shift+H)ibernate, (Shift+R)eboot, (Shift+P)oweroff
+bindsym $mod+a mode "$mode_system"
+mode "$mode_system" {
+    # lock the screen
+    bindsym l exec --no-startup-id ~/bin/i3exit lock, mode "default"
+    # log out (exit i3)
+    bindsym e exec --no-startup-id ~/bin/i3exit logout, mode "default"
+    # reload the configuration file
+    bindsym c reload
+    # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+    bindsym r restart
+    # hide/unhide i3status bar
+    bindsym b bar mode toggle, mode "default"
+
+    bindsym Shift+u exec --no-startup-id ~/bin/i3exit switch_user, mode "default"
+    bindsym Shift+s exec --no-startup-id ~/bin/i3exit suspend, mode "default"
+    bindsym Shift+h exec --no-startup-id ~/bin/i3exit hibernate, mode "default"
+    bindsym Shift+r exec --no-startup-id ~/bin/i3exit reboot, mode "default"
+    bindsym Shift+p exec --no-startup-id ~/bin/i3exit shutdown, mode "default"
+
+    # exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# Resize window (you can also use the mouse for that)
+set $mode_resize [resize] h/s, Left/Right: shrink/grow window width; n/t, Up/Down: shrink/grow height
+bindsym $mod+r mode "$mode_resize"
+mode "$mode_resize" {
+    # These bindings trigger as soon as you enter the resize mode
+    # Pressing left will shrink the window’s width.
+    # Pressing right will grow the window’s width.
+    # Pressing up will shrink the window’s height.
+    # Pressing down will grow the window’s height.
+    bindsym h resize shrink width 5 px or 5 ppt
+    bindsym t resize grow height 5 px or 5 ppt
+    bindsym n resize shrink height 5 px or 5 ppt
+    bindsym s resize grow width 5 px or 5 ppt
+
+    # same bindings, but for the arrow keys
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+
+    # exit resize mode: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+set $mode_literal [literal mode]
+bindsym $mod+v mode "$mode_literal"
+mode "$mode_literal" {
+    bindsym Escape mode "default"
+}
+
+
+# Start i3bar to display a workspace bar (plus the system information i3status finds out, if available)
+#bar {
+#    status_command i3status
+#    tray_output primary
+#}
+bar {
+    status_command    python ~/.config/i3pystatus/config.py
+    position          $bar_pos
+    workspace_buttons yes
+
+    ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
+    #tray_output primary
+    #tray_output eDP1
+
+    bindsym button4 nop
+    bindsym button5 nop
+    #font xft:Noto Sans,Icons 10.5
+    #font xft:Input Sans Narrow,Icons:size=6.875
+    #font xft:Input Sans Narrow,Icons:size=5.5
+    #font xft:Input Sans Narrow,Icons:pixelsize=5.5
+    font pango:Input Sans Narrow,Icons 6.875
+    #strip_workspace_numbers yes
+
+    colors {
+        #background $transparent
+        background #2B2C2B
+        statusline #F9FAF9
+        separator  #454947
+
+        #                  border  backgr. text
+        focused_workspace  #F9FAF9 #16A085 #2B2C2B
+        active_workspace   #595B5B #353836 #FDF6E3
+        inactive_workspace #595B5B #353836 #EEE8D5
+        urgent_workspace   #16A085 #FDF6E3 #E5201D
+    }
+}
+
+# Theme colors
+# class                 border  backgr. text    indic.  child_border
+client.focused          #808280 #808280 #80FFF9 #FDF6E3
+client.focused_inactive #434745 #434745 #16A085 #454948
+client.unfocused        #434745 #434745 #16A085 #454948
+client.urgent           #CB4B16 #FDF6E3 #16A085 #268BD2
+client.placeholder      #000000 #0c0c0c #ffffff #000000 #0c0c0c
+
+client.background       #2B2C2B
+
+
+# Open specific applications in floating mode
+for_window [title="alsamixer"] floating enable border pixel 1
+for_window [class="Calamares"] floating enable border normal
+for_window [class="Clipgrab"] floating enable
+for_window [title="File Transfer*"] floating enable
+for_window [class="Galculator"] floating enable border pixel 1
+for_window [class="GParted"] floating enable border normal
+for_window [title="i3_help"] floating enable sticky enable border normal
+for_window [class="Lightdm-gtk-greeter-settings"] floating enable
+for_window [class="Lxappearance"] floating enable sticky enable border normal
+for_window [class="Manjaro Settings Manager"] floating enable border normal
+for_window [class="Manjaro Welcome"] floating enable
+for_window [title="MuseScore: Play Panel"] floating enable
+for_window [class="Nitrogen"] floating enable sticky enable border normal
+for_window [class="Oblogout"] fullscreen enable
+for_window [class="octopi"] floating enable
+for_window [class="Pamac-manager"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="qt5ct"] floating enable sticky enable border normal
+for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
+for_window [class="Simple-scan"] floating enable border normal
+for_window [class="(?i)System-config-printer.py"] floating enable border normal
+for_window [class="Skype"] floating enable border normal
+for_window [class="Thus"] floating enable border normal
+for_window [class="Timeset-gui"] floating enable border normal
+for_window [class="(?i)virtualbox"] floating enable border normal
+for_window [class="Xfburn"] floating enable
+for_window [title="Android Emulator*"] floating enable border pixel 1
+
+
+## Autostart applications
+
+# Set the mouse cursor to something other than the default X
+exec_always --no-startup-id setcursor
+
+# Set wallpaper
+exec --no-startup-id nitrogen --restore
+
+# Run i3-randr-update at startup
+exec --no-startup-id ~/bin/i3-randr-update -f
+
+# Daemons
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+#exec --no-startup-id systemctl --user start gloom@$DISPLAY
+exec --no-startup-id systemctl --user start urxvtd@$DISPLAY
+exec --no-startup-id systemctl --user start synergys@$DISPLAY
+exec --no-startup-id systemctl --user start compton@$DISPLAY
+exec --no-startup-id systemctl --user start srandrd@$DISPLAY
+
+# Tray applets
+exec --no-startup-id nm-applet
+exec --no-startup-id pa-applet
+exec --no-startup-id blueman-applet
+exec --no-startup-id xfce4-power-manager
+exec --no-startup-id pamac-tray
+exec --no-startup-id clipit
+exec --no-startup-id fluxgui
+
+# Disable DPMS until the screensaver starts (see `dpms-lock`)
+exec --no-startup-id xset dpms 0 0 0
+
+# vim: et sw=4 ts=4 sts=4

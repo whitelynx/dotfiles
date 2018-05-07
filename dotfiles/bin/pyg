@@ -1,0 +1,3 @@
+#!/bin/bash
+exec pygmentize -f 256 -P style=lovelace "$@"
+#exec ~/Development/Other/pygments-main/pygmentize -f 256 -P style=lovelace "$@"

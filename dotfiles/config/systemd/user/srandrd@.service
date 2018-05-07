@@ -1,0 +1,11 @@
+[Unit]
+Description=Simple RandR Daemon
+
+[Service]
+Environment=DISPLAY=%I
+ExecStart=/usr/bin/srandrd -n %h/bin/i3-randr-update
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=xinit.target

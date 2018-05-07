@@ -1,0 +1,11 @@
+[Unit]
+Description=gloom - X11 backlight dimming, screen lock, and cursor management tool
+
+[Service]
+Environment=DISPLAY=%I
+ExecStart=/usr/bin/gloom -c 600 -s 600 -l 900 -k %h/bin/dpms-lock -a
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=xinit.target

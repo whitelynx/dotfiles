@@ -1,0 +1,3 @@
+#!/bin/bash
+COMMIT="$1"
+exec git diff -w "$COMMIT^..$COMMIT"

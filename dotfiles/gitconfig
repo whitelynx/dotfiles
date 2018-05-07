@@ -1,0 +1,93 @@
+[user]
+	email = whitelynx@gmail.com
+	name = David H. Bronke
+
+[credential]
+	#helper = !\\\"F:/Program Files (x86)/GitExtensions/GitCredentialWinStore/git-credential-winstore.exe\\\"
+	helper = cache --timeout=3600
+
+[push]
+	default = simple
+
+[color]
+	ui = true
+
+[column]
+	ui = auto column dense
+
+[merge]
+	# Built-in 'vimdiff'/'gvimdiff' tool:
+	#tool = vimdiff
+	#guitool = gvimdiff
+
+	# 'diffconflicts' tool, from https://github.com/whiteinge/dotfiles/blob/master/bin/diffconflicts:
+	tool = diffconflicts
+	guitool = gdiffconflicts
+
+[diff]
+	guitool = gvimdiff
+
+[core]
+	#editor = \"C:/Program Files (x86)/Vim/vim73/gvim.exe\"
+	#editor = "gvim -f"
+	editor = "qvim --nofork"
+
+[mergetool "vimdiff"]
+	cmd = nvim -d
+
+[mergetool "gvimdiff"]
+	#cmd = \"C:/Program Files (x86)/Vim/vim73/gvim.exe\" -f
+	#cmd = gvim -df
+	cmd = "qvim --nofork -- -d"
+
+[mergetool "diffconflicts"]
+	# Get diffconflicts from https://github.com/whiteinge/dotfiles/blob/master/bin/diffconflicts
+	# (wget -O ~/bin/diffconflicts https://raw.githubusercontent.com/whiteinge/dotfiles/master/bin/diffconflicts)
+	#   On Linux:
+	cmd = diffconflicts nvim $BASE $LOCAL $REMOTE $MERGED
+
+	#   On Windows:
+	#cmd = \"C:/Program Files (x86)/Git/bin/sh.exe\" C:/Users/WhiteLynx/diffconflicts vim $BASE $LOCAL $REMOTE $MERGED
+
+	trustExitCode = true
+	keepBackup = false
+
+[mergetool "gdiffconflicts"]
+	#   On Linux:
+	#cmd = diffconflicts "gvim -f" $BASE $LOCAL $REMOTE $MERGED
+	#cmd = diffconflicts "qvim --nofork" $BASE $LOCAL $REMOTE $MERGED
+	cmd = diffconflicts fqvim $BASE $LOCAL $REMOTE $MERGED
+
+	#   On Windows:
+	#cmd = \"C:/Program Files (x86)/Git/bin/sh.exe\" C:/Users/WhiteLynx/diffconflicts "gvim -f" $BASE $LOCAL $REMOTE $MERGED
+
+	trustExitCode = true
+	keepBackup = false
+
+[alias]
+	# hg-style listing commands
+	branches = branch -va
+	tags = tag --list
+	parents = show --pretty=format:'%P' -s
+	paths = remote -v
+	remotes = remote -v
+	#glog = log --graph --abbrev-commit --decorate --date=short --format=format:'%C(bold blue)%h%C(reset)%C(bold yellow)%d%C(reset) - %C(green)(%ad)%C(reset) %C(white)%s%C(reset) %C(bold black)- %an%C(reset)' --date-order
+	outgoing = !git fetch && git log FETCH_HEAD..
+	incoming = !git fetch && git log ..FETCH_HEAD
+
+	# Other hg-style commands
+	revert = checkout --
+	rollback = reset --soft HEAD^
+	forget = reset HEAD
+	manifest = ls-tree -r --name-only --full-tree HEAD
+	export = format-patch
+	update = checkout -m
+	verify = fsck
+
+	# Other random convenience commands
+	revert-all = checkout -f .
+	new-branch = checkout -b
+
+[gui]
+	fontui = -family \"DejaVu Sans\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+	fontdiff = -family drift -size 10 -weight normal -slant roman -underline 0 -overstrike 0
