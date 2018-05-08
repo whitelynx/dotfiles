@@ -12,11 +12,15 @@ dotfiles:
   f_aoeu:
     dst: ~/bin/aoeu
     link: true
-    src: bin/aoeu
+    src: bin/asdf
+  f_asdf:
+    dst: ~/bin/asdf
+    link: true
+    src: bin/asdf
   f_ar.g:
     dst: ~/bin/ar.g
     link: true
-    src: bin/aoeu
+    src: bin/ar.g
   f_config.py:
     dst: ~/.config/i3pystatus/config.py
     src: config/i3pystatus/config.py
@@ -41,6 +45,9 @@ dotfiles:
   f_fishfile:
     dst: ~/.config/fish/fishfile
     src: config/fish/fishfile
+  f_flake8:
+    dst: ~/.config/flake8
+    src: config/flake8
   f_fonts.conf:
     dst: ~/.config/fontconfig/fonts.conf
     src: config/fontconfig/fonts.conf
@@ -90,6 +97,9 @@ dotfiles:
   f_pygments-styles:
     dst: ~/bin/pygments-styles
     src: bin/pygments-styles
+  f_pylintrc:
+    dst: ~/.pylintrc
+    src: pylintrc
   f_qvim:
     dst: ~/bin/qvim
     src: bin/qvim
@@ -159,3 +169,5 @@ profiles:
     - f_fqvim
     - f_toggle-touchpad
     - f_urlquote
+    - f_flake8
+    - f_pylintrc

@@ -1,0 +1,6 @@
+# vim: ft=cfg
+[flake8]
+ignore =
+	E265, # block comment should start with '# '
+	E241  # multiple spaces after ':'
+max_line_length = 120

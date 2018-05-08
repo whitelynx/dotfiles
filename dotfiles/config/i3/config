@@ -27,17 +27,6 @@ set $rofi_opts -font 'Input Sans Narrow 11' -color-window '#222c33,#273238,#1e25
 #font pango:Input Sans Narrow,Icons 6.875
 font pango:Input Sans Narrow,Icons 8.25
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
-
 # Hide vertical borders at the edge of the screen
 hide_edge_borders both
 
@@ -172,18 +161,18 @@ bindsym $mod+l exec --no-startup-id ~/bin/i3exit lock
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws1 1:alpha
-set $ws2 2:beta
-set $ws3 3:gamma
-set $ws4 4:delta
-set $ws5 5:epsilon
-set $ws6 6:pi
-set $ws7 7:omega
-set $ws8 8:phlange
-set $ws9 9:squirrelbacon
-set $ws10 10:operand
-set $ws11 [:clango
-set $ws12 "]:sadrobot"
+set $ws1 1▪alpha
+set $ws2 2▪beta
+set $ws3 3▪gamma
+set $ws4 4▪delta
+set $ws5 5▪epsilon
+set $ws6 6▪pi
+set $ws7 7▪omega
+set $ws8 8▪phlange
+set $ws9 9▪squirrelbacon
+set $ws10 10▪operand
+set $ws11 [▪clango
+set $ws12 "]▪sadrobot"
 
 workspace $ws1 output eDP-1-1
 workspace $ws2 output eDP-1-1
@@ -239,14 +228,6 @@ bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
 bindsym $mod+Shift+bracketleft move container to workspace $ws11; workspace $ws11
 bindsym $mod+Shift+bracketright move container to workspace $ws12; workspace $ws12
-
-# Reload the configuration file
-#bindsym $mod+Shift+R reload
-# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-#bindsym $mod+Ctrl+r restart
-# Exit i3 (logs you out of your X session)
-#bindsym $mod+Shift+Q exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-#bindsym $mod+Ctrl+q exec --no-startup-id i3-end-session-menu $dmenu_opts
 
 # Volume controls
 #bindsym XF86AudioRaiseVolume exec "amixer sset $mixer_control 1%+"
@@ -320,27 +301,15 @@ mode "$mode_literal" {
 }
 
 
-# Start i3bar to display a workspace bar (plus the system information i3status finds out, if available)
-#bar {
-#    status_command i3status
-#    tray_output primary
-#}
+# Start i3bar to display a workspace/status bar
 bar {
     status_command    python ~/.config/i3pystatus/config.py
     position          $bar_pos
     workspace_buttons yes
 
-    ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-    #tray_output primary
-    #tray_output eDP1
-
     bindsym button4 nop
     bindsym button5 nop
-    #font xft:Noto Sans,Icons 10.5
-    #font xft:Input Sans Narrow,Icons:size=6.875
-    #font xft:Input Sans Narrow,Icons:size=5.5
-    #font xft:Input Sans Narrow,Icons:pixelsize=5.5
-    font pango:Input Sans Narrow,Icons 6.875
+    font pango:Input Sans Compressed,Icons 8.25
     #strip_workspace_numbers yes
 
     colors {
