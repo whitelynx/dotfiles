@@ -208,3 +208,4 @@ profiles:
     - f_flake8
     - f_pylintrc
     - f_kitty.conf
+    - f_bobthefish_colors.fish
