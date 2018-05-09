@@ -1,7 +1,10 @@
 #set -xg EDITOR (which gvim)
 set -xg EDITOR (which nvim)
-#set PATH $PATH ~/bin ~/.local/bin ~/Library/Python/2.7/bin
-set PATH $PATH ~/bin ~/.local/bin ~/.cargo/bin
+for dir in ~/bin ~/.local/bin ~/.cargo/bin ~/Library/Android/sdk/platform-tools
+	if test -d $dir
+		set PATH $PATH $dir
+	end
+end
 set -xg HOMEBREW_GITHUB_API_TOKEN {{@@ env['HOMEBREW_GITHUB_API_TOKEN'] @@}}
 
 set -g default_user {{@@ env['USER'] @@}}
