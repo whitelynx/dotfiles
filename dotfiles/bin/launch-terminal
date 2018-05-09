@@ -1,16 +1,16 @@
 #!/bin/bash
 
-TERMINAL=urxvt
+TERMINAL=kitty
+#TERMINAL=urxvt
 #TERMINAL=st
 #TERMINAL=tilix
 #TERMINAL=gnome-terminal
 
-if [ -z "$RXVT_SOCKET" ]; then
-	export RXVT_SOCKET="$HOME/.rxvt-unicode-$(hostname)$DISPLAY"
-fi
-
 case $TERMINAL in
 	urxvt)
+		if [ -z "$RXVT_SOCKET" ]; then
+			export RXVT_SOCKET="$HOME/.rxvt-unicode-$(hostname)$DISPLAY"
+		fi
 		if ! fuser "$RXVT_SOCKET" >/dev/null 2>&1; then
 			urxvtd -q -o -f
 		fi
