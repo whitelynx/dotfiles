@@ -4,7 +4,7 @@ function bobthefish_colors -S -d 'Define a custom bobthefish color scheme'
   __bobthefish_colors zenburn
 
   set -l grey       333333 # a bit darker than normal zenburn grey
-  set -l darkgrey   222222
+  set -l darkgrey   191919
   set -l black      000000
   set -l red        CC9393
   set -l brightred  FF5353
