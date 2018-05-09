@@ -13,14 +13,14 @@ dotfiles:
     dst: ~/bin/aoeu
     link: true
     src: bin/asdf
-  f_asdf:
-    dst: ~/bin/asdf
-    link: true
-    src: bin/asdf
   f_ar.g:
     dst: ~/bin/ar.g
     link: true
     src: bin/ar.g
+  f_asdf:
+    dst: ~/bin/asdf
+    link: true
+    src: bin/asdf
   f_config.py:
     dst: ~/.config/i3pystatus/config.py
     src: config/i3pystatus/config.py
@@ -78,6 +78,9 @@ dotfiles:
   f_init.vim:
     dst: ~/.config/nvim/init.vim
     src: config/nvim/init.vim
+  f_kitty.conf:
+    dst: ~/.config/kitty/kitty.conf
+    src: config/kitty/kitty.conf
   f_launch-terminal:
     dst: ~/bin/launch-terminal
     src: bin/launch-terminal
@@ -171,3 +174,4 @@ profiles:
     - f_urlquote
     - f_flake8
     - f_pylintrc
+    - f_kitty.conf
