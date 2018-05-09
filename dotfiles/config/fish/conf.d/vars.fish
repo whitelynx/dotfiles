@@ -18,6 +18,7 @@ set -g theme_color_scheme zenburn
 #set -g theme_display_hg yes
 set -g theme_display_ruby no
 set -g theme_display_user yes
+set -g theme_display_hostname ssh
 set -g theme_display_vi yes
 set -g theme_display_vi_hide_mode default
 set -g theme_title_display_process yes
