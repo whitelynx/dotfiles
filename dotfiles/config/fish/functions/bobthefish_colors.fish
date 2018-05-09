@@ -4,6 +4,8 @@ function bobthefish_colors -S -d 'Define a custom bobthefish color scheme'
   __bobthefish_colors zenburn
 
   set -l grey       333333 # a bit darker than normal zenburn grey
+  set -l darkgrey   222222
+  set -l black      000000
   set -l red        CC9393
   set -l brightred  FF5353
   set -l green      7F9F7F
@@ -30,10 +32,10 @@ function bobthefish_colors -S -d 'Define a custom bobthefish color scheme'
   set -x color_vi_mode_insert        $green $grey --bold
   set -x color_vi_mode_visual        $yellow $grey --bold
   set -x color_vagrant               $darkgreen $grey --bold
-  set -x color_username              $grey $blue
-  set -x color_hostname              $grey $blue
-  set -x color_rvm                   $red $grey  --bold
-  set -x color_virtualfish           $blue $grey --bold
-  set -x color_virtualgo             $blue $grey --bold
-  set -x color_desk                  $blue $grey --bold
+  set -x color_username              $darkgrey $blue
+  set -x color_hostname              $darkgrey $blue
+  set -x color_rvm                   $red $darkgrey  --bold
+  set -x color_virtualfish           $blue $darkgrey --bold
+  set -x color_virtualgo             $blue $black --bold
+  set -x color_desk                  $blue $black --bold
 end
