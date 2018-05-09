@@ -21,6 +21,9 @@ dotfiles:
     dst: ~/bin/asdf
     link: true
     src: bin/asdf
+  f_bobthefish_colors.fish:
+    dst: ~/.config/fish/functions/bobthefish_colors.fish
+    src: config/fish/functions/bobthefish_colors.fish
   f_config.py:
     dst: ~/.config/i3pystatus/config.py
     src: config/i3pystatus/config.py
@@ -133,6 +136,35 @@ dotfiles:
     link: true
     src: bin/sabdc
 profiles:
+  Davids-MacBook-Pro-2.local:
+    dotfiles:
+    - f_init.vim
+    - f_filetype.vim
+    - f_fishfile
+    - f_fish_user_key_bindings.fish
+    - f_vars.fish
+    - f_rc.xsh
+    - f_hyper.js
+    - f_gitconfig
+    - f_npmrc
+    - d_alacritty
+    - f_dotdrop
+    - f_git-diffcommit
+    - f_git-glog
+    - f_diffconflicts
+    - f_sabdc
+    - f_word-diff
+    - f_line-diff
+    - f_launch-terminal
+    - f_pyg
+    - f_pygments-styles
+    - f_qvim
+    - f_fqvim
+    - f_urlquote
+    - f_flake8
+    - f_pylintrc
+    - f_kitty.conf
+    - f_bobthefish_colors.fish
   syl:
     dotfiles:
     - f_init.vim
@@ -172,34 +204,6 @@ profiles:
     - f_qvim
     - f_fqvim
     - f_toggle-touchpad
-    - f_urlquote
-    - f_flake8
-    - f_pylintrc
-    - f_kitty.conf
-  Davids-MacBook-Pro-2.local:
-    dotfiles:
-    - f_init.vim
-    - f_filetype.vim
-    - f_fishfile
-    - f_fish_user_key_bindings.fish
-    - f_vars.fish
-    - f_rc.xsh
-    - f_hyper.js
-    - f_gitconfig
-    - f_npmrc
-    - d_alacritty
-    - f_dotdrop
-    - f_git-diffcommit
-    - f_git-glog
-    - f_diffconflicts
-    - f_sabdc
-    - f_word-diff
-    - f_line-diff
-    - f_launch-terminal
-    - f_pyg
-    - f_pygments-styles
-    - f_qvim
-    - f_fqvim
     - f_urlquote
     - f_flake8
     - f_pylintrc
