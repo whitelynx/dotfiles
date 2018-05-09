@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if which vimr > /dev/null; then
+if which vimr > /dev/null 2>&1; then
 	exec vimr --nvim "$@"
 else
 	exec nvim-qt "$@"
