@@ -24,6 +24,9 @@ dotfiles:
   f_bobthefish_colors.fish:
     dst: ~/.config/fish/functions/bobthefish_colors.fish
     src: config/fish/functions/bobthefish_colors.fish
+  f_chunkwmrc:
+    dst: ~/.chunkwmrc
+    src: chunkwmrc
   f_config.py:
     dst: ~/.config/i3pystatus/config.py
     src: config/i3pystatus/config.py
@@ -81,6 +84,9 @@ dotfiles:
   f_init.vim:
     dst: ~/.config/nvim/init.vim
     src: config/nvim/init.vim
+  f_khdrc:
+    dst: ~/.khdrc
+    src: khdrc
   f_kitty.conf:
     dst: ~/.config/kitty/kitty.conf
     src: config/kitty/kitty.conf
@@ -165,6 +171,8 @@ profiles:
     - f_pylintrc
     - f_kitty.conf
     - f_bobthefish_colors.fish
+    - f_chunkwmrc
+    - f_khdrc
   syl:
     dotfiles:
     - f_init.vim
