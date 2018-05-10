@@ -60,7 +60,7 @@ status.register("gpu_temp")
 
 status.register(
     "battery",
-    format="{status} {percentage:.1f}% ({percentage_design:.1f}%) {remaining}",
+    format="{status} {percentage:.1f}% {remaining}",
     status={
         "DPL": "",  # "Depleted", since the abbreviation isn't directly obvious.
         "DIS": "⬇",
@@ -118,9 +118,9 @@ status.register(
     format_muted=" MUTE")
 
 # Note: requires pyalsaaudio from PyPI
-status.register(
-    "alsa",
-    format=" {volume}%",
-    format_muted=" MUTE")
+#status.register(
+#    "alsa",
+#    format=" {volume}%",
+#    format_muted=" MUTE")
 
 status.run()
