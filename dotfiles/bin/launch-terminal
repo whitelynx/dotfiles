@@ -9,7 +9,8 @@ TERMINAL=kitty
 case $TERMINAL in
 	urxvt)
 		if [ -z "$RXVT_SOCKET" ]; then
-			export RXVT_SOCKET="$HOME/.rxvt-unicode-$(hostname)$DISPLAY"
+			RXVT_SOCKET="$HOME/.rxvt-unicode-$(hostname)$DISPLAY"
+			export RXVT_SOCKET
 		fi
 		if ! fuser "$RXVT_SOCKET" >/dev/null 2>&1; then
 			urxvtd -q -o -f
