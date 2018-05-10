@@ -39,7 +39,6 @@ DEFAULT_DIFF_OPTIONS=(-u -d)
 
 # Colors
 HEADER_COLOR='1;33' # bold yellow
-DIFF_HEADER_COLOR=$HEADER_COLOR
 FROM_FILE_COLOR='1;31' # bold red
 TO_FILE_COLOR='1;32' # bold green
 FOLD_COLOR='1;35' # bold magenta
@@ -52,11 +51,11 @@ ADD_COLOR='92' # bright green
 WORDWISE_COMMAND="dwdiff"
 
 # The command-line arguments you'd like to use with `dwdiff` or `wdiff` if we fall back to them
-DEFAULT_DWDIFF_ARGS=("-ce:\033[${DELETE_COLOR}m,e:\033[${ADD_COLOR}m" "-w[-" "-x-]" "-y{+" "-z+}" "--wdiff-output" "--diff-input" "-P")
+DEFAULT_DWDIFF_ARGS=("-ce:\\033[${DELETE_COLOR}m,e:\\033[${ADD_COLOR}m" "-w[-" "-x-]" "-y{+" "-z+}" "--wdiff-output" "--diff-input" "-P")
 DEFAULT_WDIFF_ARGS=()
 
 # The command-line arguments you'd like to use with WORDWISE_COMMAND
-DEFAULT_WORDWISE_ARGS=( ${DEFAULT_DWDIFF_ARGS[@]} )
+DEFAULT_WORDWISE_ARGS=( "${DEFAULT_DWDIFF_ARGS[@]}" )
 
 ## End Default Settings ##
 ##########################
@@ -64,7 +63,8 @@ DEFAULT_WORDWISE_ARGS=( ${DEFAULT_DWDIFF_ARGS[@]} )
 
 # Load user's config, if it exists
 USERCONF=$HOME/.sabdcrc
-[ -e $USERCONF ] && . $USERCONF
+# shellcheck source=/dev/null
+[ -e "$USERCONF" ] && . "$USERCONF"
 
 # Detect whether or not we should default to wordwise mode
 WORDWISE=0
@@ -85,12 +85,14 @@ do
     shift
 done
 
+# shellcheck disable=SC2016
 COLORSCRIPT_COMMON='
 /^=== / {print "\033['$HEADER_COLOR'm" $0 "\033[0m"; next}
 /^diff -u -d / {print "\033['$HEADER_COLOR'm=== " $0 "\033[0m"; next}
 /^--- / {print "\033['$FROM_FILE_COLOR'm" $0 "\033[0m"; next}
 /^\+\+\+ / {print "\033['$TO_FILE_COLOR'm" $0 "\033[0m"; next}
 /^@@ / {print "\033['$FOLD_COLOR'm" $0 "\033[0m"; next}'
+# shellcheck disable=SC2016
 COLORSCRIPT_LINEWISE='
 /^[-<]/ {print "\033['$DELETE_MARKER_COLOR'm" substr($0, 1, 1) "\033['$DELETE_COLOR'm" substr($0, 2) "\033[0m"; next}
 /^[+>]/ {print "\033['$ADD_MARKER_COLOR'm" substr($0, 1, 1) "\033['$ADD_COLOR'm" substr($0, 2) "\033[0m"; next}'
@@ -113,17 +115,17 @@ if [[ ${#DIFF_ARGS[@]} -gt 1 ]]; then
 	if [[ $WORDWISE -ne 0 ]]; then
 		# We're in wordwise mode! Make sure we have a usable wordwise diff command.
 		WORDWISE_COMMAND=$(which $WORDWISE_COMMAND 2> /dev/null)
-		WORDWISE_ARGS=${DEFAULT_WORDWISE_ARGS[@]}
+		WORDWISE_ARGS=("${DEFAULT_WORDWISE_ARGS[@]}")
 
 		if [[ ! -x "$WORDWISE_COMMAND" ]]; then
 			# Fall back to dwdiff
 			WORDWISE_COMMAND=$(which dwdiff 2> /dev/null)
-			WORDWISE_ARGS=${DEFAULT_DWDIFF_ARGS[@]}
+			WORDWISE_ARGS=("${DEFAULT_DWDIFF_ARGS[@]}")
 
 			if [[ ! -x "$WORDWISE_COMMAND" ]]; then
 				# Fall back to wdiff
 				WORDWISE_COMMAND=$(which wdiff 2> /dev/null)
-				WORDWISE_ARGS=${DEFAULT_WDIFF_ARGS[@]}
+				WORDWISE_ARGS=("${DEFAULT_WDIFF_ARGS[@]}")
 
 				if [[ ! -x "$WORDWISE_COMMAND" ]]; then
 					# FAIL
@@ -133,15 +135,15 @@ if [[ ${#DIFF_ARGS[@]} -gt 1 ]]; then
 			fi
 		fi
 
-		diff ${DEFAULT_DIFF_OPTIONS[@]} "${DIFF_ARGS[@]}" | $WORDWISE_COMMAND ${WORDWISE_ARGS[@]} | awk "$COLORSCRIPT"
+		diff "${DEFAULT_DIFF_OPTIONS[@]}" "${DIFF_ARGS[@]}" | $WORDWISE_COMMAND "${WORDWISE_ARGS[@]}" | awk "$COLORSCRIPT"
 
 	else
-		diff ${DEFAULT_DIFF_OPTIONS[@]} "${DIFF_ARGS[@]}" | awk "$COLORSCRIPT"
+		diff "${DEFAULT_DIFF_OPTIONS[@]}" "${DIFF_ARGS[@]}" | awk "$COLORSCRIPT"
 	fi
 
 elif [[ ${#DIFF_ARGS[@]} -eq 1 ]]; then
 	# There's one diff arg; assume it's a patch or '-'. (which signifies diff-formatted or wdiff-formatted input on stdin)
-	cat ${#DIFF_ARGS[@]} | awk "$COLORSCRIPT"
+	awk "$COLORSCRIPT" "${DIFF_ARGS[@]}"
 
 else
 	# There's no diff args; assume we're getting diff-formatted or wdiff-formatted input on stdin.

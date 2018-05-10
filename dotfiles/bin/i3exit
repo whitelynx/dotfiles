@@ -1,11 +1,8 @@
 #!/bin/sh
-# /usr/bin/i3exit
-
 
 lock() {
-    #xautolock -locknow
-	#"$HOME/bin/gloomctl" locknow
-	"$HOME/bin/dpms-lock" &
+	#xautolock -locknow
+	dpms-lock &
 }
 
 case "$1" in
@@ -20,7 +17,7 @@ case "$1" in
 		;;
 	suspend)
 		lock && sleep 0.1
-		if [ $(cat /proc/1/comm) = "systemd" ]; then
+		if [ "$(cat /proc/1/comm)" = "systemd" ]; then
 			systemctl suspend
 		else
 			dbus-send --system --dest=org.freedesktop.ConsoleKit --type=method_call --print-reply --reply-timeout=2000 /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Suspend boolean:true
@@ -28,21 +25,21 @@ case "$1" in
 		;;
 	hibernate)
 		lock && sleep 0.1
-		if [ $(cat /proc/1/comm) = "systemd" ]; then
+		if [ "$(cat /proc/1/comm)" = "systemd" ]; then
 			systemctl hibernate
 		else
 			dbus-send --system --dest=org.freedesktop.ConsoleKit --type=method_call --print-reply --reply-timeout=2000 /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Hibernate boolean:true
 		fi
 		;;
 	reboot)
-		if [ $(cat /proc/1/comm) = "systemd" ]; then
+		if [ "$(cat /proc/1/comm)" = "systemd" ]; then
 			systemctl reboot
 		else
 			dbus-send --system --print-reply --type=method_call --reply-timeout=2000 --dest=org.freedesktop.ConsoleKit /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart
 		fi
 		;;
 	shutdown)
-		if [ $(cat /proc/1/comm) = "systemd" ]; then
+		if [ "$(cat /proc/1/comm)" = "systemd" ]; then
 			systemctl poweroff
 		else
 			dbus-send --system --print-reply --type=method_call --reply-timeout=2000 --dest=org.freedesktop.ConsoleKit /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Stop

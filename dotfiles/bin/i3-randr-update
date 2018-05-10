@@ -41,10 +41,10 @@ if $FORCE || ! cmp --quiet <(echo "$init_screen_config") <(echo "$final_screen_c
 	i3-msg restart
 
 	# Restart synergys:
-	systemctl --user restart synergys@$DISPLAY
+	systemctl --user restart "synergys@$DISPLAY"
 
 	# Restart compton:
-	systemctl --user restart compton@$DISPLAY
+	systemctl --user restart "compton@$DISPLAY"
 
 	# Restart powerline:
 	#pkill -f powerline-lemonbar.py
