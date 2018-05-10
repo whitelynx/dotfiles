@@ -1,0 +1,29 @@
+#!/usr/bin/env python
+'''Preview named colors from an rgb.txt file (like the one from X11) in a truecolor terminal.
+
+'''
+# pylint: disable=missing-docstring
+import fileinput
+
+
+RESET = '\x1b[m'
+FGBLACK = '\x1b[38;2;0;0;0m'
+
+
+def fg_color(red, green, blue):
+    return f'\x1b[38;2;{red};{green};{blue}m'
+
+
+def bg_color(red, green, blue):
+    return f'\x1b[48;2;{red};{green};{blue}m'
+
+
+def process_line(line_):
+    red, green, blue, name = line_.split(maxsplit=3)
+    name = name.strip()
+    print(f'{bg_color(red, green, blue)} {name} {FGBLACK} {name} {RESET} {fg_color(red, green, blue)} {name} {RESET}')
+
+
+for line in fileinput.input():
+    if not line.startswith('!'):
+        process_line(line)

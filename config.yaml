@@ -118,6 +118,9 @@ dotfiles:
   f_rc.xsh:
     dst: ~/.config/xonsh/rc.xsh
     src: config/xonsh/rc.xsh
+  f_rgbcolors:
+    dst: ~/bin/rgbcolors
+    src: bin/rgbcolors
   f_sabdc:
     dst: ~/bin/sabdc
     link: true
@@ -217,3 +220,4 @@ profiles:
     - f_pylintrc
     - f_kitty.conf
     - f_bobthefish_colors.fish
+    - f_rgbcolors
