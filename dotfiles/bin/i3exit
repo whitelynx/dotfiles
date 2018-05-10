@@ -2,7 +2,7 @@
 
 lock() {
 	#xautolock -locknow
-	dpms-lock &
+	"$HOME/bin/dpms-lock" &
 }
 
 case "$1" in
