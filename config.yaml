@@ -176,6 +176,7 @@ profiles:
     - f_bobthefish_colors.fish
     - f_chunkwmrc
     - f_khdrc
+    - f_rgbcolors
   syl:
     dotfiles:
     - f_init.vim
