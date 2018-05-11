@@ -3,6 +3,8 @@ dotfiles
 
 Managed using [dotdrop](https://github.com/deadc0de6/dotdrop).
 
+![Screenshot](https://i.imgur.com/KAG2dYs.png)
+
 
 packages
 --------
