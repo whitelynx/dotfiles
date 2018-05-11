@@ -1,30 +1,18 @@
 # i3 config file (v4)
-#
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
 
-set $mixer_control Master
-
 # Bar on top:
 set $bar_pos top
-set $dmenu_opts -i
-#set $dmenu_opts -i -fn lime -nb black -nf white -sb '#225588' -sf white
-#set $rofi_opts -font 'Input Sans Narrow 11' -color-window '#2b2c2b,#2b2c2b,#595b5b' -color-normal '#2b2c2b,#fdf6e3,#353836,#595b5b,#80FFF9' -location 2 -terminal ~/bin/launch-terminal
 set $rofi_opts -font 'Input Sans Narrow 11' -color-window '#222c33,#273238,#1e2529' -color-normal '#222c33,#c1c1c1,#273238,#394249,#ffffff' -color-active '#222c33,#80cbc4,#273238,#394249,#80cbc4' -color-urgent '#222c33,#ff1844,#273238,#394249,#ff1844' -location 2 -terminal ~/bin/launch-terminal
 #set $rofi_opts -font 'Input Sans Narrow 11' -color-window 'argb:ee333333,#1aa,#1aa' -color-normal 'argb:00000000,#1aa,argb:11FFFFFF,#1aa,#333' -color-urgent 'argb:00000000,#f99,argb:11FFFFFF,#f99,#333' -color-active 'argb:00000000,#aa1,argb:11FFFFFF,#aa1,#333' -location 2 -terminal ~/bin/launch-terminal
 
 # Bar on bottom:
 #set $bar_pos bottom
-#set $dmenu_opts -i -b
-##set $dmenu_opts -i -fn lime -b -nb black -nf white -sb '#225588' -sf white
 #set $rofi_opts -font 'Input Sans Narrow 11' -color-window '#222c33,#273238,#1e2529' -color-normal '#222c33,#c1c1c1,#273238,#394249,#ffffff' -color-active '#222c33,#80cbc4,#273238,#394249,#80cbc4' -color-urgent '#222c33,#ff1844,#273238,#394249,#ff1844' -location 6 -terminal ~/bin/launch-terminal
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-#font pango:monospace 8
-#font pango:lime 8
-#font pango:Input Sans Narrow,Icons 6.875
 font pango:Input Sans Narrow,Icons 8.25
 
 # Hide vertical borders at the edge of the screen
@@ -34,7 +22,6 @@ hide_edge_borders both
 floating_modifier $mod
 
 # New container tiling mode
-#workspace_layout stacking
 workspace_layout tabbed
 
 # Don't steal focus
@@ -55,16 +42,7 @@ bindsym $mod+Shift+C kill
 # kill a window forcibly
 bindsym $mod+Ctrl+c --release exec --no-startup-id xkill
 
-# Start dmenu (a program launcher)
-#bindsym $mod+e exec dmenu_run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-
-#bindsym $mod+p exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -p 'Start:' $dmenu_opts"
-#bindsym $mod+Shift+P exec --no-startup-id dmenu_run -p 'Run:' $dmenu_opts
-#bindsym $mod+p exec --no-startup-id j4-dmenu-desktop --dmenu="rofi -dmenu -p 'Start:' $dmenu_opts"
+# Show program launcher
 bindsym $mod+p exec --no-startup-id "rofi $rofi_opts -sidebar-mode -modi drun,ssh,window -show drun"
 bindsym $mod+Shift+P exec --no-startup-id "rofi $rofi_opts -modi run -show run"
 
@@ -158,9 +136,6 @@ bindsym $mod+Ctrl+Left workspace prev
 bindsym $mod+l exec --no-startup-id ~/bin/i3exit lock
 
 # Workspace names
-# to display names or symbols instead of plain workspace numbers you can use
-# something like: set $ws1 1:mail
-#                 set $ws2 2:
 set $ws1 1▪alpha
 set $ws2 2▪beta
 set $ws3 3▪gamma
@@ -174,6 +149,7 @@ set $ws10 10▪operand
 set $ws11 [▪clango
 set $ws12 "]▪sadrobot"
 
+# Assign workspaces to outputs
 workspace $ws1 output eDP-1-1
 workspace $ws2 output eDP-1-1
 workspace $ws3 output eDP-1-1
@@ -230,9 +206,6 @@ bindsym $mod+Shift+bracketleft move container to workspace $ws11; workspace $ws1
 bindsym $mod+Shift+bracketright move container to workspace $ws12; workspace $ws12
 
 # Volume controls
-#bindsym XF86AudioRaiseVolume exec "amixer sset $mixer_control 1%+"
-#bindsym XF86AudioLowerVolume exec "amixer sset $mixer_control 1%-"
-#bindsym XF86AudioMute exec "amixer sset $mixer_control toggle"
 bindsym $mod+Prior exec --no-startup-id ponymix -t sink increase 2; exec --no-startup-id ~/bin/notify-volume
 bindsym $mod+Next exec --no-startup-id ponymix -t sink decrease 2; exec --no-startup-id ~/bin/notify-volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id ponymix -t sink increase 2; exec --no-startup-id ~/bin/notify-volume
@@ -273,17 +246,11 @@ mode "$mode_system" {
 set $mode_resize [resize] h/s, Left/Right: shrink/grow window width; n/t, Up/Down: shrink/grow height
 bindsym $mod+r mode "$mode_resize"
 mode "$mode_resize" {
-    # These bindings trigger as soon as you enter the resize mode
-    # Pressing left will shrink the window’s width.
-    # Pressing right will grow the window’s width.
-    # Pressing up will shrink the window’s height.
-    # Pressing down will grow the window’s height.
     bindsym h resize shrink width 5 px or 5 ppt
     bindsym t resize grow height 5 px or 5 ppt
     bindsym n resize shrink height 5 px or 5 ppt
     bindsym s resize grow width 5 px or 5 ppt
 
-    # same bindings, but for the arrow keys
     bindsym Left resize shrink width 10 px or 10 ppt
     bindsym Down resize grow height 10 px or 10 ppt
     bindsym Up resize shrink height 10 px or 10 ppt
@@ -294,6 +261,7 @@ mode "$mode_resize" {
     bindsym Escape mode "default"
 }
 
+# Literal mode: disable all key bindings except `Escape`
 set $mode_literal [literal mode]
 bindsym $mod+v mode "$mode_literal"
 mode "$mode_literal" {
