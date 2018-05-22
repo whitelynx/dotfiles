@@ -33,7 +33,7 @@ packages
 - [`i3-scrot`](https://forum.manjaro.org/index.php?topic=31977.msg261964#msg261964)
 - [`i3-wm`](https://i3wm.org) (primary window manager on Linux)
 - [`i3lock`](https://i3wm.org/i3lock)
-- [`i3pystatus`](https://github.com/enkore/i3pystatus) (maybe [`py3status`](https://github.com/ultrabug/py3status) soon?)
+- _[`i3pystatus`](https://github.com/enkore/i3pystatus) (unused)_
 - [`libnotify`](https://developer.gnome.org/notification-spec)
 - [`neovim-qt-git`](https://github.com/equalsraf/neovim-qt) (primary GUI editor on Linux)
 - [`nitrogen`](http://projects.l3ib.org/nitrogen)
@@ -42,6 +42,7 @@ packages
 - [`rofi`](https://github.com/DaveDavenport/rofi)
 - [`srandrd`](http://portix.bitbucket.org/srandrd)
 - [`systemd`](https://www.github.com/systemd/systemd) (running in `--user` mode to manage session-level apps)
+- [`xcffibär`](https://github.com/whitelynx/xcffibaer)
 - [`xfce4-notifyd`](http://goodies.xfce.org/projects/applications/xfce4-notifyd)
 - [`xorg-xinput`](http://xorg.freedesktop.org)
 - [`xorg-xrandr`](http://xorg.freedesktop.org)

@@ -1,0 +1,11 @@
+[Unit]
+Description=A themeable status bar written in Python, using `xcffib`.
+
+[Service]
+Environment=DISPLAY=%I
+ExecStart=/home/whitelynx/bin/xcffibaer
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=xinit.target

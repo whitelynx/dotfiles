@@ -270,29 +270,29 @@ mode "$mode_literal" {
 
 
 # Start i3bar to display a workspace/status bar
-bar {
-    status_command    python ~/.config/i3pystatus/config.py
-    position          $bar_pos
-    workspace_buttons yes
-
-    bindsym button4 nop
-    bindsym button5 nop
-    font pango:Input Sans Compressed,Icons 8.25
-    #strip_workspace_numbers yes
-
-    colors {
-        #background $transparent
-        background #2B2C2B
-        statusline #F9FAF9
-        separator  #454947
-
-        #                  border  backgr. text
-        focused_workspace  #F9FAF9 #16A085 #2B2C2B
-        active_workspace   #595B5B #353836 #FDF6E3
-        inactive_workspace #595B5B #353836 #EEE8D5
-        urgent_workspace   #16A085 #FDF6E3 #E5201D
-    }
-}
+#bar {
+#    status_command    python ~/.config/i3pystatus/config.py
+#    position          $bar_pos
+#    workspace_buttons yes
+#
+#    bindsym button4 nop
+#    bindsym button5 nop
+#    font pango:Input Sans Compressed,Icons 8.25
+#    #strip_workspace_numbers yes
+#
+#    colors {
+#        #background $transparent
+#        background #2B2C2B
+#        statusline #F9FAF9
+#        separator  #454947
+#
+#        #                  border  backgr. text
+#        focused_workspace  #F9FAF9 #16A085 #2B2C2B
+#        active_workspace   #595B5B #353836 #FDF6E3
+#        inactive_workspace #595B5B #353836 #EEE8D5
+#        urgent_workspace   #16A085 #FDF6E3 #E5201D
+#    }
+#}
 
 # Theme colors
 # class                 border  backgr. text    indic.  child_border
@@ -353,6 +353,9 @@ exec --no-startup-id systemctl --user start urxvtd@$DISPLAY
 exec --no-startup-id systemctl --user start synergys@$DISPLAY
 exec --no-startup-id systemctl --user start compton@$DISPLAY
 exec --no-startup-id systemctl --user start srandrd@$DISPLAY
+#exec --no-startup-id systemctl --user start polybar-primary@$DISPLAY
+#exec --no-startup-id systemctl --user start polybar-secondary@$DISPLAY
+exec --no-startup-id systemctl --user start xcffibaer@$DISPLAY
 
 # Tray applets
 exec --no-startup-id nm-applet

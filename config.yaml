@@ -144,6 +144,9 @@ dotfiles:
     dst: ~/bin/word-diff
     link: true
     src: bin/sabdc
+  f_xcffibaer@.service:
+    dst: ~/.config/systemd/user/xcffibaer@.service
+    src: config/systemd/user/xcffibaer@.service
 profiles:
   Davids-MacBook-Pro-2.local:
     dotfiles:
@@ -222,3 +225,4 @@ profiles:
     - f_kitty.conf
     - f_bobthefish_colors.fish
     - f_rgbcolors
+    - f_xcffibaer@.service
