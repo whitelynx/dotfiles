@@ -57,12 +57,12 @@ cmd - q : chunkc tiling::window --grid-layout 10:10:0:0:5:5
 #shift + cmd - x : `id=$(chunkc get _last_active_desktop); chunkc tiling::window -d $id; khd -p "cmd + alt - $id" &> /dev/null`
 #shift + cmd - z : chunkc tiling::window -d prev; khd -p "cmd + alt - z"
 #shift + cmd - c : chunkc tiling::window -d next; khd -p "cmd + alt - c"
-shift + cmd - 1 : chunkc tiling::window -d 1; khd -p "cmd - 1"
-shift + cmd - 2 : chunkc tiling::window -d 2; khd -p "cmd - 2"
-shift + cmd - 3 : chunkc tiling::window -d 3; khd -p "cmd - 3"
-shift + cmd - 4 : chunkc tiling::window -d 4; khd -p "cmd - 4"
-shift + cmd - 5 : chunkc tiling::window -d 5; khd -p "cmd - 5"
-shift + cmd - 6 : chunkc tiling::window -d 6; khd -p "cmd - 6"
+#shift + cmd - 1 : chunkc tiling::window -d 1; khd -p "cmd - 1"
+#shift + cmd - 2 : chunkc tiling::window -d 2; khd -p "cmd - 2"
+#shift + cmd - 3 : chunkc tiling::window -d 3; khd -p "cmd - 3"
+#shift + cmd - 4 : chunkc tiling::window -d 4; khd -p "cmd - 4"
+#shift + cmd - 5 : chunkc tiling::window -d 5; khd -p "cmd - 5"
+#shift + cmd - 6 : chunkc tiling::window -d 6; khd -p "cmd - 6"
 
 # switch to last active desktop
 #cmd + alt - x   : `id=$(chunkc get _last_active_desktop); khd -p "cmd + alt - $id" &> /dev/null`
