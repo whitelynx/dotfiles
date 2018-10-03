@@ -219,6 +219,13 @@ else
 	endif
 endif
 
+"-- VV --
+" URL: https://github.com/igorgladkoborodov/vv
+if exists('g:vv')
+	VVset fontfamily=Input\ Mono\ Narrow
+	VVset fontsize=11
+endif
+
 
 " Hide *.pyc, *.pyo, *.~?~, and .* files in the directory browser
 let g:explHideFiles = '^\.,.*\.py[co],.*\.~[0-9]~$'
