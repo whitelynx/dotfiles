@@ -12,7 +12,7 @@ packages
 
 ### All *NIX platforms
 
-- [`fish`](https://fishshell.com) and [`fisherman`](https://fisherman.sh) (primary shell)
+- [`fish`](https://fishshell.com) and [`fisherman`](https://fisherman.github.io) (primary shell)
 - [`kitty`](https://github.com/kovidgoyal/kitty) (primary terminal emulator)
 - [`neovim`](https://neovim.io) (primary terminal-mode editor)
 - [`nyaovim`](https://www.npmjs.com/package/nyaovim)
