@@ -6,6 +6,16 @@ Managed using [dotdrop](https://github.com/deadc0de6/dotdrop).
 ![Screenshot](https://i.imgur.com/KAG2dYs.png)
 
 
+getting started
+---------------
+
+```
+pip3 install --user docopt jinja2 PyYAML
+cd dotfiles
+./dotdrop.sh install
+```
+
+
 packages
 --------
 
