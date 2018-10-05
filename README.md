@@ -3,7 +3,7 @@ dotfiles
 
 Managed using [dotdrop](https://github.com/deadc0de6/dotdrop).
 
-![Screenshot](https://i.imgur.com/KAG2dYs.png)
+![Screenshot](https://i.imgur.com/L6s9NaZ.png)
 
 
 getting started
