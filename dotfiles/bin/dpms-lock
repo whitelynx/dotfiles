@@ -8,6 +8,7 @@ trap revert HUP INT TERM
 xset +dpms dpms 600 1200 1800
 
 #i3lock -e -n -c 000000
-i3lock -e -n -c 3d3d3c -i "$HOME/Pictures/Wallpaper/NewStore/NewStore.png"
+# NOTE: Sadly, the following won't work if you have anything other than a PNG set as your background.
+i3lock -e -n -c 3d3d3c -i `awk -F= '/^file=/{print $2; exit}' $HOME/.config/nitrogen/bg-saved.cfg`
 
 revert
