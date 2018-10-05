@@ -75,4 +75,4 @@ packages
 
 - [`chunkwm`](https://github.com/koekeishiya/chunkwm) (primary window manager on macOS)
 - [`khd`](https://github.com/koekeishiya/khd) (or [`skhd`](https://github.com/koekeishiya/skhd))
-- [`vimr`](http://vimr.org) (primary GUI editor on macOS)
+- [`vv`](https://github.com/igorgladkoborodov/vv) (primary GUI editor on macOS)
