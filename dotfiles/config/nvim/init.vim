@@ -116,6 +116,7 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'chikamichi/mediawiki.vim'
 Plug 'posva/vim-vue'
 Plug 'kelan/gyp.vim'
+Plug 'chrisbra/csv.vim'
 " Included in "sheerun/vim-polyglot":
 "Plug 'aklt/plantuml-syntax'
 "Plug 'isRuslan/vim-es6'
@@ -1052,6 +1053,14 @@ let g:javascript_plugin_jsdoc = 1
 " Part of "vim-polyglot"
 " URL: https://github.com/plasticboy/vim-markdown
 let g:vim_markdown_fenced_languages = ['c++=cpp', 'viml=vim', 'bash=sh', 'ini=dosini', 'js=javascript', 'csharp=cs']
+
+
+"-- csv.vim --
+" URL: https://github.com/chrisbra/csv.vim
+" Default to a limited set of delimiters and strict columns, for performance.
+" (if you change these settings, run :CSVInit to reinitialize the plugin)
+let g:csv_delim_test = ',;|'
+let g:csv_strict_columns = 1
 
 "==== END PLUGINS ====
 
