@@ -60,6 +60,9 @@ dotfiles:
   f_fqvim:
     dst: ~/bin/fqvim
     src: bin/fqvim
+  f_ginit.vim:
+    dst: ~/.config/nvim/ginit.vim
+    src: config/nvim/ginit.vim
   f_git-diffcommit:
     dst: ~/bin/git-diffcommit
     src: bin/git-diffcommit
@@ -151,6 +154,7 @@ profiles:
   Davids-MacBook-Pro-2.local:
     dotfiles:
     - f_init.vim
+    - f_ginit.vim
     - f_filetype.vim
     - f_fishfile
     - f_fish_user_key_bindings.fish
@@ -183,6 +187,7 @@ profiles:
   MacBook-Pro-2.local:
     dotfiles:
     - f_init.vim
+    - f_ginit.vim
     - f_filetype.vim
     - f_fishfile
     - f_fish_user_key_bindings.fish
@@ -215,6 +220,7 @@ profiles:
   syl:
     dotfiles:
     - f_init.vim
+    - f_ginit.vim
     - f_filetype.vim
     - f_i3_config
     - f_config.py
@@ -261,6 +267,7 @@ profiles:
   tiny:
     dotfiles:
     - f_init.vim
+    - f_ginit.vim
     - f_filetype.vim
     - f_i3_config
     - f_config.py
