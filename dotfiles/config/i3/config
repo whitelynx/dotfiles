@@ -360,6 +360,7 @@ exec --no-startup-id systemctl --user start srandrd@$DISPLAY
 #exec --no-startup-id systemctl --user start polybar-primary@$DISPLAY
 #exec --no-startup-id systemctl --user start polybar-secondary@$DISPLAY
 exec --no-startup-id systemctl --user start xcffibaer@$DISPLAY
+exec --no-startup-id systemctl --user start trayer@$DISPLAY
 
 # Tray applets
 exec --no-startup-id nm-applet

@@ -134,9 +134,15 @@ dotfiles:
   f_synergy.conf:
     dst: ~/.synergy.conf
     src: synergy.conf
+  f_toggle-systray:
+    dst: ~/bin/toggle-systray
+    src: bin/toggle-systray
   f_toggle-touchpad:
     dst: ~/bin/toggle-touchpad
     src: bin/toggle-touchpad
+  f_trayer@.service:
+    dst: ~/.config/systemd/user/trayer@.service
+    src: config/systemd/user/trayer@.service
   f_urlquote:
     dst: ~/bin/urlquote
     src: bin/urlquote
@@ -264,6 +270,8 @@ profiles:
     - f_bobthefish_colors.fish
     - f_rgbcolors
     - f_xcffibaer@.service
+    - f_toggle-systray
+    - f_trayer@.service
   syl:
     dotfiles:
     - f_init.vim

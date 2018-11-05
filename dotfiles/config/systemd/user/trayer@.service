@@ -1,0 +1,11 @@
+[Unit]
+Description=A lightweight GTK2-based systray for UNIX desktop.
+
+[Service]
+Environment=DISPLAY=%I
+ExecStart=/usr/bin/trayer --edge top --align right --width 20 --SetPartialStrut false --SetDockType false --distancefrom top --distance -26
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=xinit.target
