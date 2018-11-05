@@ -1,0 +1,20 @@
+#!/bin/bash
+
+timeout=800
+
+devname=$1
+icon=${2:-input-mouse}
+tpid=$(xinput list --id-only "$devname")
+if [ $? -ne 0 ]; then
+	notify-send -u normal -t "$timeout" -i "$icon" -a toggle-inputdev "$devname not found!"
+	exit 1
+fi
+tpstate=$(xinput list-props "$tpid" | awk '/Device Enabled/{print $4}')
+
+if [ "$tpstate" == "0" ]; then
+	xinput enable "$tpid"
+	notify-send -u low -t "$timeout" -i "$icon" -a toggle-inputdev "$devname ($tpid) enabled"
+else
+	xinput disable "$tpid"
+	notify-send -u low -t "$timeout" -i "$icon" -a toggle-inputdev "$devname ($tpid) disabled"
+fi

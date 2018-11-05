@@ -1,0 +1,5 @@
+#!/bin/bash
+
+tsname='Wacom HID 4875 Finger'
+
+exec "$(dirname "$0")/toggle-inputdev" "$tsname" input-tablet
