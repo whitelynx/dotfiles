@@ -370,6 +370,7 @@ exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 exec --no-startup-id fluxgui
+exec --no-startup-id kdeconnect-indicator
 
 # Disable DPMS until the screensaver starts (see `dpms-lock`)
 exec --no-startup-id xset dpms 0 0 0
