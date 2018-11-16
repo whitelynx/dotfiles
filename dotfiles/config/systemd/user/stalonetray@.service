@@ -1,0 +1,11 @@
+[Unit]
+Description=STAnd-aLONE sysTRAY. It has minimal build and run-time dependencies: the Xlib only.
+
+[Service]
+Environment=DISPLAY=%I
+ExecStart=/usr/bin/stalonetray --geometry 1x1+950+0 --max-geometry 0x1 --window-strut none --window-layer top --window-type desktop --skip-taskbar true --grow-gravity N --background black --icon-size 20
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=xinit.target

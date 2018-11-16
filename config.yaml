@@ -128,6 +128,9 @@ dotfiles:
     dst: ~/bin/sabdc
     link: true
     src: bin/sabdc
+  f_stalonetray@.service:
+    dst: ~/.config/systemd/user/stalonetray@.service
+    src: config/systemd/user/stalonetray@.service
   f_sterminalrc:
     dst: ~/.sterminalrc
     src: sterminalrc
@@ -280,6 +283,7 @@ profiles:
     - f_trayer@.service
     - f_toggle-inputdev
     - f_toggle-touchscreen
+    - f_stalonetray@.service
   syl:
     dotfiles:
     - f_init.vim

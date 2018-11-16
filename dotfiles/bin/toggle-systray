@@ -1,11 +1,15 @@
 #!/bin/bash
 
-systrayName=panel
+# Trayer:
+#systrayName=panel
+# Stalonetray:
+systrayName=stalonetray
+
 shownY=21
 hiddenY=-26
 
 if [ $(xwininfo -name "$systrayName" | awk -F':  ' '/Absolute upper-left Y/{print $2}') -eq $shownY ]; then
-	wmctrl -F -r panel -e "0,-1,$hiddenY,-1,-1"
+	wmctrl -F -r "$systrayName" -e "0,-1,$hiddenY,-1,-1"
 else
-	wmctrl -F -r panel -e "0,-1,$shownY,-1,-1"
+	wmctrl -F -r "$systrayName" -e "0,-1,$shownY,-1,-1"
 fi
