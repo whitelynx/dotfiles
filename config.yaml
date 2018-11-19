@@ -152,6 +152,9 @@ dotfiles:
   f_trayer@.service:
     dst: ~/.config/systemd/user/trayer@.service
     src: config/systemd/user/trayer@.service
+  f_tree.fish:
+    dst: ~/.config/fish/functions/tree.fish
+    src: config/fish/functions/tree.fish
   f_urlquote:
     dst: ~/bin/urlquote
     src: bin/urlquote
@@ -284,6 +287,7 @@ profiles:
     - f_toggle-inputdev
     - f_toggle-touchscreen
     - f_stalonetray@.service
+    - f_tree.fish
   syl:
     dotfiles:
     - f_init.vim
