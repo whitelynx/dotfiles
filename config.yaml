@@ -72,6 +72,9 @@ dotfiles:
   f_gitconfig:
     dst: ~/.gitconfig
     src: gitconfig
+  f_gopath.fish:
+    dst: ~/.config/fish/functions/gopath.fish
+    src: config/fish/functions/gopath.fish
   f_hyper.js:
     dst: ~/.hyper.js
     src: hyper.js
@@ -93,6 +96,15 @@ dotfiles:
   f_kitty.conf:
     dst: ~/.config/kitty/kitty.conf
     src: config/kitty/kitty.conf
+  f_l.fish:
+    dst: ~/.config/fish/functions/l.fish
+    src: config/fish/functions/l.fish
+  f_la.fish:
+    dst: ~/.config/fish/functions/la.fish
+    src: config/fish/functions/la.fish
+  f_lal.fish:
+    dst: ~/.config/fish/functions/lal.fish
+    src: config/fish/functions/lal.fish
   f_launch-terminal:
     dst: ~/bin/launch-terminal
     src: bin/launch-terminal
@@ -100,6 +112,9 @@ dotfiles:
     dst: ~/bin/line-diff
     link: true
     src: bin/sabdc
+  f_ll.fish:
+    dst: ~/.config/fish/functions/ll.fish
+    src: config/fish/functions/ll.fish
   f_notify-volume:
     dst: ~/bin/notify-volume
     src: bin/notify-volume
@@ -137,6 +152,12 @@ dotfiles:
   f_synergy.conf:
     dst: ~/.synergy.conf
     src: synergy.conf
+  f_t.fish:
+    dst: ~/.config/fish/functions/t.fish
+    src: config/fish/functions/t.fish
+  f_tl.fish:
+    dst: ~/.config/fish/functions/tl.fish
+    src: config/fish/functions/tl.fish
   f_toggle-inputdev:
     dst: ~/bin/toggle-inputdev
     src: bin/toggle-inputdev
@@ -288,6 +309,13 @@ profiles:
     - f_toggle-touchscreen
     - f_stalonetray@.service
     - f_tree.fish
+    - f_l.fish
+    - f_la.fish
+    - f_lal.fish
+    - f_ll.fish
+    - f_t.fish
+    - f_tl.fish
+    - f_gopath.fish
   syl:
     dotfiles:
     - f_init.vim
