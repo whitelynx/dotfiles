@@ -1,5 +1,6 @@
 #set -xg EDITOR (which gvim)
 set -xg EDITOR (which nvim)
+set -xg BROWSER (which chromium)
 for dir in ~/bin ~/.local/bin ~/.cargo/bin ~/Library/Android/sdk/platform-tools ~/Library/Python/*/bin
 	if test -d $dir
 		set PATH $PATH $dir
