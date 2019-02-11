@@ -363,6 +363,15 @@ profiles:
     - f_bobthefish_colors.fish
     - f_rgbcolors
     - f_xcffibaer@.service
+    - f_stalonetray@.service
+    - f_tree.fish
+    - f_l.fish
+    - f_la.fish
+    - f_lal.fish
+    - f_ll.fish
+    - f_t.fish
+    - f_tl.fish
+    - f_gopath.fish
   tiny:
     dotfiles:
     - f_init.vim
