@@ -9,6 +9,9 @@ dotfiles:
   d_systemd:
     dst: ~/.config/systemd
     src: config/systemd
+  f_01-native-wayland.conf:
+    dst: ~/.config/environment.d/01-native-wayland.conf
+    src: config/environment.d/01-native-wayland.conf
   f_aoeu:
     dst: ~/bin/aoeu
     link: true
@@ -21,6 +24,9 @@ dotfiles:
     dst: ~/bin/asdf
     link: true
     src: bin/asdf
+  f_blueman-applet@.service:
+    dst: ~/.config/systemd/user/blueman-applet@.service
+    src: config/systemd/user/blueman-applet@.service
   f_bobthefish_colors.fish:
     dst: ~/.config/fish/functions/bobthefish_colors.fish
     src: config/fish/functions/bobthefish_colors.fish
@@ -84,12 +90,18 @@ dotfiles:
   f_i3_config:
     dst: ~/.config/i3/config
     src: config/i3/config
+  f_i3blocks_config:
+    dst: ~/.config/i3blocks/config
+    src: config/i3blocks/config
   f_i3exit:
     dst: ~/bin/i3exit
     src: bin/i3exit
   f_init.vim:
     dst: ~/.config/nvim/init.vim
     src: config/nvim/init.vim
+  f_kdeconnect-indicator@.service:
+    dst: ~/.config/systemd/user/kdeconnect-indicator@.service
+    src: config/systemd/user/kdeconnect-indicator@.service
   f_khdrc:
     dst: ~/.khdrc
     src: khdrc
@@ -115,6 +127,9 @@ dotfiles:
   f_ll.fish:
     dst: ~/.config/fish/functions/ll.fish
     src: config/fish/functions/ll.fish
+  f_mako@.service:
+    dst: ~/.config/systemd/user/mako@.service
+    src: config/systemd/user/mako@.service
   f_notify-volume:
     dst: ~/bin/notify-volume
     src: bin/notify-volume
@@ -152,6 +167,9 @@ dotfiles:
   f_sterminalrc:
     dst: ~/.sterminalrc
     src: sterminalrc
+  f_sway_config:
+    dst: ~/.config/sway/config
+    src: config/sway/config
   f_synergy.conf:
     dst: ~/.synergy.conf
     src: synergy.conf
@@ -384,6 +402,12 @@ profiles:
     - f_gopath.fish
     - f_rofi_config
     - f_theme.rasi
+    - f_blueman-applet@.service
+    - f_kdeconnect-indicator@.service
+    - f_mako@.service
+    - f_sway_config
+    - f_i3blocks_config
+    - f_01-native-wayland.conf
   syl:
     dotfiles:
     - f_init.vim

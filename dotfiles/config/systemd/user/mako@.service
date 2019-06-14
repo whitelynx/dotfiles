@@ -1,0 +1,10 @@
+[Unit]
+Description=A lightweight notification daemon for Wayland compositors that support the layer-shell protocol.
+
+[Service]
+ExecStart=/usr/bin/mako --font 'Input Sans Narrow 8.25' --border-size 1 --border-color '#16A085DD' --background-color '#000000CC' --text-color '#16A085'
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=wayland.target
