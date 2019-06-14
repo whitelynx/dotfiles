@@ -877,6 +877,13 @@ let g:ale_pattern_options = {
 \	'\.min\.js$': {'ale_linters': [], 'ale_fixers': []},
 \	'\.min\.css$': {'ale_linters': [], 'ale_fixers': []},
 \}
+let g:ale_linter_aliases = {
+\	'vue': ['vue', 'javascript'],
+\}
+let g:ale_linters = {
+\	'python': ['flake8'],
+\	'vue': ['eslint', 'vls'],
+\}
 
 autocmd SourcePre */plugin/ale.vim call s:ale_settings()
 function! s:ale_settings()
