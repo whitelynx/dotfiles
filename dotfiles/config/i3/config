@@ -4,12 +4,9 @@ set $mod Mod4
 
 # Bar on top:
 set $bar_pos top
-set $rofi_opts -font 'Input Sans Narrow 11' -color-window '#222c33,#273238,#1e2529' -color-normal '#222c33,#c1c1c1,#273238,#394249,#ffffff' -color-active '#222c33,#80cbc4,#273238,#394249,#80cbc4' -color-urgent '#222c33,#ff1844,#273238,#394249,#ff1844' -location 2 -terminal ~/bin/launch-terminal
-#set $rofi_opts -font 'Input Sans Narrow 11' -color-window 'argb:ee333333,#1aa,#1aa' -color-normal 'argb:00000000,#1aa,argb:11FFFFFF,#1aa,#333' -color-urgent 'argb:00000000,#f99,argb:11FFFFFF,#f99,#333' -color-active 'argb:00000000,#aa1,argb:11FFFFFF,#aa1,#333' -location 2 -terminal ~/bin/launch-terminal
 
 # Bar on bottom:
 #set $bar_pos bottom
-#set $rofi_opts -font 'Input Sans Narrow 11' -color-window '#222c33,#273238,#1e2529' -color-normal '#222c33,#c1c1c1,#273238,#394249,#ffffff' -color-active '#222c33,#80cbc4,#273238,#394249,#80cbc4' -color-urgent '#222c33,#ff1844,#273238,#394249,#ff1844' -location 6 -terminal ~/bin/launch-terminal
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -43,8 +40,8 @@ bindsym $mod+Shift+C kill
 bindsym $mod+Ctrl+c --release exec --no-startup-id xkill
 
 # Show program launcher
-bindsym $mod+p exec --no-startup-id "rofi $rofi_opts -sidebar-mode -modi drun,ssh,window -show drun"
-bindsym $mod+Shift+P exec --no-startup-id "rofi $rofi_opts -modi run -show run"
+bindsym $mod+p exec --no-startup-id --release "rofi -sidebar-mode -modi drun,ssh,window -show drun"
+bindsym $mod+Shift+P exec --no-startup-id --release "rofi -modi run -show run"
 
 # Screenshots
 bindsym Print exec --no-startup-id i3-scrot
