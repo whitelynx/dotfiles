@@ -88,6 +88,7 @@ augroup filetypedetect
 	autocmd! BufNewFile,BufRead *mutt-* setfiletype mail
 
 	" PostgreSQL
+	autocmd! BufNewFile,BufRead *.psql setfiletype pgsql
 	autocmd! BufNewFile,BufRead *.pgsql setfiletype pgsql
 
 	" Google Protocol Buffers
