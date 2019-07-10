@@ -280,6 +280,14 @@ profiles:
     - f_chunkwmrc
     - f_khdrc
     - f_rgbcolors
+    - f_tree.fish
+    - f_l.fish
+    - f_la.fish
+    - f_lal.fish
+    - f_ll.fish
+    - f_t.fish
+    - f_tl.fish
+    - f_gopath.fish
   MacBook-Pro-2.local:
     dotfiles:
     - f_init.vim
