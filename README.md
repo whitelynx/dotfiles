@@ -30,6 +30,7 @@ packages
 - [`synergy`](https://symless.com/synergy)
 - [`ttf-input`](http://input.fontbureau.com)
 - [`xonsh`](https://github.com/xonsh/xonsh)
+- [`exa`](https://the.exa.website)
 
 
 ### GNU/Linux only
