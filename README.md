@@ -76,3 +76,4 @@ packages
 - [`chunkwm`](https://github.com/koekeishiya/chunkwm) (primary window manager on macOS)
 - [`khd`](https://github.com/koekeishiya/khd) (or [`skhd`](https://github.com/koekeishiya/skhd))
 - [`vv`](https://github.com/igorgladkoborodov/vv) (primary GUI editor on macOS)
+- [SteerMouse](http://plentycom.jp/en/steermouse/download.php) (tweaks to make external mice behave in a sane way)
