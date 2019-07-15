@@ -31,6 +31,7 @@ packages
 - [`ttf-input`](http://input.fontbureau.com)
 - [`xonsh`](https://github.com/xonsh/xonsh)
 - [`exa`](https://the.exa.website)
+- [`ripgrep`](https://github.com/BurntSushi/ripgrep)
 
 
 ### GNU/Linux only
@@ -41,17 +42,17 @@ packages
 - [`compton`](https://github.com/chjj/compton)
 - _[`gloom`](https://github.com/shizy/gloom) (unused)_
 - [`i3-scripts`](https://github.com/oberon2007/i3-scripts)
-- [`i3-scrot`](https://forum.manjaro.org/index.php?topic=31977.msg261964#msg261964)
+- [`i3-scrot`](https://aur.archlinux.org/packages/i3-scrot)
 - [`i3-wm`](https://i3wm.org) (primary window manager on Linux)
 - [`i3lock`](https://i3wm.org/i3lock)
 - _[`i3pystatus`](https://github.com/enkore/i3pystatus) (unused)_
 - [`libnotify`](https://developer.gnome.org/notification-spec)
 - [`neovim-qt-git`](https://github.com/equalsraf/neovim-qt) (primary GUI editor on Linux)
-- [`nitrogen`](http://projects.l3ib.org/nitrogen)
+- [`nitrogen`](https://github.com/l3ib/nitrogen)
 - [`polkit-gnome`](http://www.freedesktop.org/wiki/Software/polkit)
 - [`ponymix`](http://github.com/falconindy/ponymix)
 - [`rofi`](https://github.com/DaveDavenport/rofi)
-- [`srandrd`](http://portix.bitbucket.org/srandrd)
+- [`srandrd`](https://bitbucket.org/portix/srandrd)
 - [`systemd`](https://www.github.com/systemd/systemd) (running in `--user` mode to manage session-level apps)
 - [`xcffibär`](https://github.com/whitelynx/xcffibaer)
 - [`xfce4-notifyd`](http://goodies.xfce.org/projects/applications/xfce4-notifyd)
