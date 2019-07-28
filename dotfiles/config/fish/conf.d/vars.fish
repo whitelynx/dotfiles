@@ -1,11 +1,22 @@
 #set -xg EDITOR (which gvim)
 set -xg EDITOR (which nvim)
-set -xg BROWSER (which chromium)
+
+if which brave >/dev/null 2>/dev/null
+	set -xg BROWSER (which brave)
+else
+	if which chrome >/dev/null 2>/dev/null
+		set -xg BROWSER (which chrome)
+	else
+		set -xg BROWSER (which chromium)
+	end
+end
+
 for dir in ~/bin ~/.local/bin ~/.cargo/bin ~/Library/Android/sdk/platform-tools ~/Library/Python/*/bin
 	if test -d $dir
 		set PATH $PATH $dir
 	end
 end
+
 set -xg HOMEBREW_GITHUB_API_TOKEN {{@@ env['HOMEBREW_GITHUB_API_TOKEN'] @@}}
 
 set -x VIRTUAL_ENV_DISABLE_PROMPT 1
