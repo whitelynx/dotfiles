@@ -361,6 +361,8 @@ profiles:
     - f_qvim
     - f_fqvim
     - f_toggle-touchpad
+    - f_toggle-inputdev
+    - f_toggle-touchscreen
     - f_urlquote
     - f_flake8
     - f_pylintrc
@@ -421,6 +423,8 @@ profiles:
     - f_qvim
     - f_fqvim
     - f_toggle-touchpad
+    - f_toggle-inputdev
+    - f_toggle-touchscreen
     - f_urlquote
     - f_flake8
     - f_pylintrc
@@ -430,8 +434,6 @@ profiles:
     - f_xcffibaer@.service
     - f_toggle-systray
     - f_trayer@.service
-    - f_toggle-inputdev
-    - f_toggle-touchscreen
     - f_stalonetray@.service
     - f_tree.fish
     - f_l.fish
@@ -506,6 +508,11 @@ profiles:
     - f_t.fish
     - f_tl.fish
     - f_gopath.fish
+    - f_rofi_config
+    - f_theme.rasi
+    - f_blueman-applet@.service
+    - f_kdeconnect-indicator@.service
+    - f_mako@.service
   a-293qkjofef7br:
     dotfiles:
     - f_init.vim
@@ -545,7 +552,6 @@ profiles:
     - f_pygments-styles
     - f_qvim
     - f_fqvim
-    - f_toggle-touchpad
     - f_urlquote
     - f_flake8
     - f_pylintrc
@@ -562,6 +568,11 @@ profiles:
     - f_t.fish
     - f_tl.fish
     - f_gopath.fish
+    - f_rofi_config
+    - f_theme.rasi
+    - f_blueman-applet@.service
+    - f_kdeconnect-indicator@.service
+    - f_mako@.service
   tiny:
     dotfiles:
     - f_init.vim
@@ -620,3 +631,8 @@ profiles:
     - f_t.fish
     - f_tl.fish
     - f_gopath.fish
+    - f_rofi_config
+    - f_theme.rasi
+    - f_blueman-applet@.service
+    - f_kdeconnect-indicator@.service
+    - f_mako@.service
