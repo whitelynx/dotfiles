@@ -489,6 +489,7 @@ profiles:
     - f_qvim
     - f_fqvim
     - f_toggle-touchpad
+    - f_toggle-inputdev
     - f_urlquote
     - f_flake8
     - f_pylintrc
@@ -601,6 +602,8 @@ profiles:
     - f_qvim
     - f_fqvim
     - f_toggle-touchpad
+    - f_toggle-inputdev
+    - f_toggle-touchscreen
     - f_urlquote
     - f_flake8
     - f_pylintrc
