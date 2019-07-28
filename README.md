@@ -32,6 +32,7 @@ packages
 - [`xonsh`](https://github.com/xonsh/xonsh)
 - [`exa`](https://the.exa.website)
 - [`ripgrep`](https://github.com/BurntSushi/ripgrep)
+- [`nvm`](https://github.com/nvm-sh/nvm)
 
 
 ### GNU/Linux only
