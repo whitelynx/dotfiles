@@ -40,7 +40,7 @@ bindsym $mod+Shift+C kill
 bindsym $mod+Ctrl+c --release exec --no-startup-id xkill
 
 # Show program launcher
-bindsym $mod+p exec --no-startup-id --release "rofi -sidebar-mode -modi drun,ssh,window -show drun"
+bindsym $mod+p exec --no-startup-id --release "rofi -sidebar-mode -modi drun#ssh#window -show drun"
 bindsym $mod+Shift+P exec --no-startup-id --release "rofi -modi run -show run"
 
 # Screenshots
