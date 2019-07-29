@@ -33,6 +33,7 @@ packages
 - [`exa`](https://the.exa.website)
 - [`ripgrep`](https://github.com/BurntSushi/ripgrep)
 - [`nvm`](https://github.com/nvm-sh/nvm)
+- [`pyenv`](https://github.com/pyenv/pyenv)
 
 
 ### GNU/Linux only
