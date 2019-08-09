@@ -32,8 +32,10 @@ packages
 - [`xonsh`](https://github.com/xonsh/xonsh)
 - [`exa`](https://the.exa.website)
 - [`ripgrep`](https://github.com/BurntSushi/ripgrep)
-- [`nvm`](https://github.com/nvm-sh/nvm)
-- [`pyenv`](https://github.com/pyenv/pyenv)
+- [`nvm`](https://github.com/nvm-sh/nvm) (don't use distro package; install in `$HOME`)
+- [`pyenv`](https://github.com/pyenv/pyenv) (don't use distro package; install in `$HOME`)
+- [`htop`](http://hisham.hm/htop)
+- [`pinfo`](http://pinfo.sourceforge.net)
 
 
 ### GNU/Linux only
@@ -42,14 +44,12 @@ packages
 
 - [`autorandr`](https://github.com/phillipberndt/autorandr) (or [`randrctl`](https://github.com/edio/randrctl))
 - [`compton`](https://github.com/chjj/compton)
-- _[`gloom`](https://github.com/shizy/gloom) (unused)_
 - [`i3-scripts`](https://github.com/oberon2007/i3-scripts)
 - [`i3-scrot`](https://aur.archlinux.org/packages/i3-scrot)
 - [`i3-wm`](https://i3wm.org) (primary window manager on Linux)
 - [`i3lock`](https://i3wm.org/i3lock)
-- _[`i3pystatus`](https://github.com/enkore/i3pystatus) (unused)_
 - [`libnotify`](https://developer.gnome.org/notification-spec)
-- [`neovim-qt-git`](https://github.com/equalsraf/neovim-qt) (primary GUI editor on Linux)
+- [`neovim-qt`](https://github.com/equalsraf/neovim-qt) (primary GUI editor on Linux)
 - [`nitrogen`](https://github.com/l3ib/nitrogen)
 - [`polkit-gnome`](http://www.freedesktop.org/wiki/Software/polkit)
 - [`ponymix`](http://github.com/falconindy/ponymix)
@@ -61,6 +61,8 @@ packages
 - [`xorg-xinput`](http://xorg.freedesktop.org)
 - [`xorg-xrandr`](http://xorg.freedesktop.org)
 - [`xorg-xset`](https://xorg.freedesktop.org)
+- [`xclip`](https://github.com/astrand/xclip)
+- [`xsel`](http://www.vergenet.net/~conrad/software/xsel)
 
 #### Tray applications:
 
