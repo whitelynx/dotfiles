@@ -55,6 +55,7 @@ packages
 - [`ponymix`](http://github.com/falconindy/ponymix)
 - [`rofi`](https://github.com/DaveDavenport/rofi)
 - [`srandrd`](https://bitbucket.org/portix/srandrd)
+- [`stalonetray`](http://stalonetray.sourceforge.net)
 - [`systemd`](https://www.github.com/systemd/systemd) (running in `--user` mode to manage session-level apps)
 - [`xcffibär`](https://github.com/whitelynx/xcffibaer)
 - [`xfce4-notifyd`](http://goodies.xfce.org/projects/applications/xfce4-notifyd)
