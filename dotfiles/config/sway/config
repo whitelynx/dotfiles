@@ -45,19 +45,19 @@ mouse_warping none
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg /home/whitelynx/Pictures/Wallpaper/InterfaceLIFT/04114_intotheforest_3440x1440.jpg fill
+output * bg /home/whitelynx/Pictures/Wallpaper/WallpapersCraft/forest_fog_trees_126479_3840x2400.jpg fill
 #
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
-output eDP-1 pos 0 0 res 1920x1080
-output DP-5 pos 1920 0 res 3440x1440
-output DP-6 pos 1920 0 res 3440x1440
-output eDP-1 scale 1
-output DP-5 scale 1
-output DP-6 scale 1
+output eDP-1 pos 0 800 res 3200x1800
+output DP-1 pos 1600 0 res 3440x1440
+#output DP-6 pos 1600 0 res 3440x1440
+output eDP-1 scale 2
+output DP-1 scale 1
+#output DP-6 scale 1
 
 ### Input configuration
 #
@@ -72,7 +72,7 @@ output DP-6 scale 1
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
-input "1739:31251:DLL08AC:01_06CB:7A13_Touchpad" {
+input "1739:30662:Synaptics_TM3066-002" {
     dwt enabled
     tap enabled
     natural_scroll enabled
@@ -81,13 +81,9 @@ input "1739:31251:DLL08AC:01_06CB:7A13_Touchpad" {
 	events disabled_on_external_mouse
 }
 
-input "1386:18549:Wacom_HID_4875_Finger" {
+input "1267:8687:ELAN21EF:00_04F3:21EF" {
     map_to_output eDP-1
     events disabled
-}
-
-input "1386:18549:Wacom_HID_4875_Pen" {
-    map_to_output eDP-1
 }
 
 input "1:1:AT_Translated_Set_2_keyboard" {
@@ -248,13 +244,13 @@ input "1:1:AT_Translated_Set_2_keyboard" {
     workspace $ws3 output eDP-1
     workspace $ws4 output eDP-1
     workspace $ws5 output eDP-1
-    workspace $ws6 output DP-5
-    workspace $ws7 output DP-5
-    workspace $ws8 output DP-5
-    workspace $ws9 output DP-5
-    workspace $ws10 output DP-5
-    workspace $ws11 output DP-5
-    workspace $ws12 output DP-5
+    workspace $ws6 output DP-1
+    workspace $ws7 output DP-1
+    workspace $ws8 output DP-1
+    workspace $ws9 output DP-1
+    workspace $ws10 output DP-1
+    workspace $ws11 output DP-1
+    workspace $ws12 output DP-1
 
     # switch to workspace
     bindsym $mod+1 workspace $ws1
