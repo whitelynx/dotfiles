@@ -1,0 +1,29 @@
+#!/bin/sh
+
+. "$HOME/.profile"
+
+eval "$(gnome-keyring-daemon --start)"
+case "${DESKTOP_SESSION-}" in
+	i3*)
+		export QT_QPA_PLATFORMTHEME=qt5ct
+		export XIVIEWER=feh
+
+		#light-locker --no-lock-on-suspend &
+		;;
+	sway*)
+		export XCURSOR_THEME=Breeze
+		export XCURSOR_SIZE=48
+		export QT_SCALE_FACTOR=1
+		export QT_QPA_PLATFORMTHEME=qt5ct
+		export QT_QPA_PLATFORM=wayland-egl
+		export CLUTTER_BACKEND=wayland
+		export BEMENU_BACKEND=wayland
+		export MOZ_ENABLE_WAYLAND=1
+		export SDL_VIDEODRIVER=wayland
+		export XDG_SESSION_TYPE=wayland
+		export XDG_CURRENT_DESKTOP=KDE
+		export XIVIEWER=imv
+		;;
+	*)
+		;;
+esac
