@@ -447,6 +447,13 @@ client.placeholder      #000000CC #0C0C0CDD #FFFFFF #000000 #0C0C0CDD
 client.background       #2B2C2BAA
 
 
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XCURSOR_SIZE XCURSOR_THEME
+
+exec swayidle -w \
+         before-sleep 'loginctl lock-session $XDG_SESSION_ID' \
+         lock 'swaylock --image /home/whitelynx/Pictures/Wallpaper/WallpapersCraft/forest_fog_trees_126479_3840x2400.jpg --scaling fill'
+
+
 include /etc/sway/config.d/*
 
 # vim: et sw=4 ts=4 sts=4
