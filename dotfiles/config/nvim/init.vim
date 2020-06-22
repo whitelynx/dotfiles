@@ -41,13 +41,6 @@ command! -nargs=0 Neutral call QwertyKeys()
 command! -nargs=0 WhiteLynx call DvorakKeys() | call WhiteLynxColors()
 
 
-" Morgul's setup: Same as Neutral setup, but:
-" - Forces tab-switching keys and toolbar instead of buffer-switching, even if
-"   minibufexpl is loaded.
-" - Removes HTML bold, underline, and italic styling.
-command! -nargs=0 Morgul call QwertyKeys() | call MorgulColors() | ForceUseTabs
-
-
 "== Shell fixes ==
 " (if the shell is set to fish, Vim panics rather badly)
 if $SHELL =~# 'bin/fish'
@@ -336,17 +329,6 @@ function! WhiteLynxColors()
 	highlight htmlBoldUnderlineItalic term=bold,underline,italic cterm=bold,underline,italic gui=bold,underline,italic
 endfunction
 
-function! MorgulColors()
-	" Remove HTML bold, underline, and italic styling.
-	highlight htmlBold term=none cterm=none gui=none
-	highlight htmlUnderline term=none cterm=none gui=none
-	highlight htmlItalic term=none cterm=none gui=none
-	highlight htmlBoldUnderline term=none cterm=none gui=none
-	highlight htmlBoldItalic term=none cterm=none gui=none
-	highlight htmlUnderlineItalic term=none cterm=none gui=none
-	highlight htmlBoldUnderlineItalic term=none cterm=none gui=none
-endfunction
-
 
 "== Completion ==
 " On completion (Tab if you have SuperTab installed) always show the
@@ -419,7 +401,7 @@ let g:markdown_bulleted_list_marker = '-'
 let g:markdown_numbered_list_marker = '.'
 
 " Make ATX-style headings two-sided? (insert '#' characters at the end as well as at the beginning of the line)
-let g:markdown_atx_headers_two_sided = 1
+let g:markdown_atx_headers_two_sided = 0
 
 function! FiletypeKeys()
 	if &filetype ==# 'markdown'
@@ -1289,8 +1271,6 @@ syntax on
 " to use the "Neutral" configuration.
 if $USER ==? 'whitelynx' || $USER ==? 'dbronke' || $USER ==? 'davidbronke' || $USER ==? 'CORP\dbronke'
 	WhiteLynx
-elseif $USER ==? 'morgul' || $USER ==? 'ccase'
-	Morgul
 else
 	Neutral
 endif
