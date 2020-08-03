@@ -1,3 +1,4 @@
 #!/bin/bash
 
-setxkbmap dvorak -option '' -option ctrl:nocaps -option terminate:ctrl_alt_bksp -option nbsp:zwnj2nb3nnb4 -option eurosign:5 -option altwin:swap_lalt_lwin -option compose:rctrl-altgr -option lv3:ralt_switch
+#setxkbmap dvorak -option '' -option ctrl:nocaps -option terminate:ctrl_alt_bksp -option eurosign:5 -option altwin:swap_lalt_lwin -option compose:rctrl-altgr -option lv3:ralt_switch
+setxkbmap dvorak -option '' -option ctrl:nocaps -option terminate:ctrl_alt_bksp -option eurosign:5 -option altwin:swap_lalt_lwin -option compose:lctrl -option lv3:ralt_switch
