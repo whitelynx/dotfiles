@@ -1,6 +1,6 @@
 #!/bin/bash
 
-timeout=500
+timeout=1000
 
 device=$(ponymix --short | awk -F '\t' '$1 == "sink" {print $4}')
 volume=$(ponymix -t sink get-volume)
