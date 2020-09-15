@@ -99,6 +99,7 @@ Plug 'davidhalter/jedi-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'kalekundert/vim-coiled-snake'
 Plug 'Konfekt/FastFold'
+Plug 'danishprakash/vim-githubinator'
 
 " Syntax plugins
 Plug 'yads/vim-mustache-handlebars' " Until https://github.com/mustache/vim-mustache-handlebars/pull/49 gets merged and vim-polyglot gets the update...
