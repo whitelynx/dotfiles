@@ -111,6 +111,7 @@ Plug 'chikamichi/mediawiki.vim'
 Plug 'posva/vim-vue'
 Plug 'kelan/gyp.vim'
 Plug 'chrisbra/csv.vim'
+Plug 'dlmarquis/gcode.vim'
 " Included in "sheerun/vim-polyglot":
 "Plug 'aklt/plantuml-syntax'
 "Plug 'isRuslan/vim-es6'
