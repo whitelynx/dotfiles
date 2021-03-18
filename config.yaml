@@ -139,6 +139,9 @@ dotfiles:
   f_npmrc:
     dst: ~/.npmrc
     src: npmrc
+  f_psqlrc:
+    dst: ~/.psqlrc
+    src: psqlrc
   f_pyg:
     dst: ~/bin/pyg
     src: bin/pyg
@@ -256,6 +259,7 @@ profiles:
     - f_chunkwmrc
     - f_khdrc
     - f_rgbcolors
+    - f_psqlrc
   MBP-19-C02YV0MMLVDN.local:
     dotfiles:
     - f_init.vim
@@ -297,6 +301,7 @@ profiles:
     - f_t.fish
     - f_tl.fish
     - f_gopath.fish
+    - f_psqlrc
   MacBook-Pro-2.local:
     dotfiles:
     - f_init.vim
@@ -330,6 +335,7 @@ profiles:
     - f_chunkwmrc
     - f_khdrc
     - f_rgbcolors
+    - f_psqlrc
   a-1p7j2wejxat9i:
     dotfiles:
     - f_init.vim
@@ -390,6 +396,7 @@ profiles:
     - f_blueman-applet@.service
     - f_kdeconnect-indicator@.service
     - f_mako@.service
+    - f_psqlrc
   a-293qkjofef7br:
     dotfiles:
     - f_init.vim
@@ -450,6 +457,204 @@ profiles:
     - f_blueman-applet@.service
     - f_kdeconnect-indicator@.service
     - f_mako@.service
+    - f_psqlrc
+  azrahn:
+    dotfiles:
+    - f_init.vim
+    - f_ginit.vim
+    - f_filetype.vim
+    - f_i3_config
+    - f_config.py
+    - f_fishfile
+    - f_fish_user_key_bindings.fish
+    - f_vars.fish
+    - f_rc.xsh
+    - f_fonts.conf
+    - f_hyper.js
+    - f_extend.xresources
+    - f_synergy.conf
+    - f_gitconfig
+    - f_sterminalrc
+    - f_npmrc
+    - d_systemd
+    - d_alacritty
+    - f_dpms-lock
+    - f_dotdrop
+    - f_git-diffcommit
+    - f_git-glog
+    - f_diffconflicts
+    - f_asdf
+    - f_ar.g
+    - f_aoeu
+    - f_sabdc
+    - f_word-diff
+    - f_line-diff
+    - f_i3-randr-update
+    - f_i3exit
+    - f_launch-terminal
+    - f_notify-volume
+    - f_pyg
+    - f_pygments-styles
+    - f_qvim
+    - f_fqvim
+    - f_toggle-touchpad
+    - f_toggle-inputdev
+    - f_urlquote
+    - f_flake8
+    - f_pylintrc
+    - f_kitty.conf
+    - f_bobthefish_colors.fish
+    - f_rgbcolors
+    - f_xcffibaer@.service
+    - f_stalonetray@.service
+    - f_tree.fish
+    - f_l.fish
+    - f_la.fish
+    - f_lal.fish
+    - f_ll.fish
+    - f_t.fish
+    - f_tl.fish
+    - f_gopath.fish
+    - f_rofi_config
+    - f_theme.rasi
+    - f_blueman-applet@.service
+    - f_kdeconnect-indicator@.service
+    - f_mako@.service
+    - f_psqlrc
+  blackbeast:
+    dotfiles:
+    - f_init.vim
+    - f_ginit.vim
+    - f_filetype.vim
+    - f_i3_config
+    - f_config.py
+    - f_fishfile
+    - f_fish_user_key_bindings.fish
+    - f_vars.fish
+    - f_rc.xsh
+    - f_fonts.conf
+    - f_hyper.js
+    - f_extend.xresources
+    - f_synergy.conf
+    - f_gitconfig
+    - f_sterminalrc
+    - f_npmrc
+    - d_systemd
+    - d_alacritty
+    - f_dpms-lock
+    - f_dotdrop
+    - f_git-diffcommit
+    - f_git-glog
+    - f_diffconflicts
+    - f_asdf
+    - f_ar.g
+    - f_aoeu
+    - f_sabdc
+    - f_word-diff
+    - f_line-diff
+    - f_i3-randr-update
+    - f_i3exit
+    - f_launch-terminal
+    - f_notify-volume
+    - f_pyg
+    - f_pygments-styles
+    - f_qvim
+    - f_fqvim
+    - f_toggle-touchpad
+    - f_toggle-inputdev
+    - f_toggle-touchscreen
+    - f_urlquote
+    - f_flake8
+    - f_pylintrc
+    - f_kitty.conf
+    - f_bobthefish_colors.fish
+    - f_rgbcolors
+    - f_xcffibaer@.service
+    - f_stalonetray@.service
+    - f_tree.fish
+    - f_l.fish
+    - f_la.fish
+    - f_lal.fish
+    - f_ll.fish
+    - f_t.fish
+    - f_tl.fish
+    - f_gopath.fish
+    - f_rofi_config
+    - f_theme.rasi
+    - f_blueman-applet@.service
+    - f_kdeconnect-indicator@.service
+    - f_mako@.service
+    - f_sway_config
+    - f_i3blocks_config
+    - f_01-native-wayland.conf
+    - f_psqlrc
+  indigo-manjaro-virtualbox:
+    dotfiles:
+    - f_init.vim
+    - f_ginit.vim
+    - f_filetype.vim
+    - f_i3_config
+    - f_config.py
+    - f_fishfile
+    - f_fish_user_key_bindings.fish
+    - f_vars.fish
+    - f_rc.xsh
+    - f_fonts.conf
+    - f_hyper.js
+    - f_extend.xresources
+    - f_synergy.conf
+    - f_gitconfig
+    - f_sterminalrc
+    - f_npmrc
+    - d_systemd
+    - d_alacritty
+    - f_dpms-lock
+    - f_dotdrop
+    - f_git-diffcommit
+    - f_git-glog
+    - f_diffconflicts
+    - f_asdf
+    - f_ar.g
+    - f_aoeu
+    - f_sabdc
+    - f_word-diff
+    - f_line-diff
+    - f_i3-randr-update
+    - f_i3exit
+    - f_launch-terminal
+    - f_notify-volume
+    - f_pyg
+    - f_pygments-styles
+    - f_qvim
+    - f_fqvim
+    - f_toggle-touchpad
+    - f_toggle-inputdev
+    - f_toggle-touchscreen
+    - f_urlquote
+    - f_flake8
+    - f_pylintrc
+    - f_kitty.conf
+    - f_bobthefish_colors.fish
+    - f_rgbcolors
+    - f_xcffibaer@.service
+    - f_stalonetray@.service
+    - f_tree.fish
+    - f_l.fish
+    - f_la.fish
+    - f_lal.fish
+    - f_ll.fish
+    - f_t.fish
+    - f_tl.fish
+    - f_gopath.fish
+    - f_rofi_config
+    - f_theme.rasi
+    - f_blueman-applet@.service
+    - f_kdeconnect-indicator@.service
+    - f_mako@.service
+    - f_sway_config
+    - f_i3blocks_config
+    - f_01-native-wayland.conf
+    - f_psqlrc
   manjaro-hyper-v:
     dotfiles:
     - f_init.vim
@@ -516,6 +721,74 @@ profiles:
     - f_sway_config
     - f_i3blocks_config
     - f_01-native-wayland.conf
+    - f_psqlrc
+  manjaro-vmware:
+    dotfiles:
+    - f_init.vim
+    - f_ginit.vim
+    - f_filetype.vim
+    - f_i3_config
+    - f_config.py
+    - f_fishfile
+    - f_fish_user_key_bindings.fish
+    - f_vars.fish
+    - f_rc.xsh
+    - f_fonts.conf
+    - f_hyper.js
+    - f_extend.xresources
+    - f_synergy.conf
+    - f_gitconfig
+    - f_sterminalrc
+    - f_npmrc
+    - d_systemd
+    - d_alacritty
+    - f_dpms-lock
+    - f_dotdrop
+    - f_git-diffcommit
+    - f_git-glog
+    - f_diffconflicts
+    - f_asdf
+    - f_ar.g
+    - f_aoeu
+    - f_sabdc
+    - f_word-diff
+    - f_line-diff
+    - f_i3-randr-update
+    - f_i3exit
+    - f_launch-terminal
+    - f_notify-volume
+    - f_pyg
+    - f_pygments-styles
+    - f_qvim
+    - f_fqvim
+    - f_toggle-touchpad
+    - f_toggle-inputdev
+    - f_toggle-touchscreen
+    - f_urlquote
+    - f_flake8
+    - f_pylintrc
+    - f_kitty.conf
+    - f_bobthefish_colors.fish
+    - f_rgbcolors
+    - f_xcffibaer@.service
+    - f_stalonetray@.service
+    - f_tree.fish
+    - f_l.fish
+    - f_la.fish
+    - f_lal.fish
+    - f_ll.fish
+    - f_t.fish
+    - f_tl.fish
+    - f_gopath.fish
+    - f_rofi_config
+    - f_theme.rasi
+    - f_blueman-applet@.service
+    - f_kdeconnect-indicator@.service
+    - f_mako@.service
+    - f_sway_config
+    - f_i3blocks_config
+    - f_01-native-wayland.conf
+    - f_psqlrc
   oktober:
     dotfiles:
     - f_init.vim
@@ -578,6 +851,7 @@ profiles:
     - f_t.fish
     - f_tl.fish
     - f_gopath.fish
+    - f_psqlrc
   raptor:
     dotfiles:
     - f_init.vim
@@ -646,6 +920,7 @@ profiles:
     - f_sway_config
     - f_i3blocks_config
     - f_01-native-wayland.conf
+    - f_psqlrc
   syl:
     dotfiles:
     - f_init.vim
@@ -708,68 +983,7 @@ profiles:
     - f_blueman-applet@.service
     - f_kdeconnect-indicator@.service
     - f_mako@.service
-  azrahn:
-    dotfiles:
-    - f_init.vim
-    - f_ginit.vim
-    - f_filetype.vim
-    - f_i3_config
-    - f_config.py
-    - f_fishfile
-    - f_fish_user_key_bindings.fish
-    - f_vars.fish
-    - f_rc.xsh
-    - f_fonts.conf
-    - f_hyper.js
-    - f_extend.xresources
-    - f_synergy.conf
-    - f_gitconfig
-    - f_sterminalrc
-    - f_npmrc
-    - d_systemd
-    - d_alacritty
-    - f_dpms-lock
-    - f_dotdrop
-    - f_git-diffcommit
-    - f_git-glog
-    - f_diffconflicts
-    - f_asdf
-    - f_ar.g
-    - f_aoeu
-    - f_sabdc
-    - f_word-diff
-    - f_line-diff
-    - f_i3-randr-update
-    - f_i3exit
-    - f_launch-terminal
-    - f_notify-volume
-    - f_pyg
-    - f_pygments-styles
-    - f_qvim
-    - f_fqvim
-    - f_toggle-touchpad
-    - f_toggle-inputdev
-    - f_urlquote
-    - f_flake8
-    - f_pylintrc
-    - f_kitty.conf
-    - f_bobthefish_colors.fish
-    - f_rgbcolors
-    - f_xcffibaer@.service
-    - f_stalonetray@.service
-    - f_tree.fish
-    - f_l.fish
-    - f_la.fish
-    - f_lal.fish
-    - f_ll.fish
-    - f_t.fish
-    - f_tl.fish
-    - f_gopath.fish
-    - f_rofi_config
-    - f_theme.rasi
-    - f_blueman-applet@.service
-    - f_kdeconnect-indicator@.service
-    - f_mako@.service
+    - f_psqlrc
   tiny:
     dotfiles:
     - f_init.vim
@@ -839,201 +1053,4 @@ profiles:
     - f_startsway.fish
     - f_start-sway.fish
     - f_extend.xprofile
-  blackbeast:
-    dotfiles:
-    - f_init.vim
-    - f_ginit.vim
-    - f_filetype.vim
-    - f_i3_config
-    - f_config.py
-    - f_fishfile
-    - f_fish_user_key_bindings.fish
-    - f_vars.fish
-    - f_rc.xsh
-    - f_fonts.conf
-    - f_hyper.js
-    - f_extend.xresources
-    - f_synergy.conf
-    - f_gitconfig
-    - f_sterminalrc
-    - f_npmrc
-    - d_systemd
-    - d_alacritty
-    - f_dpms-lock
-    - f_dotdrop
-    - f_git-diffcommit
-    - f_git-glog
-    - f_diffconflicts
-    - f_asdf
-    - f_ar.g
-    - f_aoeu
-    - f_sabdc
-    - f_word-diff
-    - f_line-diff
-    - f_i3-randr-update
-    - f_i3exit
-    - f_launch-terminal
-    - f_notify-volume
-    - f_pyg
-    - f_pygments-styles
-    - f_qvim
-    - f_fqvim
-    - f_toggle-touchpad
-    - f_toggle-inputdev
-    - f_toggle-touchscreen
-    - f_urlquote
-    - f_flake8
-    - f_pylintrc
-    - f_kitty.conf
-    - f_bobthefish_colors.fish
-    - f_rgbcolors
-    - f_xcffibaer@.service
-    - f_stalonetray@.service
-    - f_tree.fish
-    - f_l.fish
-    - f_la.fish
-    - f_lal.fish
-    - f_ll.fish
-    - f_t.fish
-    - f_tl.fish
-    - f_gopath.fish
-    - f_rofi_config
-    - f_theme.rasi
-    - f_blueman-applet@.service
-    - f_kdeconnect-indicator@.service
-    - f_mako@.service
-    - f_sway_config
-    - f_i3blocks_config
-    - f_01-native-wayland.conf
-  indigo-manjaro-virtualbox:
-    dotfiles:
-    - f_init.vim
-    - f_ginit.vim
-    - f_filetype.vim
-    - f_i3_config
-    - f_config.py
-    - f_fishfile
-    - f_fish_user_key_bindings.fish
-    - f_vars.fish
-    - f_rc.xsh
-    - f_fonts.conf
-    - f_hyper.js
-    - f_extend.xresources
-    - f_synergy.conf
-    - f_gitconfig
-    - f_sterminalrc
-    - f_npmrc
-    - d_systemd
-    - d_alacritty
-    - f_dpms-lock
-    - f_dotdrop
-    - f_git-diffcommit
-    - f_git-glog
-    - f_diffconflicts
-    - f_asdf
-    - f_ar.g
-    - f_aoeu
-    - f_sabdc
-    - f_word-diff
-    - f_line-diff
-    - f_i3-randr-update
-    - f_i3exit
-    - f_launch-terminal
-    - f_notify-volume
-    - f_pyg
-    - f_pygments-styles
-    - f_qvim
-    - f_fqvim
-    - f_toggle-touchpad
-    - f_toggle-inputdev
-    - f_toggle-touchscreen
-    - f_urlquote
-    - f_flake8
-    - f_pylintrc
-    - f_kitty.conf
-    - f_bobthefish_colors.fish
-    - f_rgbcolors
-    - f_xcffibaer@.service
-    - f_stalonetray@.service
-    - f_tree.fish
-    - f_l.fish
-    - f_la.fish
-    - f_lal.fish
-    - f_ll.fish
-    - f_t.fish
-    - f_tl.fish
-    - f_gopath.fish
-    - f_rofi_config
-    - f_theme.rasi
-    - f_blueman-applet@.service
-    - f_kdeconnect-indicator@.service
-    - f_mako@.service
-    - f_sway_config
-    - f_i3blocks_config
-    - f_01-native-wayland.conf
-  manjaro-vmware:
-    dotfiles:
-    - f_init.vim
-    - f_ginit.vim
-    - f_filetype.vim
-    - f_i3_config
-    - f_config.py
-    - f_fishfile
-    - f_fish_user_key_bindings.fish
-    - f_vars.fish
-    - f_rc.xsh
-    - f_fonts.conf
-    - f_hyper.js
-    - f_extend.xresources
-    - f_synergy.conf
-    - f_gitconfig
-    - f_sterminalrc
-    - f_npmrc
-    - d_systemd
-    - d_alacritty
-    - f_dpms-lock
-    - f_dotdrop
-    - f_git-diffcommit
-    - f_git-glog
-    - f_diffconflicts
-    - f_asdf
-    - f_ar.g
-    - f_aoeu
-    - f_sabdc
-    - f_word-diff
-    - f_line-diff
-    - f_i3-randr-update
-    - f_i3exit
-    - f_launch-terminal
-    - f_notify-volume
-    - f_pyg
-    - f_pygments-styles
-    - f_qvim
-    - f_fqvim
-    - f_toggle-touchpad
-    - f_toggle-inputdev
-    - f_toggle-touchscreen
-    - f_urlquote
-    - f_flake8
-    - f_pylintrc
-    - f_kitty.conf
-    - f_bobthefish_colors.fish
-    - f_rgbcolors
-    - f_xcffibaer@.service
-    - f_stalonetray@.service
-    - f_tree.fish
-    - f_l.fish
-    - f_la.fish
-    - f_lal.fish
-    - f_ll.fish
-    - f_t.fish
-    - f_tl.fish
-    - f_gopath.fish
-    - f_rofi_config
-    - f_theme.rasi
-    - f_blueman-applet@.service
-    - f_kdeconnect-indicator@.service
-    - f_mako@.service
-    - f_sway_config
-    - f_i3blocks_config
-    - f_01-native-wayland.conf
+    - f_psqlrc

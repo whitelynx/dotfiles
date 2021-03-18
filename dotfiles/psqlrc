@@ -1,0 +1,1 @@
+\set PROMPT1 '%`echo ${AWS_PROFILE:-dev}`(%n@%M) [%/%x] > '
