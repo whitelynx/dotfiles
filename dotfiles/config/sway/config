@@ -14,7 +14,7 @@ set $down t
 set $up n
 set $right s
 # Your preferred terminal emulator
-set $term kitty
+set $term foot
 # Your preferred application launcher
 #set $menu dmenu_run
 set $menu /home/whitelynx/bin/rofi-run
