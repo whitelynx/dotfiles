@@ -57,9 +57,9 @@ dotfiles:
   f_fish_user_key_bindings.fish:
     dst: ~/.config/fish/functions/fish_user_key_bindings.fish
     src: config/fish/functions/fish_user_key_bindings.fish
-  f_fishfile:
-    dst: ~/.config/fish/fishfile
-    src: config/fish/fishfile
+  f_fish_plugins:
+    dst: ~/.config/fish/fish_plugins
+    src: config/fish/fish_plugins
   f_flake8:
     dst: ~/.config/flake8
     src: config/flake8
@@ -231,7 +231,7 @@ profiles:
     - f_init.vim
     - f_ginit.vim
     - f_filetype.vim
-    - f_fishfile
+    - f_fish_plugins
     - f_fish_user_key_bindings.fish
     - f_vars.fish
     - f_rc.xsh
@@ -265,7 +265,7 @@ profiles:
     - f_init.vim
     - f_ginit.vim
     - f_filetype.vim
-    - f_fishfile
+    - f_fish_plugins
     - f_fish_user_key_bindings.fish
     - f_vars.fish
     - f_rc.xsh
@@ -307,7 +307,7 @@ profiles:
     - f_init.vim
     - f_ginit.vim
     - f_filetype.vim
-    - f_fishfile
+    - f_fish_plugins
     - f_fish_user_key_bindings.fish
     - f_vars.fish
     - f_rc.xsh
@@ -343,7 +343,7 @@ profiles:
     - f_filetype.vim
     - f_i3_config
     - f_config.py
-    - f_fishfile
+    - f_fish_plugins
     - f_fish_user_key_bindings.fish
     - f_vars.fish
     - f_rc.xsh
@@ -404,7 +404,7 @@ profiles:
     - f_filetype.vim
     - f_i3_config
     - f_config.py
-    - f_fishfile
+    - f_fish_plugins
     - f_fish_user_key_bindings.fish
     - f_vars.fish
     - f_rc.xsh
@@ -465,7 +465,7 @@ profiles:
     - f_filetype.vim
     - f_i3_config
     - f_config.py
-    - f_fishfile
+    - f_fish_plugins
     - f_fish_user_key_bindings.fish
     - f_vars.fish
     - f_rc.xsh
@@ -528,7 +528,7 @@ profiles:
     - f_filetype.vim
     - f_i3_config
     - f_config.py
-    - f_fishfile
+    - f_fish_plugins
     - f_fish_user_key_bindings.fish
     - f_vars.fish
     - f_rc.xsh
@@ -595,7 +595,7 @@ profiles:
     - f_filetype.vim
     - f_i3_config
     - f_config.py
-    - f_fishfile
+    - f_fish_plugins
     - f_fish_user_key_bindings.fish
     - f_vars.fish
     - f_rc.xsh
@@ -662,7 +662,7 @@ profiles:
     - f_filetype.vim
     - f_i3_config
     - f_config.py
-    - f_fishfile
+    - f_fish_plugins
     - f_fish_user_key_bindings.fish
     - f_vars.fish
     - f_rc.xsh
@@ -729,7 +729,7 @@ profiles:
     - f_filetype.vim
     - f_i3_config
     - f_config.py
-    - f_fishfile
+    - f_fish_plugins
     - f_fish_user_key_bindings.fish
     - f_vars.fish
     - f_rc.xsh
@@ -796,7 +796,7 @@ profiles:
     - f_filetype.vim
     - f_i3_config
     - f_config.py
-    - f_fishfile
+    - f_fish_plugins
     - f_fish_user_key_bindings.fish
     - f_vars.fish
     - f_rc.xsh
@@ -859,7 +859,7 @@ profiles:
     - f_filetype.vim
     - f_i3_config
     - f_config.py
-    - f_fishfile
+    - f_fish_plugins
     - f_fish_user_key_bindings.fish
     - f_vars.fish
     - f_rc.xsh
@@ -928,7 +928,7 @@ profiles:
     - f_filetype.vim
     - f_i3_config
     - f_config.py
-    - f_fishfile
+    - f_fish_plugins
     - f_fish_user_key_bindings.fish
     - f_vars.fish
     - f_rc.xsh
@@ -991,7 +991,7 @@ profiles:
     - f_filetype.vim
     - f_i3_config
     - f_config.py
-    - f_fishfile
+    - f_fish_plugins
     - f_fish_user_key_bindings.fish
     - f_vars.fish
     - f_rc.xsh
