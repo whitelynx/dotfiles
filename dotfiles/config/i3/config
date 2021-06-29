@@ -352,7 +352,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #exec --no-startup-id systemctl --user start gloom@$DISPLAY
 exec --no-startup-id systemctl --user start urxvtd@$DISPLAY
 exec --no-startup-id systemctl --user start synergys@$DISPLAY
-#exec --no-startup-id systemctl --user start compton@$DISPLAY
+#exec --no-startup-id systemctl --user start picom@$DISPLAY
 exec --no-startup-id systemctl --user start srandrd@$DISPLAY
 exec --no-startup-id systemctl --user start xcffibaer@$DISPLAY
 exec --no-startup-id systemctl --user start stalonetray@$DISPLAY
