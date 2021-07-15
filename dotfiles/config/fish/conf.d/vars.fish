@@ -24,6 +24,7 @@ set -x VIRTUAL_ENV_DISABLE_PROMPT 1
 set fish_color_search_match --background=222
 
 if command -s pyenv >/dev/null
+	status is-interactive; and pyenv init --path | source
 	pyenv init - | source
 	pyenv virtualenv-init - | source
 end
