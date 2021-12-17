@@ -164,8 +164,8 @@ dotfiles:
     dst: ~/bin/rgbcolors
     src: bin/rgbcolors
   f_rofi_config:
-    dst: ~/.config/rofi/config
-    src: config/rofi/config
+    dst: ~/.config/rofi/config.rasi
+    src: config/rofi/config.rasi
   f_sabdc:
     dst: ~/bin/sabdc
     link: true
