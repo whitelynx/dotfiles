@@ -2,6 +2,7 @@ config:
   backup: true
   create: true
   dotpath: dotfiles
+  minversion: 1.8.2
 dotfiles:
   d_alacritty:
     dst: ~/.config/alacritty
@@ -14,15 +15,15 @@ dotfiles:
     src: config/environment.d/01-native-wayland.conf
   f_aoeu:
     dst: ~/bin/aoeu
-    link: true
+    link: link
     src: bin/asdf
   f_ar.g:
     dst: ~/bin/ar.g
-    link: true
+    link: link
     src: bin/ar.g
   f_asdf:
     dst: ~/bin/asdf
-    link: true
+    link: link
     src: bin/asdf
   f_barrier.conf:
     dst: ~/.local/share/barrier/.barrier.conf
@@ -56,6 +57,9 @@ dotfiles:
     src: extend.Xresources
   f_filetype.vim:
     dst: ~/.config/nvim/filetype.vim
+    src: config/nvim/filetype.vim
+  f_vim_filetype.vim:
+    dst: ~/.vim/filetype.vim
     src: config/nvim/filetype.vim
   f_fish_plugins:
     dst: ~/.config/fish/fish_plugins
@@ -105,6 +109,9 @@ dotfiles:
   f_init.vim:
     dst: ~/.config/nvim/init.vim
     src: config/nvim/init.vim
+  f_vimrc:
+    dst: ~/.vimrc
+    src: config/nvim/init.vim
   f_kdeconnect-indicator@.service:
     dst: ~/.config/systemd/user/kdeconnect-indicator@.service
     src: config/systemd/user/kdeconnect-indicator@.service
@@ -128,7 +135,7 @@ dotfiles:
     src: bin/launch-terminal
   f_line-diff:
     dst: ~/bin/line-diff
-    link: true
+    link: link
     src: bin/sabdc
   f_ll.fish:
     dst: ~/.config/fish/functions/ll.fish
@@ -168,7 +175,7 @@ dotfiles:
     src: config/rofi/config.rasi
   f_sabdc:
     dst: ~/bin/sabdc
-    link: true
+    link: link
     src: bin/sabdc
   f_stalonetray@.service:
     dst: ~/.config/systemd/user/stalonetray@.service
@@ -223,7 +230,7 @@ dotfiles:
     src: config/fish/conf.d/vars.fish
   f_word-diff:
     dst: ~/bin/word-diff
-    link: true
+    link: link
     src: bin/sabdc
   f_xcffibaer@.service:
     dst: ~/.config/systemd/user/xcffibaer@.service
@@ -231,6 +238,8 @@ dotfiles:
 profiles:
   Davids-MacBook-Pro-2.local:
     dotfiles:
+    - f_vimrc
+    - f_vim_filetype.vim
     - f_init.vim
     - f_ginit.vim
     - f_filetype.vim
@@ -265,6 +274,8 @@ profiles:
     - f_psqlrc
   MBP-19-C02YV0MMLVDN.local:
     dotfiles:
+    - f_vimrc
+    - f_vim_filetype.vim
     - f_init.vim
     - f_ginit.vim
     - f_filetype.vim
@@ -307,6 +318,8 @@ profiles:
     - f_psqlrc
   MacBook-Pro-2.local:
     dotfiles:
+    - f_vimrc
+    - f_vim_filetype.vim
     - f_init.vim
     - f_ginit.vim
     - f_filetype.vim
@@ -341,6 +354,8 @@ profiles:
     - f_psqlrc
   a-1p7j2wejxat9i:
     dotfiles:
+    - f_vimrc
+    - f_vim_filetype.vim
     - f_init.vim
     - f_ginit.vim
     - f_filetype.vim
@@ -402,6 +417,8 @@ profiles:
     - f_psqlrc
   a-293qkjofef7br:
     dotfiles:
+    - f_vimrc
+    - f_vim_filetype.vim
     - f_init.vim
     - f_ginit.vim
     - f_filetype.vim
@@ -463,6 +480,8 @@ profiles:
     - f_psqlrc
   azrahn:
     dotfiles:
+    - f_vimrc
+    - f_vim_filetype.vim
     - f_init.vim
     - f_ginit.vim
     - f_filetype.vim
@@ -527,6 +546,8 @@ profiles:
     - f_barrier.conf
   blackbeast:
     dotfiles:
+    - f_vimrc
+    - f_vim_filetype.vim
     - f_init.vim
     - f_ginit.vim
     - f_filetype.vim
@@ -594,6 +615,8 @@ profiles:
     - f_psqlrc
   indigo-manjaro-virtualbox:
     dotfiles:
+    - f_vimrc
+    - f_vim_filetype.vim
     - f_init.vim
     - f_ginit.vim
     - f_filetype.vim
@@ -661,6 +684,8 @@ profiles:
     - f_psqlrc
   manjaro-hyper-v:
     dotfiles:
+    - f_vimrc
+    - f_vim_filetype.vim
     - f_init.vim
     - f_ginit.vim
     - f_filetype.vim
@@ -728,6 +753,8 @@ profiles:
     - f_psqlrc
   manjaro-vmware:
     dotfiles:
+    - f_vimrc
+    - f_vim_filetype.vim
     - f_init.vim
     - f_ginit.vim
     - f_filetype.vim
@@ -795,6 +822,8 @@ profiles:
     - f_psqlrc
   oktober:
     dotfiles:
+    - f_vimrc
+    - f_vim_filetype.vim
     - f_init.vim
     - f_ginit.vim
     - f_filetype.vim
@@ -858,6 +887,8 @@ profiles:
     - f_psqlrc
   prototype:
     dotfiles:
+    - f_vimrc
+    - f_vim_filetype.vim
     - f_init.vim
     - f_ginit.vim
     - f_filetype.vim
@@ -931,6 +962,8 @@ profiles:
     - f_barrier.conf
   raptor:
     dotfiles:
+    - f_vimrc
+    - f_vim_filetype.vim
     - f_init.vim
     - f_ginit.vim
     - f_filetype.vim
@@ -1000,6 +1033,8 @@ profiles:
     - f_psqlrc
   syl:
     dotfiles:
+    - f_vimrc
+    - f_vim_filetype.vim
     - f_init.vim
     - f_ginit.vim
     - f_filetype.vim
@@ -1063,6 +1098,8 @@ profiles:
     - f_psqlrc
   tiny:
     dotfiles:
+    - f_vimrc
+    - f_vim_filetype.vim
     - f_init.vim
     - f_ginit.vim
     - f_filetype.vim
