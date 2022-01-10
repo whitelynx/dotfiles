@@ -1,8 +1,9 @@
-" NeoVim Configuration
+" Vim/NeoVim Configuration
 " Maintainer:   David H. Bronke <whitelynx@gmail.com>
 " Filename:     init.vim
 " Installation:
-"	- Save this file at /etc/xdg/nvim/init.vim or ~/.config/nvim/init.vim
+"	- Save this file at /etc/xdg/nvim/init.vim or ~/.config/nvim/init.vim for
+"		NeoVim, or at /etc/vimrc or ~/.vimrc for original Vim
 "	- Install "vim-plug" at the same place:
 "
 "		curl -fLo /etc/xdg/nvim/autoload/plug.vim --create-dirs \
