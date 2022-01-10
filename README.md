@@ -23,11 +23,11 @@ packages
 ### All *NIX platforms
 
 - [`fish`](https://fishshell.com) and [`fisher`](https://github.com/jorgebucaran/fisher) (primary shell)
-- [`kitty`](https://github.com/kovidgoyal/kitty) (primary terminal emulator)
+- [`kitty`](https://github.com/kovidgoyal/kitty) (primary terminal emulator for X11 and MacOS)
 - [`neovim`](https://neovim.io) (primary terminal-mode editor)
 - [`nyaovim`](https://www.npmjs.com/package/nyaovim)
 - [`rxvt-unicode`](http://software.schmorp.de/pkg/rxvt-unicode.html)
-- [`synergy`](https://symless.com/synergy)
+- [`barrier`](https://github.com/debauchee/barrier)
 - [`ttf-input`](http://input.fontbureau.com)
 - [`xonsh`](https://github.com/xonsh/xonsh)
 - [`exa`](https://the.exa.website)
@@ -42,12 +42,14 @@ packages
 
 (ArchLinux / Manjaro packages)
 
+- [`foot`](https://codeberg.org/dnkl/foot) (primary terminal emulator for Wayland)
 - [`autorandr`](https://github.com/phillipberndt/autorandr) (or [`randrctl`](https://github.com/edio/randrctl))
 - [`compton`](https://github.com/chjj/compton)
 - [`i3-scripts`](https://github.com/oberon2007/i3-scripts)
 - [`i3-scrot`](https://aur.archlinux.org/packages/i3-scrot)
 - [`i3-wm`](https://i3wm.org) (primary window manager on Linux)
 - [`i3lock`](https://i3wm.org/i3lock)
+- [`sway`](https://swaywm.org/) (primary compositor for Wayland)
 - [`libnotify`](https://developer.gnome.org/notification-spec)
 - [`neovim-qt`](https://github.com/equalsraf/neovim-qt) (primary GUI editor on Linux)
 - [`nitrogen`](https://github.com/l3ib/nitrogen)
