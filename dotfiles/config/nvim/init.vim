@@ -85,7 +85,13 @@ Plug 'tpope/vim-fugitive'
 Plug 'ervandew/supertab'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'Shougo/deoplete.nvim'
+if has('nvim')
+	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+	Plug 'Shougo/deoplete.nvim'
+	Plug 'roxma/nvim-yarp'
+	Plug 'roxma/vim-hug-neovim-rpc'
+endif
 Plug 'w0rp/ale'
 "Plug 'benekastah/neomake'
 Plug 'https://gitlab.com/skewed-aspect/redux.vim.git'
@@ -784,7 +790,7 @@ command! -nargs=0 ForceUseBuffers call UpdateHasTabs(0)
 " http://sourceforge.net/projects/artwiz-latin1/)
 if has('gui_running')
 	set guifont=drift\ 10,ProFont\ 10,progsole\ 10,ProggyTinyTTSZ\ 16,Terminus\ 12,Lucida\ Console\ 8
-else
+elseif has('nvim')
 	" Neovim-qt Guifont command
 	command -nargs=? Guifont call rpcnotify(0, 'Gui', 'SetFont', "<args>") | let g:Guifont="<args>"
 
