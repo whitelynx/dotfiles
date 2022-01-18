@@ -235,6 +235,10 @@ dotfiles:
   f_xcffibaer@.service:
     dst: ~/.config/systemd/user/xcffibaer@.service
     src: config/systemd/user/xcffibaer@.service
+  f_fixterm:
+    src: bin/fixterm
+    dst: ~/bin/fixterm
+    chmod: '755'
 profiles:
   Davids-MacBook-Pro-2.local:
     dotfiles:
@@ -544,6 +548,7 @@ profiles:
     - f_mako@.service
     - f_psqlrc
     - f_barrier.conf
+    - f_fixterm
   blackbeast:
     dotfiles:
     - f_vimrc

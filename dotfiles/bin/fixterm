@@ -1,0 +1,6 @@
+#!/bin/bash
+
+reset
+stty sane
+tput rs1
+echo -e "\033c"
