@@ -87,6 +87,7 @@
 	# Other random convenience commands
 	revert-all = checkout -f .
 	new-branch = checkout -b
+	wdiff = diff --color-words='\\w+|\\S'
 
 [gui]
 	fontui = -family \"DejaVu Sans\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
