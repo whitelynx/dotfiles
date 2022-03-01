@@ -11,7 +11,7 @@ end
 set -xg PYENV_ROOT $HOME/.pyenv
 set -xg NVM_DIR $HOME/.nvm
 
-for dir in ~/bin $PYENV_ROOT/bin ~/.local/bin ~/.cargo/bin ~/Library/Android/sdk/platform-tools ~/Library/Python/*/bin
+for dir in ~/bin $PYENV_ROOT/bin ~/.local/bin ~/.cargo/bin ~/Library/Android/sdk/platform-tools ~/Library/Python/*/bin ~/Development/go/bin
 	if test -d $dir
 		set PATH $dir $PATH
 	end
