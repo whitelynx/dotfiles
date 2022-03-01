@@ -225,7 +225,7 @@ else
 endif
 
 "-- VV --
-" URL: https://github.com/igorgladkoborodov/vv
+" URL: https://github.com/vv-vim/vv
 if exists('g:vv')
 	VVset fontfamily=Input\ Mono\ Narrow
 	VVset fontsize=11
