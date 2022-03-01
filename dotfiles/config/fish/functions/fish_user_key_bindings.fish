@@ -16,4 +16,12 @@ function fish_user_key_bindings
 	bind \eOc forward-word        # Ctrl+Right: move 1 word to the right
 	bind \e'[3^' kill-word        # Ctrl+Delete: delete 1 word to the right
 	bind \ch backward-kill-word   # Ctrl+Backspace: delete 1 word to the left
+
+	# Keep unused keys from dropping spam characters in the command line
+	bind \u009b'2~' true    # Insert
+	bind \e'[2~' true       # Insert
+	bind \u009b'2;3~' true  # Alt+Insert
+	bind \e'[2;3~' true     # Alt+Insert
+	bind \u009b'2;5~' true  # Ctrl+Insert
+	bind \e'[2;5~' true     # Ctrl+Insert
 end
