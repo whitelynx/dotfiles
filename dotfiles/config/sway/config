@@ -420,7 +420,7 @@ mode "$mode_literal" {
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-	status_command i3blocks
+	status_command /usr/bin/i3blocks
     position top
     colors {
         statusline #ffffff
