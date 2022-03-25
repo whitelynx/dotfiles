@@ -83,6 +83,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'Shougo/unite-outline'
 Plug 'sgur/unite-qf'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb' " GitHub support for fugitive
+Plug 'shumphrey/fugitive-gitlab.vim' " GitLab support for fugitive
+Plug 'tommcdo/vim-fubitive' " Bitbucket support for fugitive
 Plug 'ervandew/supertab'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'editorconfig/editorconfig-vim'
@@ -106,7 +109,6 @@ Plug 'davidhalter/jedi-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'kalekundert/vim-coiled-snake'
 Plug 'Konfekt/FastFold'
-Plug 'danishprakash/vim-githubinator'
 Plug 'chrisbra/matchit'
 
 " Syntax plugins
@@ -1007,6 +1009,12 @@ function! s:fugitive_settings()
 
 	"set statusline=%<%2*%{DirName(bufname(\"\"))}%3*%t%4*\ %h%m%r%w%q%y\ %{fugitive#statusline()}%#WarningMsg#%*%=%6*L%5*%l%1*/%6*%L%1*,%6*\ C%5*%c%7*%V\ %5*%p%6*%%
 	set statusline=%<%2*%{bufname(\"\")}%3*%t%4*\ %h%m%r%w%q%y\ %{fugitive#statusline()}%#WarningMsg#%*%=%6*L%5*%l%1*/%6*%L%1*,%6*\ C%5*%c%7*%V\ %5*%p%6*%%
+
+	vmap <silent> gho GBrowse
+	vmap <silent> ghc GBrowse!
+
+	nmap <silent> gho GBrowse
+	nmap <silent> ghc GBrowse!
 
 endfunction
 
