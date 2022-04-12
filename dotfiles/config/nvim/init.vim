@@ -1010,11 +1010,11 @@ function! s:fugitive_settings()
 	"set statusline=%<%2*%{DirName(bufname(\"\"))}%3*%t%4*\ %h%m%r%w%q%y\ %{fugitive#statusline()}%#WarningMsg#%*%=%6*L%5*%l%1*/%6*%L%1*,%6*\ C%5*%c%7*%V\ %5*%p%6*%%
 	set statusline=%<%2*%{bufname(\"\")}%3*%t%4*\ %h%m%r%w%q%y\ %{fugitive#statusline()}%#WarningMsg#%*%=%6*L%5*%l%1*/%6*%L%1*,%6*\ C%5*%c%7*%V\ %5*%p%6*%%
 
-	vmap <silent> gho GBrowse
-	vmap <silent> ghc GBrowse!
+	vnoremap <silent> gho :GBrowse<CR>
+	vnoremap <silent> ghc :GBrowse!<CR>
 
-	nmap <silent> gho GBrowse
-	nmap <silent> ghc GBrowse!
+	nnoremap <silent> gho :.GBrowse<CR>
+	nnoremap <silent> ghc :.GBrowse!<CR>
 
 endfunction
 
