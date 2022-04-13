@@ -184,6 +184,7 @@ set undolevels=1000
 set guioptions+=c " Use console-style dialogs, instead of gui-style (e.g., for "File has changed since editing started")
 set title
 set belloff=all " NO BELL >:o
+set mouse=a
 
 " If `pinfo` is present, use it for the K command instead of `man`.
 if executable('pinfo')
@@ -792,15 +793,9 @@ command! -nargs=0 ForceUseBuffers call UpdateHasTabs(0)
 " Set the font to drift, falling back to one of several alternatives
 " (get drift from http://artwizaleczapka.sourceforge.net/ or
 " http://sourceforge.net/projects/artwiz-latin1/)
+" For Neovim-qt, see `ginit.vim`.
 if has('gui_running')
 	set guifont=drift\ 10,ProFont\ 10,progsole\ 10,ProggyTinyTTSZ\ 16,Terminus\ 12,Lucida\ Console\ 8
-elseif has('nvim')
-	" Neovim-qt Guifont command
-	command -nargs=? Guifont call rpcnotify(0, 'Gui', 'SetFont', "<args>") | let g:Guifont="<args>"
-
-	Guifont drift:h10
-	"TODO: Apparently font fallbacks don't work in nvim-qt...
-	"Guifont drift:h10,ProFont:h10,progsole:h10,ProggyTinyTTSZ:h16,Terminus:h12
 endif
 
 
