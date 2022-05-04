@@ -218,7 +218,7 @@ bindsym XF86Sleep exec "sudo systemctl hybrid-sleep"
 bindsym XF86TouchpadToggle exec ~/bin/toggle-touchpad
 
 # Set shut down, restart and locking features
-set $mode_system [system] (l)ock, (e)xit i3, reload i3 (c)onfiguration, (r)estart i3, toggle status (b)ar, switch (Shift+U)ser, (Shift+S)uspend, (Shift+H)ibernate, (Shift+R)eboot, (Shift+P)oweroff
+set $mode_system [system] (l)ock, (e)xit i3, reload i3 (c)onfiguration, (r)estart i3, toggle status (b)ar, switch (Shift+U)ser, (Shift+S)uspend, (Shift+H)ibernate, (Shift+R)eboot, reboot to (Shift+W)indows, (Shift+P)oweroff
 bindsym $mod+a mode "$mode_system"
 mode "$mode_system" {
     # lock the screen
@@ -236,6 +236,7 @@ mode "$mode_system" {
     bindsym Shift+s exec --no-startup-id ~/bin/i3exit suspend, mode "default"
     bindsym Shift+h exec --no-startup-id ~/bin/i3exit hibernate, mode "default"
     bindsym Shift+r exec --no-startup-id ~/bin/i3exit reboot, mode "default"
+    bindsym Shift+w exec --no-startup-id ~/bin/i3exit reboot-windows, mode "default"
     bindsym Shift+p exec --no-startup-id ~/bin/i3exit shutdown, mode "default"
 
     # exit system mode: "Enter" or "Escape"

@@ -2,7 +2,16 @@
 
 lock() {
 	#xautolock -locknow
+	#dm-tool lock
 	"$HOME/bin/dpms-lock" &
+}
+
+reboot() {
+	if [ "$(cat /proc/1/comm)" = "systemd" ]; then
+		systemctl reboot
+	else
+		dbus-send --system --print-reply --type=method_call --reply-timeout=2000 --dest=org.freedesktop.ConsoleKit /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart
+	fi
 }
 
 case "$1" in
@@ -32,11 +41,11 @@ case "$1" in
 		fi
 		;;
 	reboot)
-		if [ "$(cat /proc/1/comm)" = "systemd" ]; then
-			systemctl reboot
-		else
-			dbus-send --system --print-reply --type=method_call --reply-timeout=2000 --dest=org.freedesktop.ConsoleKit /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart
-		fi
+		reboot
+		;;
+	reboot-windows)
+		sudo grub-reboot "Windows Boot Manager (on /dev/nvme1n1p1)"
+		reboot
 		;;
 	shutdown)
 		if [ "$(cat /proc/1/comm)" = "systemd" ]; then
@@ -47,7 +56,7 @@ case "$1" in
 		;;
 	*)
 		echo "== ! i3exit: missing or wrong argument ! ==
-		Try again with: lock | logout | switch_user | suspend | hibernate | reboot | shutdown"
+		Try again with: lock | logout | switch_user | suspend | hibernate | reboot | reboot-windows | shutdown"
 		exit 2
 esac
 
