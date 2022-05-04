@@ -44,6 +44,8 @@ case "$1" in
 		reboot
 		;;
 	reboot-windows)
+		# NOTE: You'll probably need the following in your sudoers:
+		# %wheel ALL=(ALL) NOPASSWD: /usr/bin/grub-reboot
 		sudo grub-reboot "Windows Boot Manager (on /dev/nvme1n1p1)"
 		reboot
 		;;
