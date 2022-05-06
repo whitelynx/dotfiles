@@ -56,6 +56,8 @@ packages
 - [`polkit-gnome`](http://www.freedesktop.org/wiki/Software/polkit)
 - [`ponymix`](http://github.com/falconindy/ponymix)
 - [`rofi`](https://github.com/DaveDavenport/rofi)
+- [`rofimoji`](https://github.com/fdw/rofimoji)
+- [`rofi-lpass`](https://github.com/whitelynx/rofi-lpass) (my fork of it includes fixes for Wayland)
 - [`srandrd`](https://bitbucket.org/portix/srandrd)
 - [`stalonetray`](http://stalonetray.sourceforge.net)
 - [`systemd`](https://www.github.com/systemd/systemd) (running in `--user` mode to manage session-level apps)

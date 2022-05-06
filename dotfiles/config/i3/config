@@ -43,6 +43,12 @@ bindsym $mod+Ctrl+c exec --no-startup-id xkill
 bindsym $mod+p exec --no-startup-id "rofi -sidebar-mode -modi drun#ssh#window -show drun"
 bindsym $mod+Shift+P exec --no-startup-id "rofi -modi run -show run"
 
+# Show password manager
+bindsym $mod+Ctrl+p exec --no-startup-id "rofi -modi lpass:rofi-lpass -show lpass"
+
+# Show emoji chooser
+bindsym $mod+e exec --no-startup-id "rofimoji --skin-tone neutral"
+
 # Screenshots
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print exec --no-startup-id i3-scrot -w
