@@ -57,7 +57,7 @@ packages
 - [`ponymix`](http://github.com/falconindy/ponymix)
 - [`rofi`](https://github.com/DaveDavenport/rofi)
 - [`rofimoji`](https://github.com/fdw/rofimoji)
-- [`rofi-lpass`](https://github.com/whitelynx/rofi-lpass) (my fork of it includes fixes for Wayland)
+- [`rofi-lpass`](https://github.com/whitelynx/rofi-lpass) (my fork of it includes fixes for Wayland, and support for typing directly into the current app)
 - [`srandrd`](https://bitbucket.org/portix/srandrd)
 - [`stalonetray`](http://stalonetray.sourceforge.net)
 - [`systemd`](https://www.github.com/systemd/systemd) (running in `--user` mode to manage session-level apps)
@@ -68,6 +68,7 @@ packages
 - [`xorg-xset`](https://xorg.freedesktop.org)
 - [`xclip`](https://github.com/astrand/xclip)
 - [`xsel`](http://www.vergenet.net/~conrad/software/xsel)
+- [`xvkbd`](http://t-sato.in.coocan.jp/xvkbd/) (or [`xdotool`](https://www.semicomplete.com/projects/xdotool/), but that doesn't work correctly with alternate keymaps)
 
 #### Tray applications:
 
