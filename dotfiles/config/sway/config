@@ -108,9 +108,13 @@ input "1:1:AT_Translated_Set_2_keyboard" {
 
     # start your launcher
     bindsym $mod+p exec $menu
+    bindsym $mod+Shift+P exec rofi -modi run -show run
 
     # password manager
-    bindsym $mod+Shift+P exec $pwman
+    bindsym $mod+Ctrl+P exec $pwman
+
+    # emoji chooser
+    bindsym $mod+Ctrl+P exec rofimoji --skin-tone neutral
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
