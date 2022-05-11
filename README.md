@@ -55,6 +55,7 @@ packages
 - [`nitrogen`](https://github.com/l3ib/nitrogen)
 - [`polkit-gnome`](http://www.freedesktop.org/wiki/Software/polkit)
 - [`ponymix`](http://github.com/falconindy/ponymix)
+- [`posy-cursors`](https://github.com/Icelk/posy-cursors)
 - [`rofi`](https://github.com/DaveDavenport/rofi)
 - [`rofimoji`](https://github.com/fdw/rofimoji)
 - [`rofi-lpass`](https://github.com/whitelynx/rofi-lpass) (my fork of it includes fixes for Wayland, and support for typing directly into the current app)

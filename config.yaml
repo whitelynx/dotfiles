@@ -239,6 +239,15 @@ dotfiles:
     src: bin/fixterm
     dst: ~/bin/fixterm
     chmod: '755'
+  f_index.theme:
+    src: icons/default/index.theme
+    dst: ~/.icons/default/index.theme
+  f_settings.ini:
+    src: config/gtk-3.0/settings.ini
+    dst: ~/.config/gtk-3.0/settings.ini
+  f_gtk-4.0_settings.ini:
+    src: config/gtk-4.0/settings.ini
+    dst: ~/.config/gtk-4.0/settings.ini
 profiles:
   Davids-MacBook-Pro-2.local:
     dotfiles:
@@ -549,6 +558,9 @@ profiles:
     - f_psqlrc
     - f_barrier.conf
     - f_fixterm
+    - f_index.theme
+    - f_settings.ini
+    - f_gtk-4.0_settings.ini
   blackbeast:
     dotfiles:
     - f_vimrc
@@ -618,6 +630,11 @@ profiles:
     - f_i3blocks_config
     - f_01-native-wayland.conf
     - f_psqlrc
+    - f_barrier.conf
+    - f_fixterm
+    - f_index.theme
+    - f_settings.ini
+    - f_gtk-4.0_settings.ini
   indigo-manjaro-virtualbox:
     dotfiles:
     - f_vimrc
@@ -687,6 +704,11 @@ profiles:
     - f_i3blocks_config
     - f_01-native-wayland.conf
     - f_psqlrc
+    - f_barrier.conf
+    - f_fixterm
+    - f_index.theme
+    - f_settings.ini
+    - f_gtk-4.0_settings.ini
   manjaro-hyper-v:
     dotfiles:
     - f_vimrc
@@ -756,6 +778,11 @@ profiles:
     - f_i3blocks_config
     - f_01-native-wayland.conf
     - f_psqlrc
+    - f_barrier.conf
+    - f_fixterm
+    - f_index.theme
+    - f_settings.ini
+    - f_gtk-4.0_settings.ini
   manjaro-vmware:
     dotfiles:
     - f_vimrc
@@ -825,6 +852,11 @@ profiles:
     - f_i3blocks_config
     - f_01-native-wayland.conf
     - f_psqlrc
+    - f_barrier.conf
+    - f_fixterm
+    - f_index.theme
+    - f_settings.ini
+    - f_gtk-4.0_settings.ini
   oktober:
     dotfiles:
     - f_vimrc
@@ -890,6 +922,11 @@ profiles:
     - f_tl.fish
     - f_gopath.fish
     - f_psqlrc
+    - f_barrier.conf
+    - f_fixterm
+    - f_index.theme
+    - f_settings.ini
+    - f_gtk-4.0_settings.ini
   prototype:
     dotfiles:
     - f_vimrc
@@ -965,6 +1002,10 @@ profiles:
     - f_extend.xprofile
     - f_psqlrc
     - f_barrier.conf
+    - f_fixterm
+    - f_index.theme
+    - f_settings.ini
+    - f_gtk-4.0_settings.ini
   raptor:
     dotfiles:
     - f_vimrc
@@ -1036,6 +1077,11 @@ profiles:
     - f_i3blocks_config
     - f_01-native-wayland.conf
     - f_psqlrc
+    - f_barrier.conf
+    - f_fixterm
+    - f_index.theme
+    - f_settings.ini
+    - f_gtk-4.0_settings.ini
   syl:
     dotfiles:
     - f_vimrc
@@ -1101,6 +1147,11 @@ profiles:
     - f_kdeconnect-indicator@.service
     - f_mako@.service
     - f_psqlrc
+    - f_barrier.conf
+    - f_fixterm
+    - f_index.theme
+    - f_settings.ini
+    - f_gtk-4.0_settings.ini
   tiny:
     dotfiles:
     - f_vimrc
@@ -1174,3 +1225,7 @@ profiles:
     - f_extend.xprofile
     - f_psqlrc
     - f_barrier.conf
+    - f_fixterm
+    - f_index.theme
+    - f_settings.ini
+    - f_gtk-4.0_settings.ini
