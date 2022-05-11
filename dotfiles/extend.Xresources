@@ -1,6 +1,5 @@
-!cursors in /usr/share/cursors/xorg-x11
-!Xcursor.theme: Vanilla-DMZ-AA
-Xcursor.theme: Breeze
+!cursors in /usr/share/icons, confusingly
+Xcursor.theme: posy-black
 Xcursor.size:  0
 
 !Xft.dpi: 75
