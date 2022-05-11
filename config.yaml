@@ -248,6 +248,10 @@ dotfiles:
   f_gtk-4.0_settings.ini:
     src: config/gtk-4.0/settings.ini
     dst: ~/.config/gtk-4.0/settings.ini
+  f_rofi-lpass-run:
+    src: bin/rofi-lpass-run
+    dst: ~/bin/rofi-lpass-run
+    chmod: '755'
 profiles:
   azrahn:
     dotfiles:
@@ -319,6 +323,7 @@ profiles:
     - f_index.theme
     - f_settings.ini
     - f_gtk-4.0_settings.ini
+    - f_rofi-lpass-run
   prototype:
     dotfiles:
     - f_vimrc
@@ -398,6 +403,7 @@ profiles:
     - f_index.theme
     - f_settings.ini
     - f_gtk-4.0_settings.ini
+    - f_rofi-lpass-run
   syl:
     dotfiles:
     - f_vimrc
@@ -468,6 +474,7 @@ profiles:
     - f_index.theme
     - f_settings.ini
     - f_gtk-4.0_settings.ini
+    - f_rofi-lpass-run
   tiny:
     dotfiles:
     - f_vimrc
@@ -545,3 +552,4 @@ profiles:
     - f_index.theme
     - f_settings.ini
     - f_gtk-4.0_settings.ini
+    - f_rofi-lpass-run
