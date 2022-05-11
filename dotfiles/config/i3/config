@@ -40,11 +40,11 @@ bindsym $mod+Shift+C kill
 bindsym $mod+Ctrl+c exec --no-startup-id xkill
 
 # Show program launcher
-bindsym $mod+p exec --no-startup-id "rofi -sidebar-mode -modi drun#ssh#window -show drun"
+bindsym $mod+p exec --no-startup-id ~/bin/rofi-run
 bindsym $mod+Shift+P exec --no-startup-id "rofi -modi run -show run"
 
 # Show password manager
-bindsym $mod+Ctrl+p exec --no-startup-id "rofi -modi lpass:rofi-lpass -show lpass"
+bindsym $mod+Ctrl+p exec --no-startup-id ~/bin/rofi-lpass-run
 
 # Show emoji chooser
 bindsym $mod+e exec --no-startup-id "rofimoji --skin-tone neutral"
