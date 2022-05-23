@@ -318,6 +318,11 @@ profiles:
     - f_blueman-applet@.service
     - f_kdeconnect-indicator@.service
     - f_mako@.service
+    - f_sway_config
+    - f_i3blocks_config
+    - f_01-native-wayland.conf
+    - f_startsway.fish
+    - f_start-sway.fish
     - f_psqlrc
     - f_barrier.conf
     - f_fixterm
@@ -470,6 +475,11 @@ profiles:
     - f_blueman-applet@.service
     - f_kdeconnect-indicator@.service
     - f_mako@.service
+    - f_sway_config
+    - f_i3blocks_config
+    - f_01-native-wayland.conf
+    - f_startsway.fish
+    - f_start-sway.fish
     - f_psqlrc
     - f_barrier.conf
     - f_fixterm
