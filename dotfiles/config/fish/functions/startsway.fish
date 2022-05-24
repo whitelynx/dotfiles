@@ -1,6 +1,6 @@
 # Defined in /tmp/fish.RG4gxf/startsway.fish @ line 2
 function startsway --description 'Start the Sway Wayland compositor'
-	set -x XCURSOR_THEME Breeze
+	set -x XCURSOR_THEME xcursor-breeze
 	set -x XCURSOR_SIZE 48
 	set -x QT_SCALE_FACTOR 1
 	set -x QT_QPA_PLATFORM wayland-egl
