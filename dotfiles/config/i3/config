@@ -250,13 +250,13 @@ mode "$mode_system" {
 #
 # Screenshots
 #
-set $mode_screenshot [screenshot] full (s)creen, current (w)indow, select (a)rea
+set $mode_screenshot <i>[screenshot]</i> full <b>(s)</b>creen, current <b>(w)</b>indow, select <b>(a)</b>rea
 bindsym Print mode "$mode_screenshot"
-mode "$mode_screenshot" {
+mode --pango_markup "$mode_screenshot" {
     # Screenshots
-    bindsym s exec --no-startup-id i3-scrot, mode "default"
-    bindsym w exec --no-startup-id i3-scrot -w, mode "default"
-    bindsym a exec --no-startup-id i3-scrot -s, mode "default"
+    bindsym --release s exec --no-startup-id i3-scrot, mode "default"
+    bindsym --release w exec --no-startup-id i3-scrot -w, mode "default"
+    bindsym --release a exec --no-startup-id i3-scrot -s, mode "default"
 
     # exit system mode: "Enter" or "Escape"
     bindsym Return mode "default"
