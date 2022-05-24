@@ -1,0 +1,25 @@
+#!/bin/bash
+
+if [ "$#" -ne 2 ]; then
+    cat - >/dev/stderr <<-EOF
+    $(basename "$0") HOST1 HOST2
+
+    Compare the dotfiles configured for two given hosts.
+EOF
+fi
+
+HOST1=$1
+HOST2=$2
+
+FIFO1=/tmp/dotfiles.$HOST1
+FIFO2=/tmp/dotfiles.$HOST2
+
+mkfifo "$FIFO1"
+mkfifo "$FIFO2"
+
+yq ".profiles.$HOST1.dotfiles" ~/dotfiles/config.yaml > "$FIFO1" &
+yq ".profiles.$HOST2.dotfiles" ~/dotfiles/config.yaml > "$FIFO2" &
+
+line-diff "$FIFO1" "$FIFO2"
+
+rm "$FIFO1" "$FIFO2"

@@ -252,6 +252,14 @@ dotfiles:
     src: bin/rofi-lpass-run
     dst: ~/bin/rofi-lpass-run
     chmod: '755'
+  f_compare-dotfiles:
+    src: bin/compare-dotfiles
+    dst: ~/bin/compare-dotfiles
+    chmod: '755'
+  f_with-us-keyboard:
+    src: bin/with-us-keyboard
+    dst: ~/bin/with-us-keyboard
+    chmod: '755'
 profiles:
   azrahn:
     dotfiles:
@@ -330,6 +338,8 @@ profiles:
     - f_settings.ini
     - f_gtk-4.0_settings.ini
     - f_rofi-lpass-run
+    - f_compare-dotfiles
+    - f_with-us-keyboard
   prototype:
     dotfiles:
     - f_vimrc
@@ -410,6 +420,8 @@ profiles:
     - f_settings.ini
     - f_gtk-4.0_settings.ini
     - f_rofi-lpass-run
+    - f_compare-dotfiles
+    - f_with-us-keyboard
   syl:
     dotfiles:
     - f_vimrc
@@ -487,6 +499,8 @@ profiles:
     - f_settings.ini
     - f_gtk-4.0_settings.ini
     - f_rofi-lpass-run
+    - f_compare-dotfiles
+    - f_with-us-keyboard
   tiny:
     dotfiles:
     - f_vimrc
@@ -565,3 +579,5 @@ profiles:
     - f_settings.ini
     - f_gtk-4.0_settings.ini
     - f_rofi-lpass-run
+    - f_compare-dotfiles
+    - f_with-us-keyboard

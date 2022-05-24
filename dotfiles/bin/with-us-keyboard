@@ -1,0 +1,11 @@
+#!/bin/bash
+
+XKBMAP_FILE=$(mktemp --tmpdir xkbmap.XXXXXXX)
+
+xkbcomp "$DISPLAY" "$XKBMAP_FILE"
+setxkbmap us -option '' -option terminate:ctrl_alt_bksp -option eurosign:5 -option compose:rctrl -option lv3:ralt_switch
+
+"$@"
+
+xkbcomp "$XKBMAP_FILE" "$DISPLAY"
+rm "$XKBMAP_FILE"
