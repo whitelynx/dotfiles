@@ -42,27 +42,15 @@ packages
 
 (ArchLinux / Manjaro packages)
 
-- [`foot`](https://codeberg.org/dnkl/foot) (primary terminal emulator for Wayland)
-- [`autorandr`](https://github.com/phillipberndt/autorandr) (or [`randrctl`](https://github.com/edio/randrctl))
-- [`compton`](https://github.com/chjj/compton)
-- [`i3-scripts`](https://github.com/oberon2007/i3-scripts)
-- [`i3-scrot`](https://aur.archlinux.org/packages/i3-scrot)
-- [`i3-wm`](https://i3wm.org) (primary window manager on Linux)
-- [`i3lock`](https://i3wm.org/i3lock)
-- [`sway`](https://swaywm.org/) (primary compositor for Wayland)
 - [`libnotify`](https://developer.gnome.org/notification-spec)
 - [`neovim-qt`](https://github.com/equalsraf/neovim-qt) (primary GUI editor on Linux)
-- [`nitrogen`](https://github.com/l3ib/nitrogen)
 - [`polkit-gnome`](http://www.freedesktop.org/wiki/Software/polkit)
 - [`ponymix`](http://github.com/falconindy/ponymix)
-- [`posy-cursors`](https://github.com/Icelk/posy-cursors)
-- [`rofi`](https://github.com/DaveDavenport/rofi)
+- [`rofi`](https://github.com/DaveDavenport/rofi) (or [`rofi-lbonn-wayland`](https://github.com/lbonn/rofi) if on Wayland)
 - [`rofimoji`](https://github.com/fdw/rofimoji)
 - [`rofi-lpass`](https://github.com/whitelynx/rofi-lpass) (my fork of it includes fixes for Wayland, and support for typing directly into the current app)
-- [`srandrd`](https://bitbucket.org/portix/srandrd)
 - [`stalonetray`](http://stalonetray.sourceforge.net)
 - [`systemd`](https://www.github.com/systemd/systemd) (running in `--user` mode to manage session-level apps)
-- [`xcffibär`](https://github.com/whitelynx/xcffibaer)
 - [`xfce4-notifyd`](http://goodies.xfce.org/projects/applications/xfce4-notifyd)
 - [`xorg-xinput`](http://xorg.freedesktop.org)
 - [`xorg-xrandr`](http://xorg.freedesktop.org)
@@ -70,6 +58,41 @@ packages
 - [`xclip`](https://github.com/astrand/xclip)
 - [`xsel`](http://www.vergenet.net/~conrad/software/xsel)
 - [`xvkbd`](http://t-sato.in.coocan.jp/xvkbd/) (or [`xdotool`](https://www.semicomplete.com/projects/xdotool/), but that doesn't work correctly with alternate keymaps)
+- [`papirus-maia-icon-theme`](https://gitlab.manjaro.org/artwork/icon-themes/papirus-maia-icon-theme)
+- [`xcursor-breeze`](https://store.kde.org/p/999927)
+- [`matcha-gtk-theme`](https://vinceliuice.github.io/theme-matcha.html)
+- [`ttf-roboto`](https://material.google.com/style/typography.html)
+
+#### For X11 only:
+- [`i3-wm`](https://i3wm.org) (primary window manager on X11)
+- [`i3-scripts`](https://github.com/oberon2007/i3-scripts)
+- [`i3-scrot`](https://aur.archlinux.org/packages/i3-scrot)
+- [`i3lock`](https://i3wm.org/i3lock)
+- [`nitrogen`](https://github.com/l3ib/nitrogen)
+- [`xcffibär`](https://github.com/whitelynx/xcffibaer) (status bar for X11)
+- [`picom`](https://github.com/yshui/picom)
+- [`autorandr`](https://github.com/phillipberndt/autorandr) (or [`randrctl`](https://github.com/edio/randrctl))
+- [`srandrd`](https://bitbucket.org/portix/srandrd)
+
+#### For Wayland only:
+- [`foot`](https://codeberg.org/dnkl/foot) (primary terminal emulator for Wayland)
+- [`sway`](https://swaywm.org/) (primary compositor for Wayland)
+- [`swaybg`](https://github.com/swaywm/swaybg)
+- [`swayidle`](https://github.com/swaywm/swayidle)
+- [`swaylock`](https://github.com/swaywm/swaylock)
+- [`i3blocks`](https://github.com/vivien/i3blocks) (old status bar for Wayland)
+- [`grim`](https://github.com/emersion/grim)
+- [`slurp`](https://github.com/emersion/slurp)
+- [`mako`](https://mako-project.org)
+- [`foot`](https://codeberg.org/dnkl/foot)
+- [`wl-clipboard`](https://github.com/bugaevc/wl-clipboard)
+- [`rofi-lbonn-wayland`](https://github.com/lbonn/rofi)
+
+##### Optional, currently unused:
+- [`waybar`](https://github.com/Alexays/Waybar/) (new status bar for Wayland)
+- [`wf-recorder`](https://github.com/ammen99/wf-recorder)
+- [`wtype`](https://github.com/atx/wtype)
+- [`kanshi`](https://wayland.emersion.fr/kanshi/)
 
 #### Tray applications:
 
@@ -78,8 +101,6 @@ packages
 - [`blueman`](https://github.com/blueman-project/blueman)
 - [`xfce4-power-manager`](http://www.xfce.org)
 - [`pamac`](https://github.com/manjaro/pamac)
-- [`clipit`](https://github.com/CristianHenzel/ClipIt)
-- [`xflux-gui-git`](https://justgetflux.com/linux.html)
 
 
 ### macOS only
