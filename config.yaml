@@ -264,6 +264,14 @@ dotfiles:
     src: bin/rofi-run
     dst: ~/bin/rofi-run
     chmod: '755'
+  f_swayexit:
+    src: bin/swayexit
+    dst: ~/bin/swayexit
+    chmod: '755'
+  f_swaygrim:
+    src: bin/swaygrim
+    dst: ~/bin/swaygrim
+    chmod: '755'
 profiles:
   azrahn:
     dotfiles:
@@ -345,6 +353,8 @@ profiles:
     - f_compare-dotfiles
     - f_with-us-keyboard
     - f_rofi-run
+    - f_swayexit
+    - f_swaygrim
   prototype:
     dotfiles:
     - f_vimrc
@@ -428,6 +438,8 @@ profiles:
     - f_compare-dotfiles
     - f_with-us-keyboard
     - f_rofi-run
+    - f_swayexit
+    - f_swaygrim
   syl:
     dotfiles:
     - f_vimrc
@@ -508,6 +520,8 @@ profiles:
     - f_compare-dotfiles
     - f_with-us-keyboard
     - f_rofi-run
+    - f_swayexit
+    - f_swaygrim
   tiny:
     dotfiles:
     - f_vimrc
@@ -589,3 +603,5 @@ profiles:
     - f_compare-dotfiles
     - f_with-us-keyboard
     - f_rofi-run
+    - f_swayexit
+    - f_swaygrim

@@ -1,0 +1,53 @@
+#!/bin/sh
+
+lock() {
+	swaylock --color '#333333' --image ~/Pictures/Wallpaper/WallpapersCraft/forest_fog_trees_126479_3840x2400.jpg --scaling fill &
+}
+
+case "$1" in
+	lock)
+		lock
+		;;
+	logout)
+		swaymsg exit
+		;;
+	switch_user)
+		dm-tool switch-to-greeter
+		;;
+	suspend)
+		lock && sleep 0.1
+		if [ "$(cat /proc/1/comm)" = "systemd" ]; then
+			systemctl suspend
+		else
+			dbus-send --system --dest=org.freedesktop.ConsoleKit --type=method_call --print-reply --reply-timeout=2000 /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Suspend boolean:true
+		fi
+		;;
+	hibernate)
+		lock && sleep 0.1
+		if [ "$(cat /proc/1/comm)" = "systemd" ]; then
+			systemctl hibernate
+		else
+			dbus-send --system --dest=org.freedesktop.ConsoleKit --type=method_call --print-reply --reply-timeout=2000 /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Hibernate boolean:true
+		fi
+		;;
+	reboot)
+		if [ "$(cat /proc/1/comm)" = "systemd" ]; then
+			systemctl reboot
+		else
+			dbus-send --system --print-reply --type=method_call --reply-timeout=2000 --dest=org.freedesktop.ConsoleKit /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart
+		fi
+		;;
+	shutdown)
+		if [ "$(cat /proc/1/comm)" = "systemd" ]; then
+			systemctl poweroff
+		else
+			dbus-send --system --print-reply --type=method_call --reply-timeout=2000 --dest=org.freedesktop.ConsoleKit /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Stop
+		fi
+		;;
+	*)
+		echo "== ! swayexit: missing or wrong argument ! ==
+		Try again with: lock | logout | switch_user | suspend | hibernate | reboot | shutdown"
+		exit 2
+esac
+
+exit 0
