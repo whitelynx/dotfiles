@@ -88,6 +88,7 @@ packages
 - [`wl-clipboard`](https://github.com/bugaevc/wl-clipboard)
 - [`rofi-lbonn-wayland`](https://github.com/lbonn/rofi)
 - [`i3wins`](https://github.com/ylmrx/i3wins)
+- [`sbdp`](https://github.com/boredland/sbdp)
 
 ##### Optional, currently unused:
 - [`waybar`](https://github.com/Alexays/Waybar/) (new status bar for Wayland)
