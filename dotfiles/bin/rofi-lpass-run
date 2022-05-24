@@ -1,2 +1,3 @@
 #!/bin/bash
+
 exec rofi -modi lpass:rofi-lpass -show lpass

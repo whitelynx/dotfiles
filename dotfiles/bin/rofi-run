@@ -1,3 +1,3 @@
 #!/bin/bash
 
-exec rofi -sidebar-mode -modi drun,ssh,window -show drun
+exec rofi -sidebar-mode -modi drun,ssh,window -show drun -icon-theme "Papirus-Dark-Maia" -show-icons
