@@ -260,6 +260,10 @@ dotfiles:
     src: bin/with-us-keyboard
     dst: ~/bin/with-us-keyboard
     chmod: '755'
+  f_rofi-run:
+    src: bin/rofi-run
+    dst: ~/bin/rofi-run
+    chmod: '755'
 profiles:
   azrahn:
     dotfiles:
@@ -340,6 +344,7 @@ profiles:
     - f_rofi-lpass-run
     - f_compare-dotfiles
     - f_with-us-keyboard
+    - f_rofi-run
   prototype:
     dotfiles:
     - f_vimrc
@@ -422,6 +427,7 @@ profiles:
     - f_rofi-lpass-run
     - f_compare-dotfiles
     - f_with-us-keyboard
+    - f_rofi-run
   syl:
     dotfiles:
     - f_vimrc
@@ -501,6 +507,7 @@ profiles:
     - f_rofi-lpass-run
     - f_compare-dotfiles
     - f_with-us-keyboard
+    - f_rofi-run
   tiny:
     dotfiles:
     - f_vimrc
@@ -581,3 +588,4 @@ profiles:
     - f_rofi-lpass-run
     - f_compare-dotfiles
     - f_with-us-keyboard
+    - f_rofi-run
