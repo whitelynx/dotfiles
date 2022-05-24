@@ -77,8 +77,8 @@ input "1739:30662:Synaptics_TM3066-002" {
     tap enabled
     natural_scroll enabled
     click_method clickfinger
-	scroll_method two_finger
-	events disabled_on_external_mouse
+    scroll_method two_finger
+    events disabled_on_external_mouse
 }
 
 input "1267:8687:ELAN21EF:00_04F3:21EF" {
@@ -103,8 +103,8 @@ input "1:1:AT_Translated_Set_2_keyboard" {
     # start a terminal
     bindsym $mod+Return exec $term
 
-	# Kill focused window
-	bindsym $mod+Shift+C kill
+    # Kill focused window
+    bindsym $mod+Shift+C kill
 
     # start your launcher
     bindsym $mod+p exec $menu
@@ -126,11 +126,11 @@ input "1:1:AT_Translated_Set_2_keyboard" {
     # exit sway (logs you out of your wayland session)
     bindsym $mod+Shift+e exit
 
-	# Lock the screen
-	bindsym $mod+l exec --no-startup-id ~/bin/swayexit lock
+    # Lock the screen
+    bindsym $mod+l exec --no-startup-id ~/bin/swayexit lock
 
-	# List keybindings
-	bindsym $mod+slash exec --no-startup-id ~/bin/sway-help
+    # List keybindings
+    bindsym $mod+slash exec --no-startup-id ~/bin/sway-help
 
 #
 # Miscellaneous:
@@ -145,39 +145,42 @@ input "1:1:AT_Translated_Set_2_keyboard" {
 #
 # Moving around:
 #
-	# Change focus
-	bindsym $mod+h focus parent; focus left
-	bindsym $mod+t focus parent; focus down
-	bindsym $mod+n focus parent; focus up
-	bindsym $mod+s focus parent; focus right
+    # Change focus
+    bindsym $mod+h focus parent; focus left
+    bindsym $mod+t focus parent; focus down
+    bindsym $mod+n focus parent; focus up
+    bindsym $mod+s focus parent; focus right
 
-	bindsym $mod+o focus left
-	bindsym $mod+u focus right
+    bindsym $mod+o focus left
+    bindsym $mod+u focus right
 
-	# alternatively, you can use the cursor keys:
-	bindsym $mod+Left focus left
-	bindsym $mod+Down focus down
-	bindsym $mod+Up focus up
-	bindsym $mod+Right focus right
+    # alternatively, you can use the cursor keys:
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
 
-	# Move focused window
-	bindsym $mod+Shift+H move left
-	bindsym $mod+Shift+T move down
-	bindsym $mod+Shift+N move up
-	bindsym $mod+Shift+S move right
+    # Window switcher
+    bindsym $mod+Tab exec i3wins
 
-	bindsym $mod+Shift+o move left
-	bindsym $mod+Shift+u move right
+    # Move focused window
+    bindsym $mod+Shift+H move left
+    bindsym $mod+Shift+T move down
+    bindsym $mod+Shift+N move up
+    bindsym $mod+Shift+S move right
 
-	# Move current workspace
-	bindsym $mod+Ctrl+h move workspace to output left
-	bindsym $mod+Ctrl+s move workspace to output right
+    bindsym $mod+Shift+o move left
+    bindsym $mod+Shift+u move right
 
-	# alternatively, you can use the cursor keys:
-	bindsym $mod+Shift+Left move left
-	bindsym $mod+Shift+Down move down
-	bindsym $mod+Shift+Up move up
-	bindsym $mod+Shift+Right move right
+    # Move current workspace
+    bindsym $mod+Ctrl+h move workspace to output left
+    bindsym $mod+Ctrl+s move workspace to output right
+
+    # alternatively, you can use the cursor keys:
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
 
     ## Move your focus around
     #bindsym $mod+$left focus left
@@ -424,14 +427,14 @@ mode "$mode_literal" {
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-	status_command /usr/bin/i3blocks
+    status_command /usr/bin/i3blocks
     position top
     colors {
         statusline #ffffff
         background #000000DD
-		# class            border    backgr.   text
-		focused_workspace  #808280CC #808280DD #000000
-		active_workspace   #434745CC #434745DD #000000
+        # class            border    backgr.   text
+        focused_workspace  #808280CC #808280DD #000000
+        active_workspace   #434745CC #434745DD #000000
         inactive_workspace #000000CC #000000DD #16A085
         #urgent_workspace   #434745CC #434745DD #16A085
         #binding_mode       #434745CC #434745DD #16A085
