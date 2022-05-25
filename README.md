@@ -83,6 +83,7 @@ packages
 - [`i3blocks`](https://github.com/vivien/i3blocks) (old status bar for Wayland)
 - [`grim`](https://github.com/emersion/grim)
 - [`slurp`](https://github.com/emersion/slurp)
+- [`grimshot`](https://github.com/swaywm/sway)
 - [`mako`](https://mako-project.org)
 - [`foot`](https://codeberg.org/dnkl/foot)
 - [`wl-clipboard`](https://github.com/bugaevc/wl-clipboard)
