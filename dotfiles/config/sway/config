@@ -350,7 +350,7 @@ bindsym $mod+y mode "$mode_layout"
 #
 # Shut down, restart and locking features
 #
-set $mode_system [system] (l)ock, (e)xit sway, reload sway (c)onfiguration, (r)estart sway, toggle status (b)ar, switch (Shift+U)ser, (Shift+S)uspend, (Shift+H)ibernate, (Shift+R)eboot, (Shift+P)oweroff
+set $mode_system [system] (l)ock, (e)xit sway, reload sway (c)onfiguration, (r)estart sway, toggle status (b)ar, switch (Shift+U)ser, (Shift+S)uspend, (Shift+H)ibernate, (Shift+R)eboot, reboot to (Shift+W)indows, (Shift+P)oweroff
 bindsym $mod+a mode "$mode_system"
 mode "$mode_system" {
     # lock the screen
@@ -368,6 +368,7 @@ mode "$mode_system" {
     bindsym Shift+s exec --no-startup-id ~/bin/swayexit suspend, mode "default"
     bindsym Shift+h exec --no-startup-id ~/bin/swayexit hibernate, mode "default"
     bindsym Shift+r exec --no-startup-id ~/bin/swayexit reboot, mode "default"
+    bindsym Shift+w exec --no-startup-id ~/bin/swayexit reboot-windows, mode "default"
     bindsym Shift+p exec --no-startup-id ~/bin/swayexit shutdown, mode "default"
 
     # exit system mode: "Enter" or "Escape"

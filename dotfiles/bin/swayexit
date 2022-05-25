@@ -4,6 +4,14 @@ lock() {
 	swaylock --color '#333333' --image ~/Pictures/Wallpaper/WallpapersCraft/forest_fog_trees_126479_3840x2400.jpg --scaling fill &
 }
 
+reboot() {
+	if [ "$(cat /proc/1/comm)" = "systemd" ]; then
+		systemctl reboot
+	else
+		dbus-send --system --print-reply --type=method_call --reply-timeout=2000 --dest=org.freedesktop.ConsoleKit /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart
+	fi
+}
+
 case "$1" in
 	lock)
 		lock
@@ -31,11 +39,13 @@ case "$1" in
 		fi
 		;;
 	reboot)
-		if [ "$(cat /proc/1/comm)" = "systemd" ]; then
-			systemctl reboot
-		else
-			dbus-send --system --print-reply --type=method_call --reply-timeout=2000 --dest=org.freedesktop.ConsoleKit /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart
-		fi
+		reboot
+		;;
+	reboot-windows)
+		# NOTE: You'll probably need the following in your sudoers:
+		# %wheel ALL=(ALL) NOPASSWD: /usr/bin/grub-reboot
+		sudo grub-reboot "Windows Boot Manager (on /dev/nvme1n1p1)"
+		reboot
 		;;
 	shutdown)
 		if [ "$(cat /proc/1/comm)" = "systemd" ]; then
@@ -46,7 +56,7 @@ case "$1" in
 		;;
 	*)
 		echo "== ! swayexit: missing or wrong argument ! ==
-		Try again with: lock | logout | switch_user | suspend | hibernate | reboot | shutdown"
+		Try again with: lock | logout | switch_user | suspend | hibernate | reboot | reboot-windows | shutdown"
 		exit 2
 esac
 
