@@ -76,14 +76,22 @@ interval=30
 [iface]
 color=#73FF00
 label=
+{%@@ if profile == 'azrahn' @@%}
 instance=wlp2s0
+{%@@ else @@%}
+instance=wlp1s0
+{%@@ endif @@%}
 interval=10
 separator=true
 
 [wifi]
 label=
 color=#73FF00
+{%@@ if profile == 'azrahn' @@%}
 instance=wlp2s0
+{%@@ else @@%}
+instance=wlp1s0
+{%@@ endif @@%}
 interval=10
 separator=true
 
