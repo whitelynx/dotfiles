@@ -82,6 +82,7 @@ packages
 - [`swaybg`](https://github.com/swaywm/swaybg)
 - [`swayidle`](https://github.com/swaywm/swayidle)
 - [`swaylock`](https://github.com/swaywm/swaylock)
+- [`waybar`](https://github.com/Alexays/Waybar/) (new status bar for Wayland)
 - [`i3blocks`](https://github.com/vivien/i3blocks) (old status bar for Wayland)
 - [`grim`](https://github.com/emersion/grim)
 - [`slurp`](https://github.com/emersion/slurp)
@@ -94,7 +95,6 @@ packages
 - [`sbdp`](https://github.com/boredland/sbdp)
 
 ##### Optional, currently unused:
-- [`waybar`](https://github.com/Alexays/Waybar/) (new status bar for Wayland)
 - [`wf-recorder`](https://github.com/ammen99/wf-recorder)
 - [`wtype`](https://github.com/atx/wtype)
 - [`kanshi`](https://wayland.emersion.fr/kanshi/)
