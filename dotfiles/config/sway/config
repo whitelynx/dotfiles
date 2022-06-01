@@ -457,8 +457,10 @@ client.placeholder      #000000CC #0C0C0CDD #FFFFFF #000000 #0C0C0CDD
 
 client.background       #2B2C2BAA
 
+xwayland enable
 
-exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XCURSOR_SIZE XCURSOR_THEME
+
+exec dbus-update-activation-environment --systemd PATH DISPLAY WAYLAND_DISPLAY SWAYSOCK XCURSOR_SIZE XCURSOR_THEME XDG_SESSION_TYPE
 
 exec swayidle -w \
          before-sleep 'loginctl lock-session $XDG_SESSION_ID' \
