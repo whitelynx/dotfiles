@@ -2,7 +2,7 @@ config:
   backup: true
   create: true
   dotpath: dotfiles
-  minversion: 1.8.2
+  minversion: 1.9.0
 dotfiles:
   d_alacritty:
     dst: ~/.config/alacritty
@@ -15,15 +15,15 @@ dotfiles:
     src: config/environment.d/01-native-wayland.conf
   f_aoeu:
     dst: ~/bin/aoeu
-    link: link
+    link: absolute
     src: bin/asdf
   f_ar.g:
     dst: ~/bin/ar.g
-    link: link
+    link: absolute
     src: bin/ar.g
   f_asdf:
     dst: ~/bin/asdf
-    link: link
+    link: absolute
     src: bin/asdf
   f_barrier.conf:
     dst: ~/.local/share/barrier/.barrier.conf
@@ -135,7 +135,7 @@ dotfiles:
     src: bin/launch-terminal
   f_line-diff:
     dst: ~/bin/line-diff
-    link: link
+    link: absolute
     src: bin/sabdc
   f_ll.fish:
     dst: ~/.config/fish/functions/ll.fish
@@ -175,7 +175,7 @@ dotfiles:
     src: config/rofi/config.rasi
   f_sabdc:
     dst: ~/bin/sabdc
-    link: link
+    link: absolute
     src: bin/sabdc
   f_stalonetray@.service:
     dst: ~/.config/systemd/user/stalonetray@.service
@@ -230,7 +230,7 @@ dotfiles:
     src: config/fish/conf.d/vars.fish
   f_word-diff:
     dst: ~/bin/word-diff
-    link: link
+    link: absolute
     src: bin/sabdc
   f_xcffibaer@.service:
     dst: ~/.config/systemd/user/xcffibaer@.service
