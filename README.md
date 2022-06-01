@@ -10,8 +10,8 @@ getting started
 ---------------
 
 ```
-pip3 install --user docopt jinja2 PyYAML
 cd dotfiles
+pip3 install -r dotdrop/requirements.txt --user
 ./dotdrop.sh install
 ```
 
