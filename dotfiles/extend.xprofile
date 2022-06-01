@@ -11,18 +11,11 @@ case "${DESKTOP_SESSION-}" in
 		#light-locker --no-lock-on-suspend &
 		;;
 	sway*)
-		export XCURSOR_THEME=xcursor-breeze
-		export XCURSOR_SIZE=48
-		export QT_SCALE_FACTOR=1
-		export QT_QPA_PLATFORMTHEME=qt5ct
-		export QT_QPA_PLATFORM=wayland
-		export CLUTTER_BACKEND=wayland
-		export BEMENU_BACKEND=wayland
-		export MOZ_ENABLE_WAYLAND=1
-		export SDL_VIDEODRIVER=wayland
+		set -a
+		. ~/.config/environment.d/01-native-wayland.conf
+		set +a
+
 		export XDG_SESSION_TYPE=wayland
-		export XDG_CURRENT_DESKTOP=KDE
-		export XIVIEWER=imv
 		;;
 	*)
 		;;
