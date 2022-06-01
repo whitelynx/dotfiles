@@ -1283,7 +1283,7 @@ syntax on
 " I suggest using one of the above commands.
 " If you're not an advanced Vim user using a Dvorak layout, you probably want
 " to use the "Neutral" configuration.
-if $USER ==? 'whitelynx' || $USER ==? 'dbronke' || $USER ==? 'davidbronke' || $USER ==? 'CORP\dbronke'
+if $USER ==? 'whitelynx' || $USER ==? 'dbronke' || $USER ==? 'davidb' || $USER ==? 'davidbronke' || $USER ==? 'CORP\dbronke'
 	WhiteLynx
 else
 	Neutral
