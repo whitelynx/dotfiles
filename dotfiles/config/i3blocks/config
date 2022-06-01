@@ -29,6 +29,10 @@ command=/usr/lib/i3blocks/$BLOCK_NAME/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
+[sway-focusedwindow]
+color=#888888
+interval=persist
+
 # Volume indicator
 #
 # The first parameter sets the step (and units to display)
@@ -78,19 +82,36 @@ color=#73FF00
 label=
 {%@@ if profile == 'azrahn' @@%}
 instance=wlp2s0
+{%@@ elif profile == 'nova' @@%}
+instance=wlp46s0
 {%@@ else @@%}
 instance=wlp1s0
 {%@@ endif @@%}
 interval=10
-separator=true
+separator=false
 
 [wifi]
 label=
 color=#73FF00
 {%@@ if profile == 'azrahn' @@%}
 instance=wlp2s0
+{%@@ elif profile == 'nova' @@%}
+instance=wlp46s0
 {%@@ else @@%}
 instance=wlp1s0
+{%@@ endif @@%}
+interval=10
+separator=true
+
+[iface]
+color=#73FF00
+label=
+{%@@ if profile == 'azrahn' @@%}
+instance=enp2s0
+{%@@ elif profile == 'nova' @@%}
+instance=enp45s0
+{%@@ else @@%}
+instance=enp1s0
 {%@@ endif @@%}
 interval=10
 separator=true
