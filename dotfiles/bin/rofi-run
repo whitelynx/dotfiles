@@ -1,3 +1,7 @@
 #!/bin/bash
 
-exec rofi -sidebar-mode -modi drun,ssh,window -show drun -icon-theme "Papirus-Dark-Maia" -show-icons
+if [ "$XDG_SESSION_TYPE" == "wayland" ]; then
+	exec rofi -sidebar-mode -modi drun,ssh -show drun -icon-theme "Papirus-Dark-Maia" -show-icons
+else
+	exec rofi -sidebar-mode -modi drun,ssh,window -show drun -icon-theme "Papirus-Dark-Maia" -show-icons
+fi
