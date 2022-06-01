@@ -268,10 +268,6 @@ dotfiles:
     src: bin/swayexit
     dst: ~/bin/swayexit
     chmod: '755'
-  f_swaygrim:
-    src: bin/swaygrim
-    dst: ~/bin/swaygrim
-    chmod: '755'
   f_sway-help:
     src: bin/sway-help
     dst: ~/bin/sway-help
@@ -358,7 +354,6 @@ profiles:
     - f_with-us-keyboard
     - f_rofi-run
     - f_swayexit
-    - f_swaygrim
     - f_sway-help
   prototype:
     dotfiles:
@@ -444,7 +439,6 @@ profiles:
     - f_with-us-keyboard
     - f_rofi-run
     - f_swayexit
-    - f_swaygrim
     - f_sway-help
   syl:
     dotfiles:
@@ -527,7 +521,6 @@ profiles:
     - f_with-us-keyboard
     - f_rofi-run
     - f_swayexit
-    - f_swaygrim
     - f_sway-help
   tiny:
     dotfiles:
@@ -611,5 +604,4 @@ profiles:
     - f_with-us-keyboard
     - f_rofi-run
     - f_swayexit
-    - f_swaygrim
     - f_sway-help
