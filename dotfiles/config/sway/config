@@ -473,7 +473,7 @@ exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSO
 
 exec swayidle -w \
          before-sleep 'loginctl lock-session $XDG_SESSION_ID' \
-         lock 'swaylock --image $wallpaper --scaling fill'
+         lock '{{@@ env['HOME'] @@}}/bin/swayexit lock'
 
 
 include /etc/sway/config.d/*

@@ -1,7 +1,8 @@
 #!/bin/sh
 
 lock() {
-	swaylock --color '#333333' --image ~/Pictures/Wallpaper/WallpapersCraft/forest_fog_trees_126479_3840x2400.jpg --scaling fill &
+	wallpaper=$(awk '/set \$wallpaper /{print $3}' $HOME/.config/sway/config)
+	swaylock --color '#333333' --image "$wallpaper" --scaling fill &
 }
 
 reboot() {
