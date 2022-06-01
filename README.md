@@ -36,6 +36,8 @@ packages
 - [`pyenv`](https://github.com/pyenv/pyenv) (don't use distro package; install in `$HOME`)
 - [`htop`](http://hisham.hm/htop)
 - [`pinfo`](http://pinfo.sourceforge.net)
+- [`jq`](https://stedolan.github.io/jq/)
+- [`yq`](https://github.com/kislyuk/yq)
 
 
 ### GNU/Linux only
