@@ -442,18 +442,7 @@ mode "$mode_literal" {
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    status_command /usr/bin/i3blocks
-    position top
-    colors {
-        statusline #ffffff
-        background #00000033
-        # class            border    backgr.   text
-        focused_workspace  #808280CC #808280DD #000000
-        active_workspace   #434745CC #434745DD #000000
-        inactive_workspace #000000CC #000000DD #16A085
-        #urgent_workspace   #434745CC #434745DD #16A085
-        #binding_mode       #434745CC #434745DD #16A085
-    }
+    swaybar_command waybar
 }
 
 #

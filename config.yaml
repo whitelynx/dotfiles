@@ -275,6 +275,12 @@ dotfiles:
   f_foot.ini:
     src: config/foot/foot.ini
     dst: ~/.config/foot/foot.ini
+  f_config:
+    src: config/waybar/config
+    dst: ~/.config/waybar/config
+  f_style.css:
+    src: config/waybar/style.css
+    dst: ~/.config/waybar/style.css
 profiles:
   azrahn:
     dotfiles:
@@ -359,6 +365,8 @@ profiles:
     - f_swayexit
     - f_sway-help
     - f_foot.ini
+    - f_config
+    - f_style.css
   prototype:
     dotfiles:
     - f_vimrc
@@ -445,6 +453,8 @@ profiles:
     - f_swayexit
     - f_sway-help
     - f_foot.ini
+    - f_config
+    - f_style.css
   syl:
     dotfiles:
     - f_vimrc
@@ -528,6 +538,8 @@ profiles:
     - f_swayexit
     - f_sway-help
     - f_foot.ini
+    - f_config
+    - f_style.css
   tiny:
     dotfiles:
     - f_vimrc
@@ -612,6 +624,8 @@ profiles:
     - f_swayexit
     - f_sway-help
     - f_foot.ini
+    - f_config
+    - f_style.css
   nova:
     dotfiles:
     - f_vimrc
@@ -695,3 +709,5 @@ profiles:
     - f_swayexit
     - f_sway-help
     - f_foot.ini
+    - f_config
+    - f_style.css
