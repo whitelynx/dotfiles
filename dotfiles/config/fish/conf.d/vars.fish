@@ -17,7 +17,9 @@ for dir in ~/bin $PYENV_ROOT/bin ~/.local/bin ~/.cargo/bin ~/Library/Android/sdk
 	end
 end
 
+{%@@ if 'HOMEBREW_GITHUB_API_TOKEN' in env @@%}
 set -xg HOMEBREW_GITHUB_API_TOKEN {{@@ env['HOMEBREW_GITHUB_API_TOKEN'] @@}}
+{%@@ endif @@%}
 
 set -x VIRTUAL_ENV_DISABLE_PROMPT 1
 
