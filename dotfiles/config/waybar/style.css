@@ -3,7 +3,7 @@
     /*font-family: FontAwesome, Input Sans Compressed, Roboto, Helvetica, Arial, sans-serif;*/
     /*font-family: FontAwesome, Input Sans Compressed, Roboto, Helvetica, Arial, sans-serif;*/
     font-family: FontAwesome, glisp, Armata, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 11px;
+    font-size: 12px;
 }
 
 window#waybar {
@@ -74,7 +74,7 @@ window#waybar.chromium {
     /*font-family: FontAwesome, Input Sans Condensed;*/
     /*font-family: FontAwesome, Input Sans Compressed, Roboto, Helvetica, Arial, sans-serif;*/
     font-family: FontAwesome, cure, Fira Sans Compressed, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 11px;
+    font-size: 12px;
 }
 
 #clock,
