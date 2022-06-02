@@ -372,7 +372,8 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id ~/bin/i3-randr-update -f
 
 # Daemons
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+#exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id /usr/bin/lxqt-policykit-agent
 #exec --no-startup-id systemctl --user start gloom@$DISPLAY
 exec --no-startup-id systemctl --user start urxvtd@$DISPLAY
 exec --no-startup-id systemctl --user start synergys@$DISPLAY

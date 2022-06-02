@@ -461,6 +461,7 @@ xwayland enable
 
 
 exec dbus-update-activation-environment --systemd PATH DISPLAY WAYLAND_DISPLAY SWAYSOCK XCURSOR_SIZE XCURSOR_THEME XDG_SESSION_TYPE
+exec /usr/bin/lxqt-policykit-agent
 
 exec swayidle -w \
          before-sleep 'loginctl lock-session $XDG_SESSION_ID' \

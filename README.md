@@ -46,7 +46,7 @@ packages
 
 - [`libnotify`](https://developer.gnome.org/notification-spec)
 - [`neovim-qt`](https://github.com/equalsraf/neovim-qt) (primary GUI editor on Linux)
-- [`polkit-gnome`](http://www.freedesktop.org/wiki/Software/polkit)
+- [`lxqt-policykit`](https://github.com/lxqt/lxqt-policykit)
 - [`ponymix`](http://github.com/falconindy/ponymix)
 - [`rofi`](https://github.com/DaveDavenport/rofi) (or [`rofi-lbonn-wayland`](https://github.com/lbonn/rofi) if on Wayland)
 - [`rofimoji`](https://github.com/fdw/rofimoji)
