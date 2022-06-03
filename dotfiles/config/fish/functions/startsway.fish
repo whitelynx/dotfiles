@@ -4,5 +4,9 @@ function startsway --description 'Start the Sway Wayland compositor'
 
 	set -x XDG_SESSION_TYPE wayland
 
-	exec sway
+	if grep '^DRIVER=nvidia$' /sys/class/drm/card*/device/uevent &>/dev/null
+		exec sway --unsupported-gpu
+	else
+		exec sway
+	end
 end
