@@ -24,4 +24,8 @@ function fish_user_key_bindings
 	bind \e'[2;3~' true     # Alt+Insert
 	bind \u009b'2;5~' true  # Ctrl+Insert
 	bind \e'[2;5~' true     # Ctrl+Insert
+	bind \u009b'1;5A' true  # Ctrl+Up
+	bind \e'[1;5A' true     # Ctrl+Up
+	bind \u009b'1;5B' true  # Ctrl+Down
+	bind \e'[1;5B' true     # Ctrl+Down
 end
