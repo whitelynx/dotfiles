@@ -31,7 +31,11 @@ set $wallpaper /usr/share/backgrounds/lunix_manjaro059I3.jpg
 ### Configuration
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
+{%@@ if profile == 'tiny' @@%}
 font pango:Input Sans Narrow,Icons 9
+{%@@ else @@%}
+font pango:glisp,Icons 8
+{%@@ endif @@%}
 
 # Hide vertical borders at the edge of the screen
 hide_edge_borders both
