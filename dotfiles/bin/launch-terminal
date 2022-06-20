@@ -2,6 +2,7 @@
 
 if [[ -n "$WAYLAND_DISPLAY" ]]; then
 	TERMINAL=foot
+	#TERMINAL=footclient
 	#TERMINAL=kitty
 else
 	TERMINAL=kitty
@@ -12,7 +13,11 @@ else
 fi
 
 case $TERMINAL in
-	foot)
+	footclient)
+		if [ ! -e "$XDG_RUNTIME_DIR/foot-$WAYLAND_DISPLAY.sock" ]; then
+			foot --server &
+			sleep 2
+		fi
 		exec footclient "$@"
 		;;
 
