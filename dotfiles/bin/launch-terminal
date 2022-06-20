@@ -1,12 +1,21 @@
 #!/bin/bash
 
-TERMINAL=kitty
-#TERMINAL=urxvt
-#TERMINAL=st
-#TERMINAL=tilix
-#TERMINAL=gnome-terminal
+if [[ -n "$WAYLAND_DISPLAY" ]]; then
+	TERMINAL=foot
+	#TERMINAL=kitty
+else
+	TERMINAL=kitty
+	#TERMINAL=urxvt
+	#TERMINAL=st
+	#TERMINAL=tilix
+	#TERMINAL=gnome-terminal
+fi
 
 case $TERMINAL in
+	foot)
+		exec footclient "$@"
+		;;
+
 	urxvt)
 		if [ -z "$RXVT_SOCKET" ]; then
 			RXVT_SOCKET="$HOME/.rxvt-unicode-$(hostname)$DISPLAY"
