@@ -2,21 +2,25 @@
 # Read `man 5 sway` for a complete reference.
 
 ### Variables
-#
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
+
 # Home row direction keys, like vim
 set $left h
 set $down t
 set $up n
 set $right s
+
 # Your preferred terminal emulator
-set $term foot
+set $term {{@@ env['HOME'] @@}}/bin/launch-terminal
+
 # Your preferred application launcher
 #set $menu dmenu_run
 set $menu {{@@ env['HOME'] @@}}/bin/rofi-run
+
 # Password manager
 set $pwman {{@@ env['HOME'] @@}}/bin/rofi-lpass-run
+
 # Wallpaper
 {%@@ if profile == 'tiny' @@%}
 set $wallpaper {{@@ env['HOME'] @@}}/Pictures/Wallpaper/WallpapersCraft/forest_fog_trees_126479_3840x2400.jpg
