@@ -88,7 +88,6 @@ packages
 - [`slurp`](https://github.com/emersion/slurp)
 - [`grimshot`](https://github.com/swaywm/sway)
 - [`mako`](https://mako-project.org)
-- [`foot`](https://codeberg.org/dnkl/foot)
 - [`wl-clipboard`](https://github.com/bugaevc/wl-clipboard)
 - [`rofi-lbonn-wayland`](https://github.com/lbonn/rofi)
 - [`i3wins`](https://github.com/ylmrx/i3wins)
