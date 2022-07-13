@@ -9,7 +9,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode"],
     //"modules-center": ["sway/window"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "sway/language", "battery", "clock", "tray"],
+    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "sway/language", "battery", "clock", "clock#est", "tray"],
     // Modules configuration
     "sway/workspaces": {
         "disable-scroll": true
@@ -36,7 +36,7 @@
         }
     },
     "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
+        "format": "{}"
     },
     //"mpd": {
     //    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
@@ -76,9 +76,17 @@
         "spacing": 4
     },
     "clock": {
-        // "timezone": "America/New_York",
         "tooltip-format": "<b>{:%Y %B}</b>\n<tt>{calendar}</tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "on-click": "date '+%H:%M:%S' | tr -d '\n' | wl-copy -p",
+        "on-click-right": "date --rfc-3339=seconds | tr -d '\n' | wl-copy -p"
+    },
+    "clock#est": {
+        "timezones": ["America/New_York", "America/Denver"],
+        "tooltip-format": "<b>{:%Y %B}</b>\n<tt>{calendar}</tt>",
+        "format": "{:%H:%M %Z}",
+        "format-alt": "{:%Y-%m-%d}",
+        "on-click": "date '+%Y-%m-%d' | tr -d '\n' | wl-copy -p",
+        "on-click-right": "date --rfc-3339=seconds | tr -d '\n' | wl-copy -p"
     },
     "cpu": {
         "format": "{usage}% ",

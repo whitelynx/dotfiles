@@ -137,6 +137,15 @@ window#waybar.chromium {
     border-bottom-right-radius: 0;
 }
 
+#clock.est {
+    background-color: #44525B;
+    padding: 0 10px;
+    margin: 0 0 1px 0;
+    min-width: 16px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
 #battery {
     background-color: #ffffff;
     color: #000000;
