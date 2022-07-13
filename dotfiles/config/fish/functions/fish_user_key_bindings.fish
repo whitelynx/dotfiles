@@ -24,7 +24,15 @@ function fish_user_key_bindings
 	bind_csi '2;5~' true         # Ctrl+Insert
 	bind_csi '1;5A' true         # Ctrl+Up
 	bind_csi '1;5B' true         # Ctrl+Down
+	bind_csi '1;6A' true         # Ctrl+Shift+Up
+	bind_csi '1;6B' true         # Ctrl+Shift+Down
+	bind_csi '1;6C' true         # Ctrl+Shift+Right
+	bind_csi '1;6D' true         # Ctrl+Shift+Left
 	bind_csi '27;5;65457~' true  # Ctrl+Numpad_1
 	bind_csi '27;5;65465~' true  # Ctrl+Numpad_9
 	bind_csi '27;5;65454~' true  # Ctrl+Numpad_.
+	bind_csi '27;5;13~' true     # Ctrl+Enter
+	bind_csi '27;6;13~' true     # Ctrl+Shift+Enter
+	bind_csi '27;5;9~' true      # Ctrl+Tab
+	bind_csi '27;6;9~' true      # Ctrl+Shift+Tab
 end
