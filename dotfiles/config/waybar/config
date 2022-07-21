@@ -81,7 +81,7 @@
         "on-click-right": "date --rfc-3339=seconds | tr -d '\n' | wl-copy -p"
     },
     "clock#est": {
-        "timezones": ["America/New_York", "America/Denver"],
+        "timezones": ["UTC", "America/New_York", "America/Denver"],
         "tooltip-format": "<b>{:%Y %B}</b>\n<tt>{calendar}</tt>",
         "format": "{:%H:%M %Z}",
         "format-alt": "{:%Y-%m-%d}",
