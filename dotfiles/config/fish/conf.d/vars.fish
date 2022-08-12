@@ -1,7 +1,7 @@
 #set -xg EDITOR (which gvim)
 set -xg EDITOR (which nvim)
 
-for browser in firefox brave chrome chrome-browser chromium chromium-browser
+for browser in firefox-developer-edition firefox brave chrome chrome-browser chromium chromium-browser
 	if command -s $browser >/dev/null
 		set -xg BROWSER (which $browser)
 		break
