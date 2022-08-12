@@ -281,6 +281,9 @@ dotfiles:
   f_style.css:
     src: config/waybar/style.css
     dst: ~/.config/waybar/style.css
+  f_xdg-desktop-portal-wlr_config:
+    src: config/xdg-desktop-portal-wlr/config
+    dst: ~/.config/xdg-desktop-portal-wlr/config
 profiles:
   azrahn:
     dotfiles:
@@ -367,6 +370,7 @@ profiles:
     - f_foot.ini
     - f_config
     - f_style.css
+    - f_xdg-desktop-portal-wlr_config
   prototype:
     dotfiles:
     - f_vimrc
@@ -455,6 +459,7 @@ profiles:
     - f_foot.ini
     - f_config
     - f_style.css
+    - f_xdg-desktop-portal-wlr_config
   syl:
     dotfiles:
     - f_vimrc
@@ -540,6 +545,7 @@ profiles:
     - f_foot.ini
     - f_config
     - f_style.css
+    - f_xdg-desktop-portal-wlr_config
   tiny:
     dotfiles:
     - f_vimrc
@@ -626,6 +632,7 @@ profiles:
     - f_foot.ini
     - f_config
     - f_style.css
+    - f_xdg-desktop-portal-wlr_config
   nova:
     dotfiles:
     - f_vimrc
@@ -711,3 +718,4 @@ profiles:
     - f_foot.ini
     - f_config
     - f_style.css
+    - f_xdg-desktop-portal-wlr_config
