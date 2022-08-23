@@ -284,6 +284,9 @@ dotfiles:
   f_xdg-desktop-portal-wlr_config:
     src: config/xdg-desktop-portal-wlr/config
     dst: ~/.config/xdg-desktop-portal-wlr/config
+  d_scripts:
+    src: config/waybar/scripts
+    dst: ~/.config/waybar/scripts
 profiles:
   azrahn:
     dotfiles:
@@ -719,3 +722,4 @@ profiles:
     - f_config
     - f_style.css
     - f_xdg-desktop-portal-wlr_config
+    - d_scripts

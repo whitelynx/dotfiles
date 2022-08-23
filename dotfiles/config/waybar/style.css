@@ -91,6 +91,9 @@ window#waybar.chromium {
 #idle_inhibitor,
 #language,
 #keyboard-state,
+#custom-connectivity,
+#custom-mako,
+#custom-scratchpad-indicator,
 #mpd {
     padding: 0 10px;
     margin: 0 1px 1px;
@@ -196,10 +199,25 @@ label:focus {
 
 #network {
     background-color: #2980b9;
+    padding: 0 8px 0 5px;
+    margin: 0 0 1px 5px;
+    border-bottom-right-radius: 0;
 }
-
 #network.disconnected {
     background-color: #f53c3c;
+}
+
+#custom-connectivity {
+    padding: 0 5px;
+    margin: 0 5px 1px 0;
+    min-width: 10px;
+    border-bottom-left-radius: 0;
+}
+#custom-connectivity.connected {
+    background-color: #2BA234;
+}
+#custom-connectivity.disconnected {
+    background-color: #AB3224;
 }
 
 #pulseaudio {
@@ -302,4 +320,22 @@ label:focus {
 
 #keyboard-state > label.locked {
     background: rgba(0, 0, 0, 0.2);
+}
+
+#custom-mako {
+    background-color: #7B7244;
+    padding: 0 5px;
+    margin: 0 0 1px 0;
+    min-width: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#custom-scratchpad-indicator {
+    background-color: #44525B;
+    padding: 0 5px;
+    margin: 0 0 1px 0;
+    min-width: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
