@@ -156,14 +156,15 @@
         "on-click": "pavucontrol"
     },
     "custom/connectivity": {
-        "interval": 5,
+        "exec": "~/.config/waybar/scripts/connectivity.sh",
         "return-type": "json",
-        "exec": "~/.config/waybar/scripts/connectivity.sh"
+        "interval": 5
     },
     "custom/mako": {
         "exec": "~/.config/waybar/scripts/mako.sh",
-        "on-click": "makoctl restore",
-        "restart-interval": 1
+        "return-type": "json",
+        "restart-interval": 1,
+        "on-click": "makoctl restore"
     },
     "custom/scratchpad-indicator": {
         "interval": 3,

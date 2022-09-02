@@ -323,12 +323,17 @@ label:focus {
 }
 
 #custom-mako {
-    background-color: #7B7244;
     padding: 0 5px;
     margin: 0 0 1px 0;
     min-width: 10px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+}
+#custom-mako.active {
+    background-color: #7B7244;
+}
+#custom-mako.inactive {
+    background-color: #444444;
 }
 
 #custom-scratchpad-indicator {
