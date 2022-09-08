@@ -9,7 +9,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode"],
     //"modules-center": ["sway/window"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "custom/connectivity", "cpu", "memory", "temperature", "backlight", "keyboard-state", "sway/language", "battery", "clock", "clock#est", "custom/mako", "custom/scratchpad-indicator", "tray"],
+    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "custom/connectivity", "cpu", "memory", "temperature", "backlight", "custom/random-wallpaper", "keyboard-state", "sway/language", "battery", "clock", "clock#est", "custom/mako", "custom/scratchpad-indicator", "tray"],
     // Modules configuration
     "sway/workspaces": {
         "disable-scroll": true
@@ -159,6 +159,11 @@
         "exec": "~/.config/waybar/scripts/connectivity.sh",
         "return-type": "json",
         "interval": 5
+    },
+    "custom/random-wallpaper": {
+        "exec": "echo ''",
+        "interval": 100,
+        "on-click": "exec python ~/.config/waybar/scripts/random-wallpaper.py"
     },
     "custom/mako": {
         "exec": "~/.config/waybar/scripts/mako.sh",

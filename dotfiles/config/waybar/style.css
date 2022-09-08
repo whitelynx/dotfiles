@@ -94,6 +94,7 @@ window#waybar.chromium {
 #custom-connectivity,
 #custom-mako,
 #custom-scratchpad-indicator,
+#custom-random-wallpaper,
 #mpd {
     padding: 0 10px;
     margin: 0 1px 1px;
@@ -195,6 +196,16 @@ label:focus {
 
 #backlight {
     background-color: #90b1b1;
+    padding: 0 7px 0 8px;
+    margin: 0 0 1px 5px;
+    border-bottom-right-radius: 0;
+}
+
+#custom-random-wallpaper {
+    background-color: #3c5c49;
+    padding: 0 8px 0 7px;
+    margin: 0 5px 1px 0;
+    border-bottom-left-radius: 0;
 }
 
 #network {
