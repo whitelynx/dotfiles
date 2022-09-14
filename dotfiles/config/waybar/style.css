@@ -42,6 +42,7 @@ window#waybar.chromium {
 
 #workspaces button {
     padding: 0 5px;
+    margin: 0 1px 1px 0;
     background-color: rgba(10, 10, 10, 0.5);
     color: #ffffff;
     /* Use box-shadow instead of border so the text isn't offset */
@@ -72,7 +73,7 @@ window#waybar.chromium {
     border-bottom-left-radius: 7px;
     border-bottom-right-radius: 7px;
     padding: 0 4px;
-    margin: 0 0 3px;
+    margin: 0 1px 3px;
     font-family: FontAwesome, cure, Fira Sans Compressed, Roboto, Helvetica, Arial, sans-serif;
     font-size: 12px;
 }
@@ -97,7 +98,7 @@ window#waybar.chromium {
 #custom-random-wallpaper,
 #mpd {
     padding: 0 10px;
-    margin: 0 1px 1px;
+    margin: 0 0 1px;
     color: #ffffff;
     border-bottom-left-radius: 7px;
     border-bottom-right-radius: 7px;
@@ -112,7 +113,7 @@ window#waybar.chromium {
 
 #window,
 #workspaces {
-    margin: 0 4px;
+    margin: 0 3px;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -136,7 +137,7 @@ window#waybar.chromium {
 #clock {
     background-color: #64727D;
     padding: 0 10px;
-    margin: 0 0 1px 5px;
+    margin: 0 0 1px 0;
     min-width: 16px;
     border-bottom-right-radius: 0;
 }
@@ -153,6 +154,7 @@ window#waybar.chromium {
 #battery {
     background-color: #ffffff;
     color: #000000;
+    margin: 0 4px 1px 0;
 }
 
 #battery.charging, #battery.plugged {
@@ -184,10 +186,27 @@ label:focus {
 #cpu {
     background-color: #2ecc71;
     color: #000000;
+    padding: 0 8px 0 5px;
+    margin: 0 0 1px 0;
+    border-bottom-right-radius: 0;
 }
 
 #memory {
     background-color: #9b59b6;
+    padding: 0 8px 0 5px;
+    margin: 0 0 1px 0;
+    border-radius: 0;
+}
+
+#temperature {
+    background-color: #f0932b;
+    padding: 0 8px 0 5px;
+    margin: 0 4px 1px 0;
+    border-bottom-left-radius: 0;
+}
+
+#temperature.critical {
+    background-color: #eb4d4b;
 }
 
 #disk {
@@ -197,21 +216,20 @@ label:focus {
 #backlight {
     background-color: #90b1b1;
     padding: 0 7px 0 8px;
-    margin: 0 0 1px 5px;
     border-bottom-right-radius: 0;
 }
 
 #custom-random-wallpaper {
     background-color: #3c5c49;
     padding: 0 8px 0 7px;
-    margin: 0 5px 1px 0;
+    margin: 0 4px 1px 0;
     border-bottom-left-radius: 0;
 }
 
 #network {
     background-color: #2980b9;
     padding: 0 8px 0 5px;
-    margin: 0 0 1px 5px;
+    margin: 0 0 1px 0;
     border-bottom-right-radius: 0;
 }
 #network.disconnected {
@@ -220,7 +238,7 @@ label:focus {
 
 #custom-connectivity {
     padding: 0 5px;
-    margin: 0 5px 1px 0;
+    margin: 0 4px 1px 0;
     min-width: 10px;
     border-bottom-left-radius: 0;
 }
@@ -234,6 +252,7 @@ label:focus {
 #pulseaudio {
     background-color: #f1c40f;
     color: #000000;
+    margin: 0 4px 1px 0;
 }
 
 #pulseaudio.muted {
@@ -253,14 +272,6 @@ label:focus {
 
 #custom-media.custom-vlc {
     background-color: #ffa000;
-}
-
-#temperature {
-    background-color: #f0932b;
-}
-
-#temperature.critical {
-    background-color: #eb4d4b;
 }
 
 #tray {
@@ -283,6 +294,7 @@ label:focus {
 
 #idle_inhibitor {
     background-color: #2d3436;
+    margin: 0 4px 1px 0;
 }
 
 #idle_inhibitor.activated {
@@ -311,7 +323,7 @@ label:focus {
     background: #00b093;
     color: #740864;
     padding: 0 5px;
-    margin: 0 5px 1px 0;
+    margin: 0 4px 1px 0;
     min-width: 16px;
     border-bottom-left-radius: 0;
 }
@@ -320,7 +332,7 @@ label:focus {
     background: #97e1ad;
     color: #000000;
     padding: 0 0px;
-    margin: 0 0 1px 5px;
+    margin: 0 0 1px 0;
     min-width: 16px;
     border-bottom-right-radius: 0;
 }
