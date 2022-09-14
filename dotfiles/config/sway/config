@@ -489,9 +489,18 @@ client.placeholder      #000000DD #0C0C0CCC #FFFFFF #000000 #0C0C0CBB
 
 client.background       #2B2C2BAA
 
+# Enable xwayland
 xwayland enable
 
+#
+# Window-specific settings:
+#
+for_window [title="^nmtui$"] floating enable, sticky enable
 
+
+#
+# Startup:
+#
 exec dbus-update-activation-environment --systemd PATH DISPLAY WAYLAND_DISPLAY SWAYSOCK XCURSOR_SIZE XCURSOR_THEME XDG_SESSION_TYPE
 exec /usr/bin/lxqt-policykit-agent
 
