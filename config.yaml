@@ -374,6 +374,7 @@ profiles:
     - f_config
     - f_style.css
     - f_xdg-desktop-portal-wlr_config
+    - d_scripts
   prototype:
     dotfiles:
     - f_vimrc
@@ -463,6 +464,7 @@ profiles:
     - f_config
     - f_style.css
     - f_xdg-desktop-portal-wlr_config
+    - d_scripts
   syl:
     dotfiles:
     - f_vimrc
@@ -549,6 +551,7 @@ profiles:
     - f_config
     - f_style.css
     - f_xdg-desktop-portal-wlr_config
+    - d_scripts
   tiny:
     dotfiles:
     - f_vimrc
@@ -636,6 +639,7 @@ profiles:
     - f_config
     - f_style.css
     - f_xdg-desktop-portal-wlr_config
+    - d_scripts
   nova:
     dotfiles:
     - f_vimrc
