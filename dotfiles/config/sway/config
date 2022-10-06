@@ -38,7 +38,7 @@ set $wallpaper /usr/share/backgrounds/lunix_manjaro059I3.jpg
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 {%@@ if profile == 'tiny' @@%}
-font pango:Input Sans Narrow,Icons 9
+font pango:Input Sans Narrow,Icons 7
 {%@@ else @@%}
 font pango:glisp,Icons 8
 {%@@ endif @@%}
