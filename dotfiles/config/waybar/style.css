@@ -1,7 +1,16 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
+{%@@ if profile == 'tiny' @@%}
+    font-family: FontAwesome, fkp, Armata, Roboto, Helvetica, Arial, sans-serif;
+    /*font-size: 11.2px;*/
+    font-size: 8.5pt; /* 1-to-1 pixels on 2x HiDPI */
+    /*font-size: 12px;*/
+    /*font-size: 18.5pt;*/ /* 1-to-1 pixels doubled on 2x HiDPI */
+	font-weight: normal;
+{%@@ else @@%}
     font-family: FontAwesome, glisp, Armata, Roboto, Helvetica, Arial, sans-serif;
     font-size: 12px;
+{%@@ endif @@%}
 }
 
 tt {
@@ -74,8 +83,14 @@ window#waybar.chromium {
     border-bottom-right-radius: 7px;
     padding: 0 4px;
     margin: 0 1px 3px;
+{%@@ if profile == 'tiny' @@%}
+    font-family: FontAwesome, aqui, Fira Sans Compressed, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 6.5pt;
+	font-style: normal;
+{%@@ else @@%}
     font-family: FontAwesome, cure, Fira Sans Compressed, Roboto, Helvetica, Arial, sans-serif;
     font-size: 12px;
+{%@@ endif @@%}
 }
 
 #clock,
