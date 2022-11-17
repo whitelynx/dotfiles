@@ -506,6 +506,8 @@ xwayland enable
 # Window-specific settings:
 #
 for_window [title="^nmtui$"] floating enable, sticky enable
+# Mark xwayland windows
+for_window [shell=".*"] title_format "%title :: %shell"
 
 
 #
