@@ -1,8 +1,10 @@
+---
 config:
   backup: true
   create: true
   dotpath: dotfiles
   minversion: 1.9.0
+
 dotfiles:
   d_alacritty:
     dst: ~/.config/alacritty
@@ -284,9 +286,12 @@ dotfiles:
   f_xdg-desktop-portal-wlr_config:
     src: config/xdg-desktop-portal-wlr/config
     dst: ~/.config/xdg-desktop-portal-wlr/config
-  d_scripts:
+  d_waybar_scripts:
     src: config/waybar/scripts
     dst: ~/.config/waybar/scripts
+  d_sway_scripts:
+    src: config/sway/scripts
+    dst: ~/.config/sway/scripts
 profiles:
   azrahn:
     dotfiles:
@@ -374,7 +379,8 @@ profiles:
     - f_config
     - f_style.css
     - f_xdg-desktop-portal-wlr_config
-    - d_scripts
+    - d_waybar_scripts
+    - d_sway_scripts
   prototype:
     dotfiles:
     - f_vimrc
@@ -464,7 +470,8 @@ profiles:
     - f_config
     - f_style.css
     - f_xdg-desktop-portal-wlr_config
-    - d_scripts
+    - d_waybar_scripts
+    - d_sway_scripts
   syl:
     dotfiles:
     - f_vimrc
@@ -551,7 +558,8 @@ profiles:
     - f_config
     - f_style.css
     - f_xdg-desktop-portal-wlr_config
-    - d_scripts
+    - d_waybar_scripts
+    - d_sway_scripts
   tiny:
     dotfiles:
     - f_vimrc
@@ -639,7 +647,8 @@ profiles:
     - f_config
     - f_style.css
     - f_xdg-desktop-portal-wlr_config
-    - d_scripts
+    - d_waybar_scripts
+    - d_sway_scripts
   nova:
     dotfiles:
     - f_vimrc
@@ -726,4 +735,5 @@ profiles:
     - f_config
     - f_style.css
     - f_xdg-desktop-portal-wlr_config
-    - d_scripts
+    - d_waybar_scripts
+    - d_sway_scripts
