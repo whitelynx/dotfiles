@@ -17,6 +17,12 @@ for dir in ~/bin $PYENV_ROOT/bin ~/.local/bin ~/.cargo/bin ~/Library/Android/sdk
 	end
 end
 
+for dir in /opt/android-sdk $HOME/Android/Sdk
+	if test -d $dir
+		set -xg ANDROID_HOME $dir
+	end
+end
+
 {%@@ if 'HOMEBREW_GITHUB_API_TOKEN' in env @@%}
 set -xg HOMEBREW_GITHUB_API_TOKEN {{@@ env['HOMEBREW_GITHUB_API_TOKEN'] @@}}
 {%@@ endif @@%}
