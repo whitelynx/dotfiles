@@ -1,9 +1,16 @@
 #set -xg EDITOR (which gvim)
 set -xg EDITOR (which nvim)
 
-for browser in firefox-developer-edition firefox brave chrome chrome-browser chromium chromium-browser
+for browser in firefox-developer-edition firefox brave chromium chromium-browser chrome chrome-browser
 	if command -s $browser >/dev/null
 		set -xg BROWSER (which $browser)
+		break
+	end
+end
+
+for chromebrowser in chromium chromium-browser brave chrome chrome-browser
+	if command -s $chromebrowser >/dev/null
+		set -xg CHROME_EXECUTABLE (which $chromebrowser)
 		break
 	end
 end
@@ -17,9 +24,10 @@ for dir in ~/bin $PYENV_ROOT/bin ~/.local/bin ~/.cargo/bin ~/Library/Android/sdk
 	end
 end
 
-for dir in /opt/android-sdk $HOME/Android/Sdk
+for dir in $HOME/Android/Sdk /opt/android-sdk
 	if test -d $dir
 		set -xg ANDROID_HOME $dir
+		break
 	end
 end
 
