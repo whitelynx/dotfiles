@@ -84,8 +84,8 @@
     "clock#secondary": {
         "timezones": ["UTC", "America/New_York", "America/Denver"],
         "tooltip-format": "<b>{:%Y %B}</b>\n<tt>{calendar}</tt>",
-        "format": "{:%H:%M %Z}",
-        "format-alt": "{:%Y-%m-%d}",
+        "format": "{:%a %Y-%m-%d}",
+        "format-alt": "{:%H:%M %Z}",
         "on-click": "date '+%Y-%m-%d' | tr -d '\n' | wl-copy -p",
         "on-click-right": "date --rfc-3339=seconds | tr -d '\n' | wl-copy -p"
     },
@@ -193,3 +193,4 @@
     //    // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     }
 }
+// vi: set ft=javascript:
