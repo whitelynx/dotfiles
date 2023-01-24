@@ -1,10 +1,8 @@
----
 config:
   backup: true
   create: true
   dotpath: dotfiles
   minversion: 1.9.0
-
 dotfiles:
   d_alacritty:
     dst: ~/.config/alacritty
@@ -292,6 +290,10 @@ dotfiles:
   d_sway_scripts:
     src: config/sway/scripts
     dst: ~/.config/sway/scripts
+  f_monitor-ping-drops:
+    src: bin/monitor-ping-drops
+    dst: ~/bin/monitor-ping-drops
+    chmod: '755'
 profiles:
   azrahn:
     dotfiles:
@@ -381,6 +383,7 @@ profiles:
     - f_xdg-desktop-portal-wlr_config
     - d_waybar_scripts
     - d_sway_scripts
+    - f_monitor-ping-drops
   prototype:
     dotfiles:
     - f_vimrc
