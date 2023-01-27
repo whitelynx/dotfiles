@@ -112,5 +112,5 @@ augroup filetypedetect
 	autocmd! BufNewFile,BufRead afiedt.buf setfiletype plsql
 
 	" Dockerfiles with suffixes
-	autocmd! BufNewFile,BufRead Dockerfile.*,Dockerfile-* setfiletype Dockerfile
+	autocmd! BufNewFile,BufRead Dockerfile.*,Dockerfile-* setfiletype dockerfile
 augroup END
