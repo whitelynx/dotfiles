@@ -75,6 +75,8 @@ bindsym $mod+Shift+u move right
 
 # Move current workspace
 bindsym $mod+Ctrl+h move workspace to output left
+bindsym $mod+Ctrl+t move workspace to output down
+bindsym $mod+Ctrl+n move workspace to output up
 bindsym $mod+Ctrl+s move workspace to output right
 
 # alternatively, you can use the cursor keys:
