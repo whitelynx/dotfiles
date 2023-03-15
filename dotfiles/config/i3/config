@@ -373,6 +373,9 @@ exec --no-startup-id nitrogen --restore
 # Run i3-randr-update at startup
 exec --no-startup-id ~/bin/i3-randr-update -f
 
+# Update execution environment
+exec --no-startup-id dbus-update-activation-environment --systemd PATH DISPLAY WAYLAND_DISPLAY SWAYSOCK XCURSOR_SIZE XCURSOR_THEME XDG_SESSION_TYPE I3SOCK
+
 # Daemons
 #exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id /usr/bin/lxqt-policykit-agent
