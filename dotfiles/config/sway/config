@@ -70,9 +70,9 @@ set $primary_output eDP-1
 output $primary_output pos 0 800 res 1920x1080 scale 1
 output DP-1 pos 1920 0 res 3440x1440 scale 1
 {%@@ elif profile == 'nova' @@%}
-set $primary_output "Unknown 0x0621 0x00000000"
+set $primary_output "LG Display 0x0621 Unknown"
 output $primary_output pos 380 1440 res 1920x1080 scale 1
-output "Goldstar Company Ltd LG ULTRAWIDE 0x00006BA7" pos 0 0 res 3440x1440 scale 1
+output "LG Electronics LG ULTRAWIDE 0x00006BA7" pos 0 0 res 3440x1440 scale 1
 output DP-1 pos 2300 1080 res 3440x1440 scale 1
 {%@@ endif @@%}
 
@@ -232,6 +232,8 @@ input "1:1:AT_Translated_Set_2_keyboard" {
 
     # Move current workspace
     bindsym $mod+Ctrl+h move workspace to output left
+    bindsym $mod+Ctrl+t move workspace to output down
+    bindsym $mod+Ctrl+n move workspace to output up
     bindsym $mod+Ctrl+s move workspace to output right
 
     # alternatively, you can use the cursor keys:
