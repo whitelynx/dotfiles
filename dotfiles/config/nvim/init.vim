@@ -1032,6 +1032,12 @@ let g:tlRememberPosition = 1
 " breaks the Dvorak layout.
 let g:surround_no_mappings = 1
 
+"-- Colorizer --
+" Use virtual text to render swatches at the end of lines
+if has('nvim')
+	let g:colorizer_use_virtual_text = 1
+endif
+
 
 "-- OmniCppComplete --
 " Better omnicomplete than the original
@@ -1262,6 +1268,9 @@ if has('autocmd')
 
 	" YAML files
 	autocmd FileType yaml setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab
+
+	" AWS config files (dosini filetype)
+	autocmd FileType dosini let g:colorizer_hex_pattern = ['color\s*=\s*', '\%(\x\{3}\|\x\{6}\)', '\>'] | ColorHighlight!
 
 	" Default omnicomplete function
 	if exists('+omnifunc')
