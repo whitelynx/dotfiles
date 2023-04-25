@@ -113,4 +113,7 @@ augroup filetypedetect
 
 	" Dockerfiles with suffixes
 	autocmd! BufNewFile,BufRead Dockerfile.*,Dockerfile-* setfiletype dockerfile
+
+	" AWS config files
+	autocmd! BufNewFile,BufRead */{,.}aws/{config,credentials} setfiletype dosini
 augroup END
