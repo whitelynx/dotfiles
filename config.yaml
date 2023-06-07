@@ -294,6 +294,12 @@ dotfiles:
     src: bin/monitor-ping-drops
     dst: ~/bin/monitor-ping-drops
     chmod: '755'
+  f_newbranch.fish:
+    src: config/fish/functions/newbranch.fish
+    dst: ~/.config/fish/functions/newbranch.fish
+  f_newcommit.fish:
+    src: config/fish/functions/newcommit.fish
+    dst: ~/.config/fish/functions/newcommit.fish
 profiles:
   azrahn:
     dotfiles:
@@ -740,3 +746,5 @@ profiles:
     - f_xdg-desktop-portal-wlr_config
     - d_waybar_scripts
     - d_sway_scripts
+    - f_newbranch.fish
+    - f_newcommit.fish
