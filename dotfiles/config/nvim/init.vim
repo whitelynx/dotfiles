@@ -1086,6 +1086,16 @@ command! -nargs=0 -range RevertPatchChanges <line1>,<line2>call RevertPatchChang
 
 "== Custom Functions ==
 
+function! CImplementationSkel() range
+	" Convert method definitions (as copied from a header file) to skeleton
+	" implementations.
+
+	let className = input("Class Name: ")
+	execute a:firstline . "," . a:lastline . 's/^[[:space:]]*\%(\%(virtual\|explicit\)[[:space:]]\+\)\?\%(\([^[:space:]]\+\%(<[^>]*>\)\?\)[[:space:]]\+\)\?\([~]\?[a-zA-Z0-9_]\+\)[[:space:]]*\((.*)\)\%([[:space:]]*=[[:space:]]*0\)\?;[[:space:]]*$' .
+		\ '/\1 ' . className . '::\2\3\r{\r} \/\/ end \2/'
+endfunction
+
+
 " Custom operator: join {motion} lines (like J, but accepts a {motion})
 function! JoinOperator(type, ...)
 	'[,']join
