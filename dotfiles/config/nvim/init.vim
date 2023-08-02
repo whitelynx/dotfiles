@@ -874,6 +874,11 @@ let g:ale_linters = {
 \	'python': ['flake8'],
 \	'vue': ['eslint', 'vls'],
 \}
+if exists('g:vscode')
+	let g:ale_virtualtext_cursor = 'disabled'
+else
+	let g:ale_virtualtext_cursor = 'all'
+endif
 
 autocmd SourcePre */plugin/ale.vim call s:ale_settings()
 function! s:ale_settings()
