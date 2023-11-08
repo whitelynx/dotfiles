@@ -906,21 +906,21 @@ function! s:gitgutter_settings()
 	" Ignore whitespace changes:
 	let g:gitgutter_diff_args = '-w'
 
-	nmap [h <Plug>GitGutterPrevHunk
-	nmap ]h <Plug>GitGutterNextHunk
-	nmap <Leader>gn <Plug>GitGutterNextHunk<cr>
-	nmap <Leader>gN <Plug>GitGutterPrevHunk<cr>
+	nmap [h <Plug>(GitGutterPrevHunk)
+	nmap ]h <Plug>(GitGutterNextHunk)
+	nmap <Leader>gn <Plug>(GitGutterNextHunk)<cr>
+	nmap <Leader>gN <Plug>(GitGutterPrevHunk)<cr>
 
-	nmap <Leader>gg gg<Plug>GitGutterNextHunk<cr>
-	nmap <Leader>G G<Plug>GitGutterPrevHunk<cr>
+	nmap <Leader>gg gg<Plug>(GitGutterNextHunk)<cr>
+	nmap <Leader>G G<Plug>(GitGutterPrevHunk)<cr>
 
-	nmap <Leader>ha <Plug>GitGutterStageHunk
-	nmap <Leader>hs <Plug>GitGutterStageHunk
-	nmap <Leader>hr <Plug>GitGutterRevertHunk
-	nmap <Leader>ga <Plug>GitGutterStageHunk<cr>
-	nmap <Leader>gr <Plug>GitGutterRevertHunk<cr>
+	nmap <Leader>ha <Plug>(GitGutterStageHunk)
+	nmap <Leader>hs <Plug>(GitGutterStageHunk)
+	nmap <Leader>hr <Plug>(GitGutterRevertHunk)
+	nmap <Leader>ga <Plug>(GitGutterStageHunk)<cr>
+	nmap <Leader>gr <Plug>(GitGutterRevertHunk)<cr>
 
-	nmap <Leader>gp <Plug>GitGutterPreviewHunk<cr>
+	nmap <Leader>gp <Plug>(GitGutterPreviewHunk)<cr>
 
 endfunction
 
@@ -1015,6 +1015,9 @@ function! s:fugitive_settings()
 
 	nnoremap <silent> gho :.GBrowse<CR>
 	nnoremap <silent> ghc :.GBrowse!<CR>
+
+	vnoremap <Leader>gb :<C-u>'<,'>Git blame<CR>
+	nnoremap <Leader>gb :Git blame<CR>
 
 endfunction
 
