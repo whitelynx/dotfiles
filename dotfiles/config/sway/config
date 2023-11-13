@@ -523,6 +523,8 @@ exec swayidle -w \
          before-sleep 'loginctl lock-session $XDG_SESSION_ID' \
          lock '{{@@ env['HOME'] @@}}/bin/swayexit lock'
 
+exec blueman-applet
+
 
 include /etc/sway/config.d/*
 
