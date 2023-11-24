@@ -63,8 +63,8 @@ mouse_warping none
 output * bg $wallpaper fill
 {%@@ if profile == 'tiny' @@%}
 set $primary_output eDP-1
-output $primary_output pos 0 800 res 3200x1800 scale 2
-output DP-1 pos 1600 0 res 3440x1440 scale 1
+output $primary_output pos 500 1440 res 3200x1800 scale 2
+output "LG Electronics LG ULTRAWIDE 0x00006BA7" pos 0 0 res 3440x1440 scale 1
 {%@@ elif profile == 'syl' @@%}
 set $primary_output eDP-1
 output $primary_output pos 0 800 res 1920x1080 scale 1
