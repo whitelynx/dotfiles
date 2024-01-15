@@ -200,6 +200,17 @@ input "1:1:AT_Translated_Set_2_keyboard" {
     #bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
     #bindsym --release Num_Lock exec pkill -SIGRTMIN+11 i3blocks
 
+    # Touchpad
+{%@@ if profile == 'tiny' @@%}
+    bindsym XF86TouchpadToggle input "1739:30662:Synaptics_TM3066-002" events toggle
+{%@@ elif profile == 'nova' @@%}
+    bindsym XF86TouchpadToggle input "10248:258:FTCS1000:00_2808:0102_Touchpad" events toggle
+{%@@ elif profile == 'syl' @@%}
+    bindsym XF86TouchpadToggle input "2:14:ETPS/2_Elantech_Touchpad" events toggle
+{%@@ elif profile == 'azrahn' @@%}
+    bindsym XF86TouchpadToggle input "2:7:SynPS/2_Synaptics_TouchPad" events toggle
+{%@@ endif @@%}
+
 #
 # Moving around:
 #
