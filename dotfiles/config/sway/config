@@ -150,6 +150,16 @@ input "1:1:AT_Translated_Set_2_keyboard" {
     xkb_numlock enabled
 }
 
+input "19280:61325:KP_Republic_BM60_RGB_POKER" {
+    #xkb_layout us,us,us,us
+    #xkb_variant dvorak,dvorak-intl,dvorak-alt-intl,
+    #xkb_options ctrl:nocaps,altwin:swap_lalt_lwin,lv3:ralt_switch,compose:lctrl,eurosign:5,nbsp:zwnj2nb3nnb4,terminate:ctrl_alt_bksp
+    xkb_layout us
+    xkb_variant dvorak
+    xkb_options ctrl:nocaps,altwin:swap_lalt_lwin,lv3:ralt_switch,compose:lctrl,eurosign:5
+    xkb_numlock enabled
+}
+
 ### Key bindings
 #
 # Basics:
