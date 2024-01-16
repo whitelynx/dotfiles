@@ -73,6 +73,7 @@ output DP-1 pos 1920 0 res 3440x1440 scale 1
 set $primary_output "LG Display 0x0621 Unknown"
 output $primary_output pos 380 1440 res 1920x1080 scale 1
 output "LG Electronics LG ULTRAWIDE 0x00006BA7" pos 0 0 res 3440x1440 scale 1
+output "Samsung Electric Company C49J89x HNTR100972" pos 760 360 res 3840x1080 scale 1
 output DP-1 pos 2300 1080 res 3440x1440 scale 1
 {%@@ endif @@%}
 
