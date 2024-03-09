@@ -300,6 +300,10 @@ dotfiles:
   f_newcommit.fish:
     src: config/fish/functions/newcommit.fish
     dst: ~/.config/fish/functions/newcommit.fish
+  f_startsway:
+    src: bin/startsway
+    dst: ~/bin/startsway
+    chmod: '755'
 profiles:
   azrahn:
     dotfiles:
@@ -748,3 +752,4 @@ profiles:
     - d_sway_scripts
     - f_newbranch.fish
     - f_newcommit.fish
+    - f_startsway

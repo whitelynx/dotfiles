@@ -1,0 +1,11 @@
+#!/bin/bash
+
+source ~/.config/environment.d/01-native-wayland.conf
+
+export XDG_SESSION_TYPE=wayland
+
+if grep '^DRIVER=nvidia$' /sys/class/drm/card*/device/uevent &>/dev/null; then
+	exec sway --unsupported-gpu
+else
+	exec sway
+fi
