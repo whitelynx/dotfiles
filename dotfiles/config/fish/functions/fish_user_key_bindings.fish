@@ -18,8 +18,15 @@ function fish_user_key_bindings
 	bind \ch backward-kill-word   # Ctrl+Backspace: delete 1 word to the left
 	bind_csi '3^' kill-word       # Ctrl+Delete: delete 1 word to the right
 
+{%@@ if profile == 'azrahn' @@%}
+	# For MSI GS75 Stealth keyboard: remap Insert to Home
+	bind_csi '2~' beginning-of-line  # Insert
+
+	# Keep unused keys from dropping spam characters in the command line
+{%@@ else @@%}
 	# Keep unused keys from dropping spam characters in the command line
 	bind_csi '2~' true           # Insert
+{%@@ endif @@%}
 	bind_csi '2;3~' true         # Alt+Insert
 	bind_csi '2;5~' true         # Ctrl+Insert
 	bind_csi '1;5A' true         # Ctrl+Up
