@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 tpname=$(xinput list --name-only | grep -i Touchpad --max-count=1)
 

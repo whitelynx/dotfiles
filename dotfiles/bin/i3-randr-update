@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 exec >~/.i3-randr-update.log 2>&1
 

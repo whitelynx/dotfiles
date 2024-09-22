@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # shellcheck disable=SC2046
 eval $(grep -v '^#' ~/dotfiles/.env) ~/dotfiles/dotdrop.sh "$@"

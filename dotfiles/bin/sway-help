@@ -1,3 +1,3 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 exec foot bash -c 'sbdp ~/.config/sway/config; read -N1'

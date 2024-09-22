@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Show every ping
 #ping 192.168.38.1 | awk 'BEGIN{last_seq = 0}; /icmp_seq=/ { new_seq = gensub(/.* icmp_seq=([0-9]+) .*/, "\\1", 1); dropped_pkts = new_seq - last_seq - 1; if(dropped_pkts > 0) { print strftime() "  \x1b[1;31m" $0 "\x1b[0m - " dropped_pkts " dropped packet" (dropped_pkts > 1 ? "s" : "") } else { print strftime() "  " $0 }; last_seq = new_seq }'

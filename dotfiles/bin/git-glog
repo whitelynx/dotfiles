@@ -1,3 +1,3 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 exec git log --color=always --graph --abbrev-commit --decorate --date=short --format=tformat:'%C(bold blue)%>|(19)%h%C(reset)%C(bold yellow)%d%C(reset) - %C(green)(%ad)%C(reset) %C(white)%s%C(reset) %C(bold black)- %an%C(reset)' --date-order "$@" | perl -pe 's/(\x1b\[[0-9;,]*m *[0-9a-f]+(?:\x1b\[[0-9;,]*m)* )\(([^)]*)\)/$1 . "(" . $2 =~ s|\bHEAD\b|\x1b[7m$&\x1b[27m|rg . ")"/e;s/\e\[1;30m/\e[1;38;5;236m/g'

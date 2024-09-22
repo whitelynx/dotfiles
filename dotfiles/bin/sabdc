@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # sabdc
 # Stupid awk-based diff colorizer
 

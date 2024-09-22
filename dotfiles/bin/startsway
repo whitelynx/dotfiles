@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 source ~/.config/environment.d/01-native-wayland.conf
 
