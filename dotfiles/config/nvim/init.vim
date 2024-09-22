@@ -112,7 +112,6 @@ Plug 'Konfekt/FastFold'
 Plug 'chrisbra/matchit'
 
 " Syntax plugins
-Plug 'yads/vim-mustache-handlebars' " Until https://github.com/mustache/vim-mustache-handlebars/pull/49 gets merged and vim-polyglot gets the update...
 Plug 'sheerun/vim-polyglot'
 Plug 'alunny/pegjs-vim'
 Plug 'artoj/qmake-syntax-vim'
@@ -1070,6 +1069,12 @@ let g:javascript_plugin_jsdoc = 1
 " Part of "vim-polyglot"
 " URL: https://github.com/plasticboy/vim-markdown
 let g:vim_markdown_fenced_languages = ['c++=cpp', 'viml=vim', 'bash=sh', 'ini=dosini', 'js=javascript', 'csharp=cs']
+
+"-- vim-svelte-plugin --
+" Part of "vim-polyglot"
+" URL: https://github.com/leafOfTree/vim-svelte-plugin
+let g:vim_svelte_plugin_use_typescript = 1
+let g:vim_svelte_plugin_use_sass = 1
 
 
 "-- csv.vim --
