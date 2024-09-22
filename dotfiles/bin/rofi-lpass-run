@@ -1,3 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-exec rofi -modi lpass:$HOME/bin/rofi-lpass -show lpass
+ROFI=rofi
+if [[ -n "$WAYLAND_DISPLAY" ]] && which wofi > /dev/null 2>&1; then
+	ROFI=wofi
+fi
+
+exec $ROFI -modi lpass:$HOME/bin/rofi-lpass -show lpass
