@@ -90,13 +90,15 @@ Plug 'ervandew/supertab'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'editorconfig/editorconfig-vim'
 if has('nvim')
-	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+	Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+	Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+	Plug 'neovim/nvim-lspconfig'
 else
 	Plug 'Shougo/deoplete.nvim'
 	Plug 'roxma/nvim-yarp'
 	Plug 'roxma/vim-hug-neovim-rpc'
+	Plug 'w0rp/ale'
 endif
-Plug 'w0rp/ale'
 "Plug 'benekastah/neomake'
 Plug 'https://gitlab.com/skewed-aspect/redux.vim.git'
 Plug 'tpope/vim-abolish'
@@ -849,6 +851,13 @@ function! s:vim_plug_buffer_settings()
 
 	nmap <buffer> <Esc> :<C-u>bd<cr>
 endfunction
+
+
+"-- coq_nvim --
+" URL: https://github.com/ms-jpq/coq_nvim
+
+" Enable coq at startup.
+let g:coq_settings = { 'auto_start': 'shut-up' }
 
 
 "-- deoplete --
