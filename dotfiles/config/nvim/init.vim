@@ -97,8 +97,8 @@ else
 	Plug 'Shougo/deoplete.nvim'
 	Plug 'roxma/nvim-yarp'
 	Plug 'roxma/vim-hug-neovim-rpc'
-	Plug 'w0rp/ale'
 endif
+Plug 'dense-analysis/ale'
 "Plug 'benekastah/neomake'
 Plug 'https://gitlab.com/skewed-aspect/redux.vim.git'
 Plug 'tpope/vim-abolish'
@@ -868,7 +868,7 @@ let g:deoplete#enable_at_startup = 1
 
 
 "-- ale --
-" URL: https://github.com/w0rp/ale
+" URL: https://github.com/dense-analysis/ale
 
 let g:ale_echo_msg_format = '[%linter%] %code: %%s'
 let g:ale_pattern_options = {
@@ -881,6 +881,27 @@ let g:ale_linter_aliases = {
 let g:ale_linters = {
 \	'python': ['flake8'],
 \	'vue': ['eslint', 'vls'],
+\}
+let g:ale_fixers = {
+\   'python': [
+\       'black',
+\   ],
+\   'javascript': [
+\       'biome',
+\       'eslint',
+\       'prettier',
+\       'trim_whitespace',
+\   ],
+\   'typescript': [
+\       'biome',
+\       'eslint',
+\       'prettier',
+\       'trim_whitespace',
+\   ],
+\   'svelte': [
+\       'prettier',
+\       'trim_whitespace',
+\   ],
 \}
 if exists('g:vscode')
 	let g:ale_virtualtext_cursor = 'disabled'
