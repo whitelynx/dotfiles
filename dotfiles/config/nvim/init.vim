@@ -187,6 +187,13 @@ set title
 set belloff=all " NO BELL >:o
 set mouse=a
 
+" Change "cw" and "cW" to include the space after the word
+if has('nvim')
+	set cpoptions-=_
+else
+	set cpoptions-=z
+endif
+
 " If `pinfo` is present, use it for the K command instead of `man`.
 if executable('pinfo')
 	set keywordprg=pinfo
@@ -359,10 +366,6 @@ set completeopt=menuone,menu,longest,preview
 
 
 "== Basic Key Bindings ==
-" Change "cw" and "cW" to include the space after the word
-nnoremap cw dwi
-nnoremap cW dWi
-
 " Run ctags to regenerate tags in the current directory
 map <C-F12> :<C-u>call RunCTags()<CR>
 " Use ",T" here because ",t" is mapped by the tasklist plugin
