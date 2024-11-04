@@ -7,8 +7,17 @@ trap revert HUP INT TERM
 
 xset +dpms dpms 600 1200 1800
 
+NITROGEN_CONFIG=$HOME/.config/nitrogen/bg-saved.cfg
+
+wallpaper=$HOME/Pictures/Wallpaper/WallpapersCraft/house_forest_solitude_122151_3840x2400.jpg
+if [ -f "$NITROGEN_CONFIG" ]; then
+	wallpaper=$(awk -F= '/^file=/{print $2; exit}' "$NITROGEN_CONFIG")
+fi
+
 #i3lock -e -n -c 000000
 # NOTE: Sadly, the following won't work if you have anything other than a PNG set as your background.
-i3lock -e -n -c 3d3d3c -i `awk -F= '/^file=/{print $2; exit}' $HOME/.config/nitrogen/bg-saved.cfg`
+#i3lock -e -n -c 3d3d3c -i "$wallpaper"
+# This handles pretty much any wallpaper format:
+magick convert "$wallpaper" RGB:- | i3lock -e -n -c 3d3d3c -F --raw "$(magick identify -format "%wx%h" "$wallpaper"):rgb" --image /dev/stdin
 
 revert
