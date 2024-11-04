@@ -303,12 +303,12 @@ if g:colors_name !=# 'redux'
 		colorscheme luciusblack
 	catch
 		" Fall back to pablo with tweaks
-        colorscheme pablo
-        highlight Visual term=reverse guibg=#444444 ctermbg=82
-        highlight Comment term=bold ctermfg=DarkGrey guifg=#aaaaaa
-        highlight Folded term=standout ctermfg=Yellow ctermbg=82 guifg=Cyan guibg=Grey20
-        highlight FoldColumn term=standout ctermfg=Yellow ctermbg=82 guifg=Cyan guibg=Grey20
-        highlight Constant term=underline ctermfg=DarkCyan
+		colorscheme pablo
+		highlight Visual term=reverse guibg=#444444 ctermbg=82
+		highlight Comment term=bold ctermfg=DarkGrey guifg=#aaaaaa
+		highlight Folded term=standout ctermfg=Yellow ctermbg=82 guifg=Cyan guibg=Grey20
+		highlight FoldColumn term=standout ctermfg=Yellow ctermbg=82 guifg=Cyan guibg=Grey20
+		highlight Constant term=underline ctermfg=DarkCyan
 	endtry
 
 	" Use the colorsupport.vim plugin (vim script 2682) for terminal color support.
@@ -857,7 +857,12 @@ endfunction
 " URL: https://github.com/ms-jpq/coq_nvim
 
 " Enable coq at startup.
-let g:coq_settings = { 'auto_start': 'shut-up' }
+let g:coq_settings = {
+\	'auto_start': 'shut-up',
+\	'keymap': {
+\		'jump_to_mark': v:null,
+\	},
+\}
 
 
 "-- deoplete --
@@ -883,25 +888,25 @@ let g:ale_linters = {
 \	'vue': ['eslint', 'vls'],
 \}
 let g:ale_fixers = {
-\   'python': [
-\       'black',
-\   ],
-\   'javascript': [
-\       'biome',
-\       'eslint',
-\       'prettier',
-\       'trim_whitespace',
-\   ],
-\   'typescript': [
-\       'biome',
-\       'eslint',
-\       'prettier',
-\       'trim_whitespace',
-\   ],
-\   'svelte': [
-\       'prettier',
-\       'trim_whitespace',
-\   ],
+\	'python': [
+\		'black',
+\	],
+\	'javascript': [
+\		'biome',
+\		'eslint',
+\		'prettier',
+\		'trim_whitespace',
+\	],
+\	'typescript': [
+\		'biome',
+\		'eslint',
+\		'prettier',
+\		'trim_whitespace',
+\	],
+\	'svelte': [
+\		'prettier',
+\		'trim_whitespace',
+\	],
 \}
 if exists('g:vscode')
 	let g:ale_virtualtext_cursor = 'disabled'
