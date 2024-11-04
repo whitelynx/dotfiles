@@ -13,18 +13,14 @@ dotfiles:
   f_01-native-wayland.conf:
     dst: ~/.config/environment.d/01-native-wayland.conf
     src: config/environment.d/01-native-wayland.conf
-  f_aoeu:
-    dst: ~/bin/aoeu
+  f_nth:
+    dst: ~/bin/nth
     link: absolute
-    src: bin/asdf
-  f_ar.g:
-    dst: ~/bin/ar.g
+    src: bin/nth
+  f_lkj:
+    dst: ~/bin/lkj
     link: absolute
-    src: bin/ar.g
-  f_asdf:
-    dst: ~/bin/asdf
-    link: absolute
-    src: bin/asdf
+    src: bin/lkj
   f_barrier.conf:
     dst: ~/.local/share/barrier/.barrier.conf
     src: local/share/barrier/.barrier.conf
@@ -333,9 +329,8 @@ profiles:
     - f_git-diffcommit
     - f_git-glog
     - f_diffconflicts
-    - f_asdf
-    - f_ar.g
-    - f_aoeu
+    - f_nth
+    - f_lkj
     - f_sabdc
     - f_word-diff
     - f_line-diff
@@ -422,9 +417,8 @@ profiles:
     - f_git-diffcommit
     - f_git-glog
     - f_diffconflicts
-    - f_asdf
-    - f_ar.g
-    - f_aoeu
+    - f_nth
+    - f_lkj
     - f_sabdc
     - f_word-diff
     - f_line-diff
@@ -513,9 +507,8 @@ profiles:
     - f_git-diffcommit
     - f_git-glog
     - f_diffconflicts
-    - f_asdf
-    - f_ar.g
-    - f_aoeu
+    - f_nth
+    - f_lkj
     - f_sabdc
     - f_word-diff
     - f_line-diff
@@ -601,9 +594,8 @@ profiles:
     - f_git-diffcommit
     - f_git-glog
     - f_diffconflicts
-    - f_asdf
-    - f_ar.g
-    - f_aoeu
+    - f_nth
+    - f_lkj
     - f_sabdc
     - f_word-diff
     - f_line-diff
@@ -690,9 +682,8 @@ profiles:
     - f_git-diffcommit
     - f_git-glog
     - f_diffconflicts
-    - f_asdf
-    - f_ar.g
-    - f_aoeu
+    - f_nth
+    - f_lkj
     - f_sabdc
     - f_word-diff
     - f_line-diff
