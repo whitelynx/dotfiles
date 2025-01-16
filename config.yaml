@@ -33,7 +33,7 @@ dotfiles:
   f_chunkwmrc:
     dst: ~/.chunkwmrc
     src: chunkwmrc
-  f_config.py:
+  f_i3pystatus_config.py:
     dst: ~/.config/i3pystatus/config.py
     src: config/i3pystatus/config.py
   f_diffconflicts:
@@ -309,7 +309,7 @@ profiles:
     - f_ginit.vim
     - f_filetype.vim
     - f_i3_config
-    - f_config.py
+    - f_i3pystatus_config.py
     - f_fish_plugins
     - f_fish_user_key_bindings.fish
     - f_vars.fish
@@ -397,7 +397,7 @@ profiles:
     - f_ginit.vim
     - f_filetype.vim
     - f_i3_config
-    - f_config.py
+    - f_i3pystatus_config.py
     - f_fish_plugins
     - f_fish_user_key_bindings.fish
     - f_vars.fish
@@ -487,7 +487,7 @@ profiles:
     - f_ginit.vim
     - f_filetype.vim
     - f_i3_config
-    - f_config.py
+    - f_i3pystatus_config.py
     - f_fish_plugins
     - f_fish_user_key_bindings.fish
     - f_vars.fish
@@ -574,7 +574,7 @@ profiles:
     - f_ginit.vim
     - f_filetype.vim
     - f_i3_config
-    - f_config.py
+    - f_i3pystatus_config.py
     - f_fish_plugins
     - f_fish_user_key_bindings.fish
     - f_vars.fish
@@ -662,7 +662,7 @@ profiles:
     - f_ginit.vim
     - f_filetype.vim
     - f_i3_config
-    - f_config.py
+    - f_i3pystatus_config.py
     - f_fish_plugins
     - f_fish_user_key_bindings.fish
     - f_vars.fish
