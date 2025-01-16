@@ -9,7 +9,20 @@ Managed using [dotdrop](https://github.com/deadc0de6/dotdrop).
 getting started
 ---------------
 
+### Using [poetry](https://python-poetry.org/):
+```bash
+cd dotfiles
+poetry install
+./dotdrop.sh install
 ```
+
+**Note:** On some systems, dotdrop may not correctly determine the virtualenv to use; in these cases, you can specify `DOTDROP_VIRTUALENV`:
+```bash
+DOTDROP_VIRTUALENV=(poetry env info -p) ./dotdrop.sh install
+```
+
+### Using another Python environment:
+```bash
 cd dotfiles
 pip3 install -r dotdrop/requirements.txt --user
 ./dotdrop.sh install

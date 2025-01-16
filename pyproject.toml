@@ -1,0 +1,27 @@
+[project]
+name = "dotfiles"
+version = "0.1.0"
+description = "whitelynx's dotfiles"
+authors = [
+    {name = "David H. Bronke",email = "whitelynx@gmail.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.6"
+
+dependencies = [
+    "jinja2",
+    "docopt",
+    "ruamel-yaml",
+    "python-magic",
+    "packaging",
+    "requests",
+    "tomli",
+    "tomli-w",
+    "distro"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
