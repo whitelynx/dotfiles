@@ -30,7 +30,7 @@ packages
 - [`barrier`](https://github.com/debauchee/barrier)
 - [`ttf-input`](http://input.fontbureau.com)
 - [`xonsh`](https://github.com/xonsh/xonsh)
-- [`exa`](https://the.exa.website)
+- [`eza`](https://eza.rocks/)
 - [`ripgrep`](https://github.com/BurntSushi/ripgrep)
 - [`nvm`](https://github.com/nvm-sh/nvm) (don't use distro package; install in `$HOME`)
 - [`pyenv`](https://github.com/pyenv/pyenv) (don't use distro package; install in `$HOME`)
