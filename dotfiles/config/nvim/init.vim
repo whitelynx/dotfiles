@@ -799,7 +799,11 @@ command! -nargs=0 ForceUseBuffers call UpdateHasTabs(0)
 " http://sourceforge.net/projects/artwiz-latin1/)
 " For Neovim-qt, see `ginit.vim`.
 if has('gui_running')
+{%@@ if profile == 'DE2MCB0003-neu' @@%}
+	set guifont=Input\ Mono\ Narrow:h11
+{%@@ else @@%}
 	set guifont=drift\ 10,ProFont\ 10,progsole\ 10,ProggyTinyTTSZ\ 16,Terminus\ 12,Lucida\ Console\ 8
+{%@@ endif @@%}
 endif
 
 
