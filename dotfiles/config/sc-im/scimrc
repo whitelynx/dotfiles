@@ -8,3 +8,11 @@ nnoremap "S" "g$"
 
 nnoremap "l" "n"
 nnoremap "L" "N"
+
+vnoremap "t" "j"
+vnoremap "n" "k"
+vnoremap "s" "l"
+vnoremap "H" "g0"
+vnoremap "T" "L"
+vnoremap "N" "H"
+vnoremap "S" "g$"
