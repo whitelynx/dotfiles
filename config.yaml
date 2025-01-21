@@ -300,6 +300,36 @@ dotfiles:
     src: bin/startsway
     dst: ~/bin/startsway
     chmod: '755'
+  f_aerospace.toml:
+    src: aerospace.toml
+    dst: ~/.aerospace.toml
+  f_scimrc:
+    src: config/sc-im/scimrc
+    dst: ~/.config/sc-im/scimrc
+  f_sketchybarrc:
+    src: config/sketchybar/sketchybarrc
+    dst: ~/.config/sketchybar/sketchybarrc
+    chmod: '755'
+  f_aerospace.sh:
+    src: config/sketchybar/plugins/aerospace.sh
+    dst: ~/.config/sketchybar/plugins/aerospace.sh
+    chmod: '755'
+  f_battery.sh:
+    src: config/sketchybar/plugins/battery.sh
+    dst: ~/.config/sketchybar/plugins/battery.sh
+    chmod: '755'
+  f_clock.sh:
+    src: config/sketchybar/plugins/clock.sh
+    dst: ~/.config/sketchybar/plugins/clock.sh
+    chmod: '755'
+  f_front_app.sh:
+    src: config/sketchybar/plugins/front_app.sh
+    dst: ~/.config/sketchybar/plugins/front_app.sh
+    chmod: '755'
+  f_volume.sh:
+    src: config/sketchybar/plugins/volume.sh
+    dst: ~/.config/sketchybar/plugins/volume.sh
+    chmod: '755'
 profiles:
   azrahn:
     dotfiles:
@@ -800,3 +830,11 @@ profiles:
     - f_style.css
     - f_newbranch.fish
     - f_newcommit.fish
+    - f_aerospace.toml
+    - f_scimrc
+    - f_sketchybarrc
+    - f_aerospace.sh
+    - f_battery.sh
+    - f_clock.sh
+    - f_front_app.sh
+    - f_volume.sh

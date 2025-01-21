@@ -1,0 +1,10 @@
+nnoremap "t" "j"
+nnoremap "n" "k"
+nnoremap "s" "l"
+nnoremap "H" "g0"
+nnoremap "T" "L"
+nnoremap "N" "H"
+nnoremap "S" "g$"
+
+nnoremap "l" "n"
+nnoremap "L" "N"
