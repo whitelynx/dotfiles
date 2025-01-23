@@ -60,10 +60,10 @@ exec-on-workspace-change = ['/bin/bash', '-c',
 	'''
 
     # i3 wraps focus by default
-    cmd-h = 'focus --boundaries-action wrap-around-the-workspace left'
-    cmd-t = 'focus --boundaries-action wrap-around-the-workspace down'
-    cmd-n = 'focus --boundaries-action wrap-around-the-workspace up'
-    cmd-s = 'focus --boundaries-action wrap-around-the-workspace right'
+    cmd-h = 'focus left'
+    cmd-t = 'focus down'
+    cmd-n = 'focus up'
+    cmd-s = 'focus right'
 
     cmd-shift-h = 'move left'
     cmd-shift-t = 'move down'
@@ -86,10 +86,6 @@ exec-on-workspace-change = ['/bin/bash', '-c',
     # Not supported, because this command is redundant in AeroSpace mental model.
     # See: https://nikitabobko.github.io/AeroSpace/guide#floating-windows
     #cmd-space = 'focus toggle_tiling_floating'
-
-    # `focus parent`/`focus child` are not yet supported, and it's not clear whether they
-    # should be supported at all https://github.com/nikitabobko/AeroSpace/issues/5
-    # cmd-a = 'focus parent'
 
     cmd-1 = 'workspace 1'
     cmd-2 = 'workspace 2'
