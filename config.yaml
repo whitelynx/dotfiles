@@ -774,7 +774,7 @@ profiles:
     - f_newbranch.fish
     - f_newcommit.fish
     - f_startsway
-  DE2MCB0003-neu:
+  DE2MCB0003:
     dotfiles:
     - f_vimrc
     - f_vim_filetype.vim
