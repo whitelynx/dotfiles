@@ -15,7 +15,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # Run Sketchybar together with AeroSpace
 # sketchbar has a built-in detection of already running process,
 # so it won't be run twice on AeroSpace restart
-after-startup-command = ['exec-and-forget sketchybar']
+after-startup-command = ['exec-and-forget sketchybar', 'layout h_accordion']
 
 # Notify Sketchybar about workspace change
 exec-on-workspace-change = ['/bin/bash', '-c',
@@ -27,17 +27,24 @@ exec-on-workspace-change = ['/bin/bash', '-c',
     2 = 1
     3 = 1
     4 = 1
-    5 = 2
+    5 = 1
     6 = 2
     7 = 2
     8 = 2
-    9 = 3
-    10 = 3
+    9 = 2
+    10 = 2
     11 = 3
     12 = 3
 
+#FIXME: This really doesn't do what I want - it fixes my bindings on the built-in
+# keyboard, but breaks them on my external keyboard.
+#[key-mapping]
+#    preset = 'dvorak'
+
 [mode.main.binding]
     # See: https://nikitabobko.github.io/AeroSpace/goodies#open-a-new-window-with-applescript
+	#FIXME: This still doesn't work as expected. I don't want it to switch to an open Ghostty
+	# window first, just open a new one on the current desktop.
     cmd-enter = '''exec-and-forget osascript -e '
 	tell application "Ghostty"
 		if it is running then
@@ -64,11 +71,23 @@ exec-on-workspace-change = ['/bin/bash', '-c',
     cmd-t = 'focus down'
     cmd-n = 'focus up'
     cmd-s = 'focus right'
+    cmd-o = 'focus left'
+    cmd-u = 'focus right'
+    cmd-left  = 'focus left'
+    cmd-down  = 'focus down'
+    cmd-up    = 'focus up'
+    cmd-right = 'focus right'
 
     cmd-shift-h = 'move left'
     cmd-shift-t = 'move down'
     cmd-shift-n = 'move up'
     cmd-shift-s = 'move right'
+    cmd-shift-o = 'move left'
+    cmd-shift-u = 'move right'
+    cmd-shift-left  = 'move left'
+    cmd-shift-down  = 'move down'
+    cmd-shift-up    = 'move up'
+    cmd-shift-right = 'move right'
 
     # Consider using 'join-with' command as a 'split' replacement if you want to enable
     # normalizations
@@ -78,7 +97,7 @@ exec-on-workspace-change = ['/bin/bash', '-c',
     cmd-f = 'fullscreen'
 
     #cmd-s = 'layout v_accordion' # 'layout stacking' in i3
-    #cmd-w = 'layout h_accordion' # 'layout tabbed' in i3
+    cmd-w = 'layout h_accordion' # 'layout tabbed' in i3
     #cmd-e = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
 
     cmd-shift-space = 'layout floating tiling' # 'floating toggle' in i3
@@ -123,7 +142,7 @@ exec-on-workspace-change = ['/bin/bash', '-c',
 
 [mode.action.binding]
 	c = 'reload-config'
-	s = 'exec-and-forget screencapture -p'
+	#s = 'exec-and-forget screencapture -p'
     enter = 'mode main'
     esc = 'mode main'
 
@@ -132,5 +151,9 @@ exec-on-workspace-change = ['/bin/bash', '-c',
     t = 'resize height +50'
     n = 'resize height -50'
     s = 'resize width +50'
+    left  = 'resize width -50'
+    down  = 'resize height +50'
+    up    = 'resize height -50'
+    right = 'resize width +50'
     enter = 'mode main'
     esc = 'mode main'
