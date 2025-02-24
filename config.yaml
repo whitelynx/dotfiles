@@ -330,6 +330,9 @@ dotfiles:
     src: config/sketchybar/plugins/volume.sh
     dst: ~/.config/sketchybar/plugins/volume.sh
     chmod: '755'
+  f_bashrc:
+    src: bashrc
+    dst: ~/.bashrc
 profiles:
   azrahn:
     dotfiles:
@@ -838,3 +841,4 @@ profiles:
     - f_clock.sh
     - f_front_app.sh
     - f_volume.sh
+    - f_bashrc
