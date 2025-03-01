@@ -4,13 +4,12 @@ if [[ -n "$WAYLAND_DISPLAY" ]] && which fuzzel > /dev/null 2>&1; then
 	exec fuzzel
 fi
 
-ROFI=rofi
-if [[ -n "$WAYLAND_DISPLAY" ]] && which wofi > /dev/null 2>&1; then
-	ROFI=wofi
-fi
-
-if [ "$XDG_SESSION_TYPE" == "wayland" ]; then
-	exec $ROFI -sidebar-mode -modi drun,ssh -show drun -icon-theme "Papirus-Dark-Maia" -show-icons
-else
-	exec $ROFI -sidebar-mode -modi drun,ssh,window -show drun -icon-theme "Papirus-Dark-Maia" -show-icons
+if which rofi > /dev/null 2>&1; then
+	if [ "$XDG_SESSION_TYPE" == "wayland" ]; then
+		exec rofi -sidebar-mode -modi drun,ssh -show drun -icon-theme "Papirus-Dark" -show-icons
+	else
+		exec rofi -sidebar-mode -modi drun,ssh,window -show drun -icon-theme "Papirus-Dark" -show-icons
+	fi
+elif [[ -n "$WAYLAND_DISPLAY" ]] && which wofi > /dev/null 2>&1; then
+	exec wofi --sidebar-mode --modi drun,ssh --show drun --icon-theme "Papirus-Dark" --show-icons
 fi
