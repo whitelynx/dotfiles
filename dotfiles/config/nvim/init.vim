@@ -98,7 +98,7 @@ else
 	Plug 'roxma/nvim-yarp'
 	Plug 'roxma/vim-hug-neovim-rpc'
 endif
-Plug 'dense-analysis/ale'
+"Plug 'dense-analysis/ale'
 "Plug 'benekastah/neomake'
 Plug 'https://gitlab.com/skewed-aspect/redux.vim.git'
 Plug 'tpope/vim-abolish'
