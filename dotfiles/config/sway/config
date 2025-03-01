@@ -29,7 +29,7 @@ set $wallpaper /usr/share/backgrounds/glowing_lake.jpg
 {%@@ elif profile == 'syl' @@%}
 set $wallpaper /usr/share/backgrounds/LogicWavelength_wood-logo.jpg
 {%@@ elif profile == 'azrahn' @@%}
-set $wallpaper {{@@ env['HOME'] @@}}/Pictures/wallpaper/nature-1613209542681-1802.jpg
+set $wallpaper {{@@ env['HOME'] @@}}/Pictures/Wallpaper/WallpapersCraft/starry_sky_trees_stars_night_118267_3840x2400.jpg
 {%@@ else @@%}
 set $wallpaper /usr/share/backgrounds/lunix_manjaro059I3.jpg
 {%@@ endif @@%}
@@ -129,7 +129,7 @@ input "2:14:ETPS/2_Elantech_Touchpad" {
     events disabled_on_external_mouse
 }
 {%@@ elif profile == 'azrahn' @@%}
-input "2:7:SynPS/2_Synaptics_TouchPad" {
+input "1739:52653:CUST0001:00_06CB:CDAD_Touchpad" {
     dwt enabled
     tap enabled
     natural_scroll enabled
@@ -157,6 +157,24 @@ input "19280:61325:KP_Republic_BM60_RGB_POKER" {
     xkb_layout us
     xkb_variant dvorak
     xkb_options ctrl:nocaps,altwin:swap_lalt_lwin,lv3:ralt_switch,compose:lctrl,eurosign:5
+    xkb_numlock enabled
+}
+
+input "65261:51921:David_H._Bronke_Dactyl_Lynx" {
+    xkb_layout us
+    xkb_options compose:menu
+    xkb_numlock enabled
+}
+
+input "12346:16452:Svalboard_lightly" {
+    xkb_layout us
+    xkb_options compose:menu
+    xkb_numlock enabled
+}
+
+input "12346:16452:Svalboard_lightly_Keyboard" {
+    xkb_layout us
+    xkb_options compose:menu
     xkb_numlock enabled
 }
 
