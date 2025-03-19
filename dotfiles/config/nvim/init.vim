@@ -90,8 +90,8 @@ Plug 'ervandew/supertab'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'editorconfig/editorconfig-vim'
 if has('nvim')
-	Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-	Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+	#Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+	#Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 	Plug 'neovim/nvim-lspconfig'
 else
 	Plug 'Shougo/deoplete.nvim'
