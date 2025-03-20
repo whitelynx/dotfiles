@@ -116,4 +116,7 @@ augroup filetypedetect
 
 	" AWS config files
 	autocmd! BufNewFile,BufRead */{,.}aws/{config,credentials} setfiletype dosini
+
+	" Salt project config files
+	autocmd! BufNewFile,BufRead *.sls setfiletype yaml
 augroup END
