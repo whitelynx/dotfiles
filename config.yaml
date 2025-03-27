@@ -333,6 +333,10 @@ dotfiles:
   f_bashrc:
     src: bashrc
     dst: ~/.bashrc
+  f_fuzzel.ini:
+    src: config/fuzzel/fuzzel.ini
+    dst: ~/.config/fuzzel/fuzzel.ini
+    chmod: '644'
 profiles:
   azrahn:
     dotfiles:
@@ -422,6 +426,7 @@ profiles:
     - d_waybar_scripts
     - d_sway_scripts
     - f_monitor-ping-drops
+    - f_fuzzel.ini
   prototype:
     dotfiles:
     - f_vimrc
@@ -512,6 +517,8 @@ profiles:
     - f_xdg-desktop-portal-wlr_config
     - d_waybar_scripts
     - d_sway_scripts
+    - f_monitor-ping-drops
+    - f_fuzzel.ini
   syl:
     dotfiles:
     - f_vimrc
@@ -599,6 +606,8 @@ profiles:
     - f_xdg-desktop-portal-wlr_config
     - d_waybar_scripts
     - d_sway_scripts
+    - f_monitor-ping-drops
+    - f_fuzzel.ini
   tiny:
     dotfiles:
     - f_vimrc
@@ -687,6 +696,8 @@ profiles:
     - f_xdg-desktop-portal-wlr_config
     - d_waybar_scripts
     - d_sway_scripts
+    - f_monitor-ping-drops
+    - f_fuzzel.ini
   nova:
     dotfiles:
     - f_vimrc
@@ -928,3 +939,4 @@ profiles:
     - d_waybar_scripts
     - d_sway_scripts
     - f_monitor-ping-drops
+    - f_fuzzel.ini
