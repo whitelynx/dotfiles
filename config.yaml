@@ -238,7 +238,7 @@ dotfiles:
   f_index.theme:
     src: icons/default/index.theme
     dst: ~/.icons/default/index.theme
-  f_settings.ini:
+  f_gtk-3.0_settings.ini:
     src: config/gtk-3.0/settings.ini
     dst: ~/.config/gtk-3.0/settings.ini
   f_gtk-4.0_settings.ini:
@@ -407,7 +407,7 @@ profiles:
     - f_barrier.conf
     - f_fixterm
     - f_index.theme
-    - f_settings.ini
+    - f_gtk-3.0_settings.ini
     - f_gtk-4.0_settings.ini
     - f_rofi-lpass-run
     - f_compare-dotfiles
@@ -498,7 +498,7 @@ profiles:
     - f_barrier.conf
     - f_fixterm
     - f_index.theme
-    - f_settings.ini
+    - f_gtk-3.0_settings.ini
     - f_gtk-4.0_settings.ini
     - f_rofi-lpass-run
     - f_compare-dotfiles
@@ -585,7 +585,7 @@ profiles:
     - f_barrier.conf
     - f_fixterm
     - f_index.theme
-    - f_settings.ini
+    - f_gtk-3.0_settings.ini
     - f_gtk-4.0_settings.ini
     - f_rofi-lpass-run
     - f_compare-dotfiles
@@ -673,7 +673,7 @@ profiles:
     - f_barrier.conf
     - f_fixterm
     - f_index.theme
-    - f_settings.ini
+    - f_gtk-3.0_settings.ini
     - f_gtk-4.0_settings.ini
     - f_rofi-lpass-run
     - f_compare-dotfiles
@@ -760,7 +760,7 @@ profiles:
     - f_barrier.conf
     - f_fixterm
     - f_index.theme
-    - f_settings.ini
+    - f_gtk-3.0_settings.ini
     - f_gtk-4.0_settings.ini
     - f_rofi-lpass-run
     - f_compare-dotfiles
@@ -825,7 +825,7 @@ profiles:
     - f_barrier.conf
     - f_fixterm
     - f_index.theme
-    - f_settings.ini
+    - f_gtk-3.0_settings.ini
     - f_gtk-4.0_settings.ini
     - f_compare-dotfiles
     - f_foot.ini
@@ -915,8 +915,6 @@ profiles:
     - f_barrier.conf
     - f_fixterm
     - f_index.theme
-    - f_settings.ini
-    - f_gtk-4.0_settings.ini
     - f_rofi-lpass-run
     - f_compare-dotfiles
     - f_with-us-keyboard
