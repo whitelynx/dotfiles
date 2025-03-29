@@ -62,7 +62,7 @@ packages
 - [`lxqt-policykit`](https://github.com/lxqt/lxqt-policykit)
 - [`ponymix`](http://github.com/falconindy/ponymix)
 - [`rofi`](https://github.com/DaveDavenport/rofi) (or [`rofi-lbonn-wayland`](https://github.com/lbonn/rofi) if on Wayland)
-- [`rofimoji`](https://github.com/fdw/rofimoji)
+- [`bemoji`](https://github.com/marty-oehme/bemoji) (previously used [`rofimoji`](https://github.com/fdw/rofimoji))
 - [`rofi-lpass`](https://github.com/whitelynx/rofi-lpass) (my fork of it includes fixes for Wayland, and support for typing directly into the current app)
 - [`stalonetray`](http://stalonetray.sourceforge.net)
 - [`systemd`](https://www.github.com/systemd/systemd) (running in `--user` mode to manage session-level apps)
@@ -102,7 +102,7 @@ packages
 - [`grimshot`](https://github.com/swaywm/sway)
 - [`mako`](https://mako-project.org)
 - [`wl-clipboard`](https://github.com/bugaevc/wl-clipboard)
-- [`rofi-lbonn-wayland`](https://github.com/lbonn/rofi)
+- [`fuzzel`](https://codeberg.org/dnkl/fuzzel) (previously used [`rofi-lbonn-wayland`](https://github.com/lbonn/rofi))
 - [`i3wins`](https://github.com/ylmrx/i3wins)
 - [`sbdp`](https://github.com/boredland/sbdp)
 
