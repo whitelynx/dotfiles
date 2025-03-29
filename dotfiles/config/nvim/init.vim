@@ -112,6 +112,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'kalekundert/vim-coiled-snake'
 Plug 'Konfekt/FastFold'
 Plug 'chrisbra/matchit'
+Plug 'vimwiki/vimwiki'
 
 " Syntax plugins
 Plug 'sheerun/vim-polyglot'
@@ -1085,6 +1086,14 @@ let g:surround_no_mappings = 1
 if has('nvim')
 	let g:colorizer_use_virtual_text = 1
 endif
+
+
+"-- VimWiki --
+let g:vimwiki_list = [{
+\	'syntax': 'markdown',
+\	'ext': 'md',
+\	'path': '~/Nextcloud/Notes/',
+\}]
 
 
 "-- OmniCppComplete --
