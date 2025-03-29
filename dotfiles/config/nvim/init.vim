@@ -235,14 +235,6 @@ else
 	endif
 endif
 
-"-- VV --
-" URL: https://github.com/vv-vim/vv
-if exists('g:vv')
-	VVset fontfamily=Input\ Mono\ Narrow
-	VVset fontsize=11
-endif
-
-
 " Hide *.pyc, *.pyo, *.~?~, and .* files in the directory browser
 let g:explHideFiles = '^\.,.*\.py[co],.*\.~[0-9]~$'
 
@@ -798,11 +790,17 @@ command! -nargs=0 ForceUseBuffers call UpdateHasTabs(0)
 " (get drift from http://artwizaleczapka.sourceforge.net/ or
 " http://sourceforge.net/projects/artwiz-latin1/)
 " For Neovim-qt, see `ginit.vim`.
-if has('gui_running')
+if exists('g:vv')
+	" URL: https://github.com/vv-vim/vv
+	VVset fontfamily=Input\ Mono\ Narrow
+	VVset fontsize=11
+elseif has('gui_running')
 {%@@ if profile == 'DE2MCB0003' @@%}
 	set guifont=Input\ Mono\ Narrow:h11
+{%@@ elif profile == 'DE2NTB0027' @@%}
+	set guifont=League\ Mono\ Narrow:h11
 {%@@ else @@%}
-	set guifont=drift\ 10,ProFont\ 10,progsole\ 10,ProggyTinyTTSZ\ 16,Terminus\ 12,Lucida\ Console\ 8
+	set guifont=drift\ 10,ProFont\ 10,progsole\ 10,ProggyTinyTTSZ\ 16,Terminus\ 12,Lucida\ Console\ 8,League\ Mono\ Narrow:h11
 {%@@ endif @@%}
 endif
 

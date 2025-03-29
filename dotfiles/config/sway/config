@@ -39,6 +39,8 @@ set $wallpaper /usr/share/backgrounds/lunix_manjaro059I3.jpg
 # is used in the bar {} block below.
 {%@@ if profile == 'tiny' @@%}
 font pango:Input Sans Narrow,Icons 7
+{%@@ elif profile == 'DE2NTB0027' @@%}
+font pango:League Mono Narrow,Icons 11
 {%@@ else @@%}
 font pango:glisp,Icons 8
 {%@@ endif @@%}
