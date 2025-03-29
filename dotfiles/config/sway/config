@@ -214,7 +214,8 @@ input "12346:16452:Svalboard_lightly_Keyboard" {
     bindsym $mod+Ctrl+P exec $pwman
 
     # emoji chooser
-    bindsym $mod+e exec rofimoji --skin-tone neutral
+    #bindsym $mod+e exec rofimoji --skin-tone neutral
+    bindsym $mod+e exec bemoji -t
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -222,9 +223,6 @@ input "12346:16452:Svalboard_lightly_Keyboard" {
     # Change normal to inverse to use left mouse button for resizing and right
     # mouse button for dragging.
     floating_modifier $mod normal
-
-    # exit sway (logs you out of your wayland session)
-    bindsym $mod+Shift+e exit
 
     # Lock the screen
     bindsym $mod+l exec --no-startup-id ~/bin/swayexit lock
@@ -490,6 +488,7 @@ mode "$mode_system" {
     bindsym l exec --no-startup-id ~/bin/swayexit lock, mode "default"
     # log out (exit sway)
     bindsym e exec --no-startup-id ~/bin/swayexit logout, mode "default"
+    #bindsym e exit
     # reload the configuration file
     bindsym c reload
     # restart sway inplace (preserves your layout/session, can be used to upgrade sway)
@@ -582,6 +581,7 @@ xwayland enable
 # Window-specific settings:
 #
 for_window [title="^nmtui$"] floating enable, sticky enable
+for_window [app_id="^nm-tray$" title="^nm-tray$"] floating enable, sticky enable, border none, move position cursor
 # Mark xwayland windows
 for_window [shell=".*"] title_format "%title :: %shell"
 
