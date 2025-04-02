@@ -1,3 +1,4 @@
+# vim: set et sw=4 ts=4 sts=4:
 # Reference: https://github.com/i3/i3/blob/next/etc/config
 
 start-at-login = true
@@ -43,28 +44,28 @@ exec-on-workspace-change = ['/bin/bash', '-c',
 
 [mode.main.binding]
     # See: https://nikitabobko.github.io/AeroSpace/goodies#open-a-new-window-with-applescript
-	#FIXME: This still doesn't work as expected. I don't want it to switch to an open Ghostty
-	# window first, just open a new one on the current desktop.
+    #FIXME: This still doesn't work as expected. I don't want it to switch to an open Ghostty
+    # window first, just open a new one on the current desktop.
     cmd-enter = '''exec-and-forget osascript -e '
-	tell application "Ghostty"
-		if it is running then
-			activate
-			tell application "System Events"
-				tell process "Ghostty"
-					tell menu bar 1
-						tell menu bar item "File"
-							tell menu "File"
-								click menu item "New Window"
-							end tell
-						end tell
-					end tell
-				end tell
-			end tell
-		else
-			activate
-		end if
-	end tell'
-	'''
+    tell application "Ghostty"
+        if it is running then
+            activate
+            tell application "System Events"
+                tell process "Ghostty"
+                    tell menu bar 1
+                        tell menu bar item "File"
+                            tell menu "File"
+                                click menu item "New Window"
+                            end tell
+                        end tell
+                    end tell
+                end tell
+            end tell
+        else
+            activate
+        end if
+    end tell'
+    '''
 
     # i3 wraps focus by default
     cmd-h = 'focus left'
@@ -135,14 +136,14 @@ exec-on-workspace-change = ['/bin/bash', '-c',
     cmd-shift-c = 'reload-config'
 
     cmd-l = '''exec-and-forget osascript -e 'open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app'
-	'''
+    '''
 
     cmd-a = 'mode action'
     cmd-r = 'mode resize'
 
 [mode.action.binding]
-	c = 'reload-config'
-	#s = 'exec-and-forget screencapture -p'
+    c = 'reload-config'
+    #s = 'exec-and-forget screencapture -p'
     enter = 'mode main'
     esc = 'mode main'
 
