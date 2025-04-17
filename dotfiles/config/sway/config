@@ -589,8 +589,10 @@ for_window [shell=".*"] title_format "%title :: %shell"
 #
 # Startup:
 #
-exec dbus-update-activation-environment --systemd PATH DISPLAY WAYLAND_DISPLAY SWAYSOCK XCURSOR_SIZE XCURSOR_THEME XDG_SESSION_TYPE
+exec dbus-update-activation-environment --systemd PATH DISPLAY WAYLAND_DISPLAY SWAYSOCK XCURSOR_SIZE XCURSOR_THEME XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE
+exec systemctl --user import-environment PATH DISPLAY WAYLAND_DISPLAY SWAYSOCK XCURSOR_SIZE XCURSOR_THEME XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE
 exec /usr/bin/lxqt-policykit-agent
+exec --no-startup-id /usr/lib/xdg-desktop-portal -r
 
 exec swayidle -w \
          before-sleep 'loginctl lock-session $XDG_SESSION_ID' \
