@@ -791,18 +791,26 @@ command! -nargs=0 ForceUseBuffers call UpdateHasTabs(0)
 " (get drift from http://artwizaleczapka.sourceforge.net/ or
 " http://sourceforge.net/projects/artwiz-latin1/)
 " For Neovim-qt, see `ginit.vim`.
-if exists('g:vv')
-	" URL: https://github.com/vv-vim/vv
-	VVset fontfamily=Input\ Mono\ Narrow
-	VVset fontsize=11
-elseif has('gui_running')
-{%@@ if profile == 'DE2MCB0003' @@%}
-	set guifont=Input\ Mono\ Narrow:h11
-{%@@ elif profile == 'DE2NTB0027' @@%}
-	set guifont=League\ Mono\ Narrow:h11
+{%@@ if profile in ['DE2MCB0003', 'DE2NTB0027'] @@%}
+let l:smallfont = 'drift:h10,Spleen\ 6x12:h9,ProFont:h10,progsole:h10,ProggyTinyTTSZ:h16,Terminus:h12,Lucida Console:h8,League Mono Narrow:h11'
+let l:mediumfont = 'Spleen\ 8x16:h12,Input\ Mono\ Narrow:h11,League\ Mono\ Narrow:h11'
+let l:largefont = 'Spleen\ 12x24:h18,Input\ Mono\ Narrow:h11,League\ Mono\ Narrow:h11'
 {%@@ else @@%}
-	set guifont=drift\ 10,ProFont\ 10,progsole\ 10,ProggyTinyTTSZ\ 16,Terminus\ 12,Lucida\ Console\ 8,League\ Mono\ Narrow:h11
+let l:smallfont = 'drift:h10,Spleen\ 6x12:h9,ProFont:h10,progsole:h10,ProggyTinyTTSZ:h16,Terminus:h12,Lucida Console:h8,League Mono Narrow:h11'
+let l:mediumfont = 'Spleen\ 8x16:h12,Input\ Mono\ Narrow:h11,League\ Mono\ Narrow:h11'
+let l:largefont = 'Spleen\ 12x24:h18,Input\ Mono\ Narrow:h14,League\ Mono\ Narrow:h14'
 {%@@ endif @@%}
+
+if has('gui_running')
+{%@@ if profile in ['DE2MCB0003', 'DE2NTB0027'] @@%}
+	exec 'set guifont=' . escape(l:mediumfont, ' \')
+{%@@ else @@%}
+	exec 'set guifont=' . escape(l:smallfont, ' \')
+{%@@ endif @@%}
+
+	exec 'nnoremap <C--> :<C-u>set guifont=' . escape(l:smallfont, ' \')<CR>
+	exec 'nnoremap <C-=> :<C-u>set guifont=' . escape(l:mediumfont, ' \')<CR>
+	exec 'nnoremap <C-S-+> :<C-u>set guifont=' . escape(l:largefont, ' \')<CR>
 endif
 
 
