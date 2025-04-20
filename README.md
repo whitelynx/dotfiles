@@ -63,7 +63,6 @@ packages
 - [`ponymix`](http://github.com/falconindy/ponymix)
 - [`rofi`](https://github.com/DaveDavenport/rofi) (or [`rofi-lbonn-wayland`](https://github.com/lbonn/rofi) if on Wayland)
 - [`bemoji`](https://github.com/marty-oehme/bemoji) (previously used [`rofimoji`](https://github.com/fdw/rofimoji))
-- [`rofi-lpass`](https://github.com/whitelynx/rofi-lpass) (my fork of it includes fixes for Wayland, and support for typing directly into the current app)
 - [`stalonetray`](http://stalonetray.sourceforge.net)
 - [`systemd`](https://www.github.com/systemd/systemd) (running in `--user` mode to manage session-level apps)
 - [`xfce4-notifyd`](http://goodies.xfce.org/projects/applications/xfce4-notifyd)
@@ -73,7 +72,6 @@ packages
 - [`xclip`](https://github.com/astrand/xclip)
 - [`xsel`](http://www.vergenet.net/~conrad/software/xsel)
 - [`xvkbd`](http://t-sato.in.coocan.jp/xvkbd/) (or [`xdotool`](https://www.semicomplete.com/projects/xdotool/), but that doesn't work correctly with alternate keymaps)
-- [`papirus-maia-icon-theme`](https://gitlab.manjaro.org/artwork/icon-themes/papirus-maia-icon-theme)
 - [`xcursor-breeze`](https://store.kde.org/p/999927)
 - [`matcha-gtk-theme`](https://vinceliuice.github.io/theme-matcha.html)
 - [`ttf-roboto`](https://material.google.com/style/typography.html)
@@ -105,6 +103,7 @@ packages
 - [`fuzzel`](https://codeberg.org/dnkl/fuzzel) (previously used [`rofi-lbonn-wayland`](https://github.com/lbonn/rofi))
 - [`i3wins`](https://github.com/ylmrx/i3wins)
 - [`sbdp`](https://github.com/boredland/sbdp)
+- [`imv`](https://sr.ht/~exec64/imv/)
 
 ##### Optional, currently unused:
 - [`wf-recorder`](https://github.com/ammen99/wf-recorder)
