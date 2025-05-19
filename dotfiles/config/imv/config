@@ -1,0 +1,3 @@
+[binds]
+yy = exec basename $imv_current_file | tr -d '\n' | wl-copy
+<Shift+Y> = exec echo -n $imv_current_file | wl-copy

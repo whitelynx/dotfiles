@@ -337,6 +337,9 @@ dotfiles:
     src: config/fuzzel/fuzzel.ini
     dst: ~/.config/fuzzel/fuzzel.ini
     chmod: '644'
+  f_imv_config:
+    src: config/imv/config
+    dst: ~/.config/imv/config
 profiles:
   azrahn:
     dotfiles:
@@ -427,6 +430,7 @@ profiles:
     - d_sway_scripts
     - f_monitor-ping-drops
     - f_fuzzel.ini
+    - f_imv_config
   prototype:
     dotfiles:
     - f_vimrc
@@ -519,6 +523,7 @@ profiles:
     - d_sway_scripts
     - f_monitor-ping-drops
     - f_fuzzel.ini
+    - f_imv_config
   syl:
     dotfiles:
     - f_vimrc
@@ -608,6 +613,7 @@ profiles:
     - d_sway_scripts
     - f_monitor-ping-drops
     - f_fuzzel.ini
+    - f_imv_config
   tiny:
     dotfiles:
     - f_vimrc
@@ -698,6 +704,7 @@ profiles:
     - d_sway_scripts
     - f_monitor-ping-drops
     - f_fuzzel.ini
+    - f_imv_config
   DE2MCB0003:
     dotfiles:
     - f_vimrc
@@ -850,3 +857,4 @@ profiles:
     - d_sway_scripts
     - f_monitor-ping-drops
     - f_fuzzel.ini
+    - f_imv_config
