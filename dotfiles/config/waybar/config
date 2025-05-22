@@ -135,7 +135,7 @@
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "on-click-right": "foot -T nmtui /bin/sh -c 'sleep 1; exec /usr/bin/nmtui'"
+        "on-click": "foot -T nmtui /bin/sh -c 'sleep 1; exec /usr/bin/nmtui'"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -154,7 +154,8 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "ponymix toggle",
+        "on-click-right": "pavucontrol"
     },
     "custom/connectivity": {
         "exec": "~/.config/waybar/scripts/connectivity.sh",
@@ -170,7 +171,8 @@
         "exec": "~/.config/waybar/scripts/mako.sh",
         "return-type": "json",
         "restart-interval": 1,
-        "on-click": "makoctl restore"
+        "on-click": "makoctl restore",
+        "on-click-right": "makoctl dismiss -a"
     },
     "custom/scratchpad-indicator": {
         "interval": 3,
