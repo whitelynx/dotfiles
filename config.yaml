@@ -102,6 +102,9 @@ dotfiles:
   f_i3exit:
     dst: ~/bin/i3exit
     src: bin/i3exit
+  f_lsps.lua:
+    dst: ~/.config/nvim/lsps.lua
+    src: config/nvim/lsps.lua
   f_init.vim:
     dst: ~/.config/nvim/init.vim
     src: config/nvim/init.vim
@@ -345,6 +348,7 @@ profiles:
     dotfiles:
     - f_vimrc
     - f_vim_filetype.vim
+    - f_lsps.lua
     - f_init.vim
     - f_ginit.vim
     - f_filetype.vim
@@ -435,6 +439,7 @@ profiles:
     dotfiles:
     - f_vimrc
     - f_vim_filetype.vim
+    - f_lsps.lua
     - f_init.vim
     - f_ginit.vim
     - f_filetype.vim
@@ -528,6 +533,7 @@ profiles:
     dotfiles:
     - f_vimrc
     - f_vim_filetype.vim
+    - f_lsps.lua
     - f_init.vim
     - f_ginit.vim
     - f_filetype.vim
@@ -618,6 +624,7 @@ profiles:
     dotfiles:
     - f_vimrc
     - f_vim_filetype.vim
+    - f_lsps.lua
     - f_init.vim
     - f_ginit.vim
     - f_filetype.vim
@@ -709,6 +716,7 @@ profiles:
     dotfiles:
     - f_vimrc
     - f_vim_filetype.vim
+    - f_lsps.lua
     - f_init.vim
     - f_ginit.vim
     - f_filetype.vim
@@ -774,6 +782,7 @@ profiles:
     dotfiles:
     - f_vimrc
     - f_vim_filetype.vim
+    - f_lsps.lua
     - f_init.vim
     - f_ginit.vim
     - f_filetype.vim
