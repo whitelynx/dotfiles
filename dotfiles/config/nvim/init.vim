@@ -1369,6 +1369,24 @@ filetype plugin indent on
 syntax on
 
 
+"== Python integration ==
+" To set this up:
+"
+"    pyenv virtualenv default neovim
+"    pyenv activate neovim
+"    pip install pynvim neovim pyflakes yapf
+"    ln -s (pyenv which pyflakes) (pyenv which yapf) ~/bin/
+
+" Set the path to the Python executable, in its virtualenv.
+let g:python3_host_prog = $HOME . '/.pyenv/versions/neovim/bin/python'
+
+
+"== Load Lua Configuration ==
+if has('nvim')
+	luafile lsps.lua
+endif
+
+
 "== Default User Configuration ==
 " I suggest using one of the above commands.
 " If you're not an advanced Vim user using a Dvorak layout, you probably want
