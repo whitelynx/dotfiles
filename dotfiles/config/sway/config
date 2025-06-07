@@ -62,6 +62,8 @@ focus_wrapping yes
 # Don't move the mouse pointer on me!
 mouse_warping none
 
+seat seat0 xcursor_theme Simp1e-Nord-Dark 24
+
 ### Output configuration
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 output * bg $wallpaper fill
