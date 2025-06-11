@@ -792,25 +792,29 @@ command! -nargs=0 ForceUseBuffers call UpdateHasTabs(0)
 " http://sourceforge.net/projects/artwiz-latin1/)
 " For Neovim-qt, see `ginit.vim`.
 {%@@ if profile in ['DE2MCB0003', 'DE2NTB0027'] @@%}
-let l:smallfont = 'drift:h10,Spleen\ 6x12:h9,ProFont:h10,progsole:h10,ProggyTinyTTSZ:h16,Terminus:h12,Lucida Console:h8,League Mono Narrow:h11'
-let l:mediumfont = 'Spleen\ 8x16:h12,Input\ Mono\ Narrow:h11,League\ Mono\ Narrow:h11'
-let l:largefont = 'Spleen\ 12x24:h18,Input\ Mono\ Narrow:h11,League\ Mono\ Narrow:h11'
+let s:smallfonts = ['drift:h10', 'Spleen\ 6x12:h9', 'ProFont:h10', 'progsole:h10', 'ProggyTinyTTSZ:h16', 'Terminus:h12', 'League\ Mono\ Narrow:h11', 'Lucida\ Console:h8']
+let s:mediumfonts = ['Spleen\ 8x16:h12', 'Input\ Mono\ Narrow:h11', 'League\ Mono\ Narrow:h11']
+let s:largefonts = ['Spleen\ 12x24:h18', 'Input\ Mono\ Narrow:h11', 'League\ Mono\ Narrow:h11']
 {%@@ else @@%}
-let l:smallfont = 'drift:h10,Spleen\ 6x12:h9,ProFont:h10,progsole:h10,ProggyTinyTTSZ:h16,Terminus:h12,Lucida Console:h8,League Mono Narrow:h11'
-let l:mediumfont = 'Spleen\ 8x16:h12,Input\ Mono\ Narrow:h11,League\ Mono\ Narrow:h11'
-let l:largefont = 'Spleen\ 12x24:h18,Input\ Mono\ Narrow:h14,League\ Mono\ Narrow:h14'
+let s:smallfonts = ['drift:h10', 'Spleen\ 6x12:h9', 'ProFont:h10', 'progsole:h10', 'ProggyTinyTTSZ:h16', 'Terminus:h12', 'League\ Mono\ Narrow:h11', 'Lucida\ Console:h8']
+let s:mediumfonts = ['Spleen\ 8x16:h12', 'Input\ Mono\ Narrow:h11', 'League\ Mono\ Narrow:h11']
+let s:largefonts = ['Spleen\ 12x24:h18', 'Input\ Mono\ Narrow:h14', 'League\ Mono\ Narrow:h14']
 {%@@ endif @@%}
+
+function! SetFontFromSet()
+	" FIXME: If GuiFont is not defined, try set guifont=
+endfunction
 
 if has('gui_running')
 {%@@ if profile in ['DE2MCB0003', 'DE2NTB0027'] @@%}
-	exec 'set guifont=' . escape(l:mediumfont, ' \')
+	exec 'set guifont=' . escape(s:mediumfont, ' \')
 {%@@ else @@%}
-	exec 'set guifont=' . escape(l:smallfont, ' \')
+	exec 'set guifont=' . escape(s:smallfont, ' \')
 {%@@ endif @@%}
 
-	exec 'nnoremap <C--> :<C-u>set guifont=' . escape(l:smallfont, ' \')<CR>
-	exec 'nnoremap <C-=> :<C-u>set guifont=' . escape(l:mediumfont, ' \')<CR>
-	exec 'nnoremap <C-S-+> :<C-u>set guifont=' . escape(l:largefont, ' \')<CR>
+	exec 'nnoremap <C--> :<C-u>set guifont=' . escape(s:smallfont, ' \') . '<CR>'
+	exec 'nnoremap <C-=> :<C-u>set guifont=' . escape(s:mediumfont, ' \') . '<CR>'
+	exec 'nnoremap <C-S-+> :<C-u>set guifont=' . escape(s:largefont, ' \') . '<CR>'
 endif
 
 
