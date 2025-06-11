@@ -83,9 +83,10 @@ output "Samsung Electric Company C49J89x HNTR100972" pos 760 360 res 3840x1080 s
 output DP-1 pos 2300 1080 res 3440x1440 scale 1
 {%@@ elif profile == 'DE2NTB0027' @@%}
 set $primary_output eDP-1
-output $primary_output pos 3840 0 res 2560x1600 scale 1
-output "Ancor Communications Inc MX279 DALMRS001872" pos 0 0 res 1920x1080 scale 1
-output "Ancor Communications Inc MX279 FCLMRS003146" pos 1920 0 res 1920x1080 scale 1
+output $primary_output pos 3840 400 res 2560x1600 scale 1
+output "LG Electronics LG ULTRAWIDE 0x000137E9" pos 0 0 res 3840x1600 scale 1
+#output "Ancor Communications Inc MX279 DALMRS001872" pos 0 0 res 1920x1080 scale 1
+#output "Ancor Communications Inc MX279 FCLMRS003146" pos 1920 0 res 1920x1080 scale 1
 {%@@ endif @@%}
 
 {%@@ if profile in ('tiny', 'syl', 'nova', 'DE2NTB0027') @@%}
@@ -365,16 +366,26 @@ input "12346:16452:Svalboard_lightly_Keyboard" {
 
     # Assign workspaces to outputs
 {%@@ if profile == 'DE2NTB0027' @@%}
-    workspace $ws1 output "Ancor Communications Inc MX279 DALMRS001872"
-    workspace $ws2 output "Ancor Communications Inc MX279 DALMRS001872"
-    workspace $ws3 output "Ancor Communications Inc MX279 DALMRS001872"
-    workspace $ws4 output "Ancor Communications Inc MX279 DALMRS001872"
-    workspace $ws5 output "Ancor Communications Inc MX279 DALMRS001872"
-    workspace $ws6 output "Ancor Communications Inc MX279 FCLMRS003146"
-    workspace $ws7 output "Ancor Communications Inc MX279 FCLMRS003146"
-    workspace $ws8 output "Ancor Communications Inc MX279 FCLMRS003146"
-    workspace $ws9 output "Ancor Communications Inc MX279 FCLMRS003146"
-    workspace $ws10 output "Ancor Communications Inc MX279 FCLMRS003146"
+    #workspace $ws1 output "Ancor Communications Inc MX279 DALMRS001872"
+    #workspace $ws2 output "Ancor Communications Inc MX279 DALMRS001872"
+    #workspace $ws3 output "Ancor Communications Inc MX279 DALMRS001872"
+    #workspace $ws4 output "Ancor Communications Inc MX279 DALMRS001872"
+    #workspace $ws5 output "Ancor Communications Inc MX279 DALMRS001872"
+    #workspace $ws6 output "Ancor Communications Inc MX279 FCLMRS003146"
+    #workspace $ws7 output "Ancor Communications Inc MX279 FCLMRS003146"
+    #workspace $ws8 output "Ancor Communications Inc MX279 FCLMRS003146"
+    #workspace $ws9 output "Ancor Communications Inc MX279 FCLMRS003146"
+    #workspace $ws10 output "Ancor Communications Inc MX279 FCLMRS003146"
+    workspace $ws1 output "LG Electronics LG ULTRAWIDE 0x000137E9"
+    workspace $ws2 output "LG Electronics LG ULTRAWIDE 0x000137E9"
+    workspace $ws3 output "LG Electronics LG ULTRAWIDE 0x000137E9"
+    workspace $ws4 output "LG Electronics LG ULTRAWIDE 0x000137E9"
+    workspace $ws5 output "LG Electronics LG ULTRAWIDE 0x000137E9"
+    workspace $ws6 output "LG Electronics LG ULTRAWIDE 0x000137E9"
+    workspace $ws7 output "LG Electronics LG ULTRAWIDE 0x000137E9"
+    workspace $ws8 output "LG Electronics LG ULTRAWIDE 0x000137E9"
+    workspace $ws9 output "LG Electronics LG ULTRAWIDE 0x000137E9"
+    workspace $ws10 output "LG Electronics LG ULTRAWIDE 0x000137E9"
     workspace $ws11 output eDP-1
     workspace $ws12 output eDP-1
 {%@@ else @@%}
