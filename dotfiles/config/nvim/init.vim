@@ -806,6 +806,8 @@ function! SetFontFromSet()
 endfunction
 
 if has('gui_running')
+	GuiTabline 0
+
 {%@@ if profile in ['DE2MCB0003', 'DE2NTB0027'] @@%}
 	exec 'set guifont=' . escape(s:mediumfont, ' \')
 {%@@ else @@%}

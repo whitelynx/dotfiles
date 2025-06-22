@@ -72,9 +72,6 @@ dotfiles:
   f_fqvim:
     dst: ~/bin/fqvim
     src: bin/fqvim
-  f_ginit.vim:
-    dst: ~/.config/nvim/ginit.vim
-    src: config/nvim/ginit.vim
   f_git-diffcommit:
     dst: ~/bin/git-diffcommit
     src: bin/git-diffcommit
@@ -350,7 +347,6 @@ profiles:
     - f_vim_filetype.vim
     - f_lsps.lua
     - f_init.vim
-    - f_ginit.vim
     - f_filetype.vim
     - f_i3_config
     - f_i3pystatus_config.py
@@ -441,7 +437,6 @@ profiles:
     - f_vim_filetype.vim
     - f_lsps.lua
     - f_init.vim
-    - f_ginit.vim
     - f_filetype.vim
     - f_i3_config
     - f_i3pystatus_config.py
@@ -535,7 +530,6 @@ profiles:
     - f_vim_filetype.vim
     - f_lsps.lua
     - f_init.vim
-    - f_ginit.vim
     - f_filetype.vim
     - f_i3_config
     - f_i3pystatus_config.py
@@ -626,7 +620,6 @@ profiles:
     - f_vim_filetype.vim
     - f_lsps.lua
     - f_init.vim
-    - f_ginit.vim
     - f_filetype.vim
     - f_i3_config
     - f_i3pystatus_config.py
@@ -718,7 +711,6 @@ profiles:
     - f_vim_filetype.vim
     - f_lsps.lua
     - f_init.vim
-    - f_ginit.vim
     - f_filetype.vim
     - f_fish_plugins
     - f_fish_user_key_bindings.fish
@@ -784,7 +776,6 @@ profiles:
     - f_vim_filetype.vim
     - f_lsps.lua
     - f_init.vim
-    - f_ginit.vim
     - f_filetype.vim
     - f_i3_config
     - f_i3pystatus_config.py
