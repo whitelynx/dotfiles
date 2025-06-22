@@ -27,15 +27,6 @@
         //    "default": ""
         //}
     },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
     "sway/mode": {
         "format": "{}"
     },
@@ -72,22 +63,40 @@
             "deactivated": ""
         }
     },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 4
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "ponymix toggle",
+        "on-click-right": "pavucontrol"
     },
-    "clock": {
-        "tooltip-format": "<b>{:%Y %B}</b>\n<tt>{calendar}</tt>",
-        "on-click": "date '+%H:%M:%S' | tr -d '\n' | wl-copy -p",
-        "on-click-right": "date --rfc-3339=seconds | tr -d '\n' | wl-copy -p"
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{ipaddr}/{cidr} ({essid} {signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click": "foot -T nmtui /bin/sh -c 'sleep 1; exec /usr/bin/nmtui'"
     },
-    "clock#secondary": {
-        "timezones": ["UTC", "America/New_York", "America/Denver"],
-        "tooltip-format": "<b>{:%Y %B}</b>\n<tt>{calendar}</tt>",
-        "format": "{:%a %Y-%m-%d}",
-        "format-alt": "{:%H:%M %Z}",
-        "on-click": "date '+%Y-%m-%d' | tr -d '\n' | wl-copy -p",
-        "on-click-right": "date --rfc-3339=seconds | tr -d '\n' | wl-copy -p"
+    "custom/connectivity": {
+        "exec": "~/.config/waybar/scripts/connectivity.sh",
+        "return-type": "json",
+        "interval": 5
     },
     "cpu": {
         "format": "{usage}% "
@@ -109,6 +118,20 @@
         "format-icons": ["", ""],
         "reverse-scrolling": true
     },
+    "custom/random-wallpaper": {
+        "exec": "echo ''",
+        "interval": 100,
+        "on-click": "exec python ~/.config/waybar/scripts/random-wallpaper.py"
+    },
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
     "battery": {
         "states": {
             // "good": 95,
@@ -128,45 +151,18 @@
     //"battery#bat2": {
     //    "bat": "BAT2"
     //},
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{ipaddr}/{cidr} ({essid} {signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "on-click": "foot -T nmtui /bin/sh -c 'sleep 1; exec /usr/bin/nmtui'"
+    "clock": {
+        "tooltip-format": "<b>{:%Y %B}</b>\n<tt>{calendar}</tt>",
+        "on-click": "date '+%H:%M:%S' | tr -d '\n' | wl-copy -p",
+        "on-click-right": "date --rfc-3339=seconds | tr -d '\n' | wl-copy -p"
     },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "ponymix toggle",
-        "on-click-right": "pavucontrol"
-    },
-    "custom/connectivity": {
-        "exec": "~/.config/waybar/scripts/connectivity.sh",
-        "return-type": "json",
-        "interval": 5
-    },
-    "custom/random-wallpaper": {
-        "exec": "echo ''",
-        "interval": 100,
-        "on-click": "exec python ~/.config/waybar/scripts/random-wallpaper.py"
+    "clock#secondary": {
+        "timezones": ["UTC", "America/New_York", "America/Denver"],
+        "tooltip-format": "<b>{:%Y %B}</b>\n<tt>{calendar}</tt>",
+        "format": "{:%a %Y-%m-%d}",
+        "format-alt": "{:%H:%M %Z}",
+        "on-click": "date '+%Y-%m-%d' | tr -d '\n' | wl-copy -p",
+        "on-click-right": "date --rfc-3339=seconds | tr -d '\n' | wl-copy -p"
     },
     "custom/mako": {
         "exec": "~/.config/waybar/scripts/mako.sh",
@@ -182,7 +178,7 @@
         "format": "{} 🗗",
         "on-click": "exec swaymsg 'scratchpad show'",
         "on-click-right": "exec swaymsg 'move scratchpad'"
-    //},
+    },
     //"custom/media": {
     //    "format": "{icon} {}",
     //    "return-type": "json",
@@ -194,6 +190,10 @@
     //    "escape": true,
     //    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
     //    // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    //},
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 4
     }
 }
 // vi: set ft=javascript:
