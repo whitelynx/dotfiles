@@ -125,6 +125,7 @@ Plug 'kelan/gyp.vim'
 Plug 'chrisbra/csv.vim'
 Plug 'dlmarquis/gcode.vim'
 Plug 'hsanson/vim-openapi'
+Plug 'Vftdan/vim-syntax-libconfig'
 " Included in "sheerun/vim-polyglot":
 "Plug 'aklt/plantuml-syntax'
 "Plug 'isRuslan/vim-es6'
