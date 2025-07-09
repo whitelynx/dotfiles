@@ -184,7 +184,6 @@ set noruler " Turn off ruler, since we're including it in the status line
 set nostartofline " Don't move to the first non-blank on the line any time you use "d", "<<", ">>", "G", "gg", etc.
 set undofile
 set undolevels=1000
-set guioptions+=c " Use console-style dialogs, instead of gui-style (e.g., for "File has changed since editing started")
 set title
 set belloff=all " NO BELL >:o
 set mouse=a
@@ -781,6 +780,8 @@ autocmd TabEnter * call UpdateHasTabs(1)
 "== Keyboard Mapping Commands ==
 " Show the current keyboard mapping state.
 command! -nargs=0 ShowKB echo "Keyboard Layout:" (g:useDvorak ? "Dvorak" : "QWERTY") . ";  File Switching:" (g:hasTabs ? "tabs" : "buffers")
+
+nnoremap <Leader>. :<C-u>ShowKB<CR>
 
 " Add commands to switch key binding options.
 command! -nargs=0 ForceUseTabs call UpdateHasTabs(1)
