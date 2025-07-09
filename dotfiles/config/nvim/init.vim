@@ -113,6 +113,18 @@ Plug 'kalekundert/vim-coiled-snake'
 Plug 'Konfekt/FastFold'
 Plug 'chrisbra/matchit'
 Plug 'vimwiki/vimwiki'
+Plug 'mbbill/undotree'
+if has('nvim')
+	Plug 'nvim-lua/plenary.nvim'
+	Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
+	"Plug 'ibhagwan/fzf-lua'
+	"Plug 'nvim-tree/nvim-web-devicons'
+	Plug 'ThePrimeagen/harpoon', { 'branch': 'harpoon2' }
+	Plug 'folke/which-key.nvim'
+	Plug 'luukvbaal/nnn.nvim'
+elseif has('terminal')
+	Plug 'mcchrish/nnn.vim'
+endif
 
 " Syntax plugins
 Plug 'sheerun/vim-polyglot'
@@ -1128,6 +1140,67 @@ let g:vimwiki_list = [{
 \	'ext': 'md',
 \	'path': '~/Nextcloud/Notes/',
 \}]
+
+
+"-- undotree --
+nnoremap <Leader>u :UndotreeToggle<CR>
+
+
+""" NVim-only plugins """
+if has('nvim')
+
+
+"-- Telescope --
+" Find files using Telescope command-line sugar.
+nnoremap <Leader>ff <cmd>Telescope find_files<cr>
+nnoremap <Leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <Leader>fb <cmd>Telescope buffers<cr>
+nnoremap <Leader>fh <cmd>Telescope help_tags<cr>
+
+
+"-- harpoon --
+lua << EOF
+local harpoon = require('harpoon')
+harpoon:setup({})
+
+-- basic telescope configuration
+local conf = require("telescope.config").values
+local function toggle_telescope(harpoon_files)
+	local file_paths = {}
+	for _, item in ipairs(harpoon_files.items) do
+		table.insert(file_paths, item.value)
+	end
+
+	require("telescope.pickers").new({}, {
+		prompt_title = "Harpoon",
+		finder = require("telescope.finders").new_table({
+			results = file_paths,
+		}),
+		previewer = conf.file_previewer({}),
+		sorter = conf.generic_sorter({}),
+	}):find()
+end
+
+vim.keymap.set("n", "<C-e>", function() toggle_telescope(harpoon:list()) end,
+	{ desc = "Open harpoon window" })
+EOF
+
+
+"-- which-key.nvim --
+lua << EOF
+vim.keymap.set("n", "<Leader>?", function() require("which-key").show({ global = false }) end,
+	{ desc = "Buffer Local Keymaps (which-key)" })
+EOF
+
+
+"-- nnn.nvim --
+lua << EOF
+require("nnn").setup()
+EOF
+
+
+endif
+""" End NVim-only plugins """
 
 
 "-- OmniCppComplete --
