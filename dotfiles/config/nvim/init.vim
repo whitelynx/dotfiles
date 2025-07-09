@@ -802,22 +802,40 @@ let s:mediumfonts = ['Spleen\ 8x16:h12', 'Input\ Mono\ Narrow:h11', 'League\ Mon
 let s:largefonts = ['Spleen\ 12x24:h18', 'Input\ Mono\ Narrow:h14', 'League\ Mono\ Narrow:h14']
 {%@@ endif @@%}
 
-function! SetFontFromSet()
-	" FIXME: If GuiFont is not defined, try set guifont=
+function! SetFontFromSet(fontlist)
+	" Try successive fonts until one successfully loads.
+	for font in a:fontlist
+		try
+			exec 'set guifont=' . escape(font, ' \')
+			break
+		catch /.*/
+			continue
+		endtry
+	endfor
+endfunction
+
+function! SmallFont()
+	call SetFontFromSet(s:smallfonts)
+endfunction
+
+function! MediumFont()
+	call SetFontFromSet(s:mediumfonts)
+endfunction
+
+function! LargeFont()
+	call SetFontFromSet(s:largefonts)
 endfunction
 
 if has('gui_running')
-	GuiTabline 0
-
 {%@@ if profile in ['DE2MCB0003', 'DE2NTB0027'] @@%}
-	exec 'set guifont=' . escape(s:mediumfont, ' \')
+	call MediumFont()
 {%@@ else @@%}
-	exec 'set guifont=' . escape(s:smallfont, ' \')
+	call SmallFont()
 {%@@ endif @@%}
 
-	exec 'nnoremap <C--> :<C-u>set guifont=' . escape(s:smallfont, ' \') . '<CR>'
-	exec 'nnoremap <C-=> :<C-u>set guifont=' . escape(s:mediumfont, ' \') . '<CR>'
-	exec 'nnoremap <C-S-+> :<C-u>set guifont=' . escape(s:largefont, ' \') . '<CR>'
+	nnoremap <C--> :<C-u>call SmallFont()<CR>
+	nnoremap <C-=> :<C-u>call MediumFont()<CR>
+	nnoremap <C-S-+> :<C-u>call LargeFont()<CR>
 endif
 
 
