@@ -271,10 +271,10 @@ dotfiles:
   f_foot.ini:
     src: config/foot/foot.ini
     dst: ~/.config/foot/foot.ini
-  f_config:
+  f_waybar_config:
     src: config/waybar/config
     dst: ~/.config/waybar/config
-  f_style.css:
+  f_waybar_style.css:
     src: config/waybar/style.css
     dst: ~/.config/waybar/style.css
   f_xdg-desktop-portal-wlr_config:
@@ -432,8 +432,8 @@ profiles:
     - f_swayexit
     - f_sway-help
     - f_foot.ini
-    - f_config
-    - f_style.css
+    - f_waybar_config
+    - f_waybar_style.css
     - f_xdg-desktop-portal-wlr_config
     - d_waybar_scripts
     - d_sway_scripts
@@ -525,8 +525,8 @@ profiles:
     - f_swayexit
     - f_sway-help
     - f_foot.ini
-    - f_config
-    - f_style.css
+    - f_waybar_config
+    - f_waybar_style.css
     - f_xdg-desktop-portal-wlr_config
     - d_waybar_scripts
     - d_sway_scripts
@@ -615,8 +615,8 @@ profiles:
     - f_swayexit
     - f_sway-help
     - f_foot.ini
-    - f_config
-    - f_style.css
+    - f_waybar_config
+    - f_waybar_style.css
     - f_xdg-desktop-portal-wlr_config
     - d_waybar_scripts
     - d_sway_scripts
@@ -706,8 +706,8 @@ profiles:
     - f_swayexit
     - f_sway-help
     - f_foot.ini
-    - f_config
-    - f_style.css
+    - f_waybar_config
+    - f_waybar_style.css
     - f_xdg-desktop-portal-wlr_config
     - d_waybar_scripts
     - d_sway_scripts
@@ -766,8 +766,8 @@ profiles:
     - f_gtk-4.0_settings.ini
     - f_compare-dotfiles
     - f_foot.ini
-    - f_config
-    - f_style.css
+    - f_waybar_config
+    - f_waybar_style.css
     - f_newbranch.fish
     - f_newcommit.fish
     - f_aerospace.toml
@@ -859,8 +859,8 @@ profiles:
     - f_swayexit
     - f_sway-help
     - f_foot.ini
-    - f_config
-    - f_style.css
+    - f_waybar_config
+    - f_waybar_style.css
     - f_xdg-desktop-portal-wlr_config
     - d_waybar_scripts
     - d_sway_scripts
