@@ -51,12 +51,12 @@ dotfiles:
   f_extend.xresources:
     dst: ~/.extend.Xresources
     src: extend.Xresources
-  f_filetype.vim:
+  f_nvim_old_filetype.vim:
     dst: ~/.config/nvim/filetype.vim
-    src: config/nvim/filetype.vim
+    src: config/nvim-old/filetype.vim
   f_vim_filetype.vim:
     dst: ~/.vim/filetype.vim
-    src: config/nvim/filetype.vim
+    src: config/nvim-old/filetype.vim
   f_fish_plugins:
     dst: ~/.config/fish/fish_plugins
     src: config/fish/fish_plugins
@@ -99,15 +99,15 @@ dotfiles:
   f_i3exit:
     dst: ~/bin/i3exit
     src: bin/i3exit
-  f_lsps.lua:
+  f_nvim_old_lsps.lua:
     dst: ~/.config/nvim/lsps.lua
-    src: config/nvim/lsps.lua
-  f_init.vim:
+    src: config/nvim-old/lsps.lua
+  f_nvim_old_init.vim:
     dst: ~/.config/nvim/init.vim
-    src: config/nvim/init.vim
+    src: config/nvim-old/init.vim
   f_vimrc:
     dst: ~/.vimrc
-    src: config/nvim/init.vim
+    src: config/nvim-old/init.vim
   f_kdeconnect-indicator@.service:
     dst: ~/.config/systemd/user/kdeconnect-indicator@.service
     src: config/systemd/user/kdeconnect-indicator@.service
@@ -345,9 +345,9 @@ profiles:
     dotfiles:
     - f_vimrc
     - f_vim_filetype.vim
-    - f_lsps.lua
-    - f_init.vim
-    - f_filetype.vim
+    - f_nvim_old_lsps.lua
+    - f_nvim_old_init.vim
+    - f_nvim_old_filetype.vim
     - f_i3_config
     - f_i3pystatus_config.py
     - f_fish_plugins
@@ -435,9 +435,9 @@ profiles:
     dotfiles:
     - f_vimrc
     - f_vim_filetype.vim
-    - f_lsps.lua
-    - f_init.vim
-    - f_filetype.vim
+    - f_nvim_old_lsps.lua
+    - f_nvim_old_init.vim
+    - f_nvim_old_filetype.vim
     - f_i3_config
     - f_i3pystatus_config.py
     - f_fish_plugins
@@ -528,9 +528,9 @@ profiles:
     dotfiles:
     - f_vimrc
     - f_vim_filetype.vim
-    - f_lsps.lua
-    - f_init.vim
-    - f_filetype.vim
+    - f_nvim_old_lsps.lua
+    - f_nvim_old_init.vim
+    - f_nvim_old_filetype.vim
     - f_i3_config
     - f_i3pystatus_config.py
     - f_fish_plugins
@@ -618,9 +618,9 @@ profiles:
     dotfiles:
     - f_vimrc
     - f_vim_filetype.vim
-    - f_lsps.lua
-    - f_init.vim
-    - f_filetype.vim
+    - f_nvim_old_lsps.lua
+    - f_nvim_old_init.vim
+    - f_nvim_old_filetype.vim
     - f_i3_config
     - f_i3pystatus_config.py
     - f_fish_plugins
@@ -709,9 +709,9 @@ profiles:
     dotfiles:
     - f_vimrc
     - f_vim_filetype.vim
-    - f_lsps.lua
-    - f_init.vim
-    - f_filetype.vim
+    - f_nvim_old_lsps.lua
+    - f_nvim_old_init.vim
+    - f_nvim_old_filetype.vim
     - f_fish_plugins
     - f_fish_user_key_bindings.fish
     - f_vars.fish
@@ -774,9 +774,9 @@ profiles:
     dotfiles:
     - f_vimrc
     - f_vim_filetype.vim
-    - f_lsps.lua
-    - f_init.vim
-    - f_filetype.vim
+    - f_nvim_old_lsps.lua
+    - f_nvim_old_init.vim
+    - f_nvim_old_filetype.vim
     - f_i3_config
     - f_i3pystatus_config.py
     - f_fish_plugins
