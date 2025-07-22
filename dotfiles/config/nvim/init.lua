@@ -1,6 +1,7 @@
 require("config.options")
 
 require("config.lazy")
+require("config.mini")
 
 require("config.lsps")
 require("config.autocmds")

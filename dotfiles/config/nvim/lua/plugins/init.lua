@@ -1,4 +1,5 @@
 return {
+    { "echasnovski/mini.nvim", version = false },
     "folke/neodev.nvim",
     "folke/which-key.nvim",
     {
@@ -24,10 +25,10 @@ return {
     --    "nvim-lualine/lualine.nvim",
     --    dependencies = { "nvim-tree/nvim-web-devicons" }
     --},
-    {
-        "sschleemilch/slimline.nvim",
-        opts = {}
-    },
+    --{
+    --    "sschleemilch/slimline.nvim",
+    --    opts = {}
+    --},
     {
         "neovim/nvim-lspconfig",
         dependencies = {
@@ -48,31 +49,40 @@ return {
         branch = "main",
         build = ":TSUpdate"
     },
-    "duane9/nvim-rg",
+    --"duane9/nvim-rg",
     {
         "ibhagwan/fzf-lua",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
+        dependencies = { { "echasnovski/mini.nvim", version = false } },
         opts = {}
     },
     {
-        'saghen/blink.cmp',
+        "linrongbin16/gitlinker.nvim",
+        cmd = "GitLink",
+        opts = {},
+        keys = {
+            { "<leader>ghc", "<cmd>GitLink<cr>", mode = { "n", "v" }, desc = "Yank git link" },
+            { "<leader>gho", "<cmd>GitLink!<cr>", mode = { "n", "v" }, desc = "Open git link" },
+        },
+    },
+    {
+        "saghen/blink.cmp",
         -- optional: provides snippets for the snippet source
-        dependencies = { 'rafamadriz/friendly-snippets' },
+        dependencies = { "rafamadriz/friendly-snippets" },
 
         -- use a release tag to download pre-built binaries
-        version = '1.*',
+        version = "1.*",
         -- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
-        -- build = 'cargo build --release',
+        -- build = "cargo build --release",
         -- If you use nix, you can build from source using latest nightly rust with:
-        -- build = 'nix run .#build-plugin',
+        -- build = "nix run .#build-plugin",
 
-        ---@module 'blink.cmp'
+        ---@module "blink.cmp"
         ---@type blink.cmp.Config
         opts = {
-            -- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
-            -- 'super-tab' for mappings similar to vscode (tab to accept)
-            -- 'enter' for enter to accept
-            -- 'none' for no mappings
+            -- "default" (recommended) for mappings similar to built-in completions (C-y to accept)
+            -- "super-tab" for mappings similar to vscode (tab to accept)
+            -- "enter" for enter to accept
+            -- "none" for no mappings
             --
             -- All presets have the following mappings:
             -- C-space: Open menu or open docs if already open
@@ -81,12 +91,12 @@ return {
             -- C-k: Toggle signature help (if signature.enabled = true)
             --
             -- See :h blink-cmp-config-keymap for defining your own keymap
-            keymap = { preset = 'super-tab' },
+            keymap = { preset = "super-tab" },
 
             appearance = {
-                -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
+                -- "mono" (default) for "Nerd Font Mono" or "normal" for "Nerd Font"
                 -- Adjusts spacing to ensure icons are aligned
-                nerd_font_variant = 'mono'
+                nerd_font_variant = "mono"
             },
 
             -- (Default) Only show the documentation popup when manually triggered
@@ -95,7 +105,7 @@ return {
             -- Default list of enabled providers defined so that you can extend it
             -- elsewhere in your config, without redefining it, due to `opts_extend`
             sources = {
-                default = { 'lsp', 'path', 'snippets', 'buffer' },
+                default = { "lsp", "path", "snippets", "buffer" },
             },
 
             -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
