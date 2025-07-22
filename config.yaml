@@ -340,14 +340,23 @@ dotfiles:
   f_imv_config:
     src: config/imv/config
     dst: ~/.config/imv/config
+  f_nvim_init.lua:
+    src: config/nvim/init.lua
+    dst: ~/.config/nvim/init.lua
+  d_nvim_plugins:
+    dst: ~/.config/nvim/lua/plugins
+    src: config/nvim/lua/plugins
+  d_nvim_config:
+    dst: ~/.config/nvim/lua/config
+    src: config/nvim/lua/config
 profiles:
   azrahn:
     dotfiles:
     - f_vimrc
     - f_vim_filetype.vim
-    - f_nvim_old_lsps.lua
-    - f_nvim_old_init.vim
-    - f_nvim_old_filetype.vim
+    - f_nvim_init.lua
+    - d_nvim_plugins
+    - d_nvim_config
     - f_i3_config
     - f_i3pystatus_config.py
     - f_fish_plugins
@@ -435,9 +444,9 @@ profiles:
     dotfiles:
     - f_vimrc
     - f_vim_filetype.vim
-    - f_nvim_old_lsps.lua
-    - f_nvim_old_init.vim
-    - f_nvim_old_filetype.vim
+    - f_nvim_init.lua
+    - d_nvim_plugins
+    - d_nvim_config
     - f_i3_config
     - f_i3pystatus_config.py
     - f_fish_plugins
@@ -528,9 +537,9 @@ profiles:
     dotfiles:
     - f_vimrc
     - f_vim_filetype.vim
-    - f_nvim_old_lsps.lua
-    - f_nvim_old_init.vim
-    - f_nvim_old_filetype.vim
+    - f_nvim_init.lua
+    - d_nvim_plugins
+    - d_nvim_config
     - f_i3_config
     - f_i3pystatus_config.py
     - f_fish_plugins
@@ -618,9 +627,9 @@ profiles:
     dotfiles:
     - f_vimrc
     - f_vim_filetype.vim
-    - f_nvim_old_lsps.lua
-    - f_nvim_old_init.vim
-    - f_nvim_old_filetype.vim
+    - f_nvim_init.lua
+    - d_nvim_plugins
+    - d_nvim_config
     - f_i3_config
     - f_i3pystatus_config.py
     - f_fish_plugins
@@ -709,9 +718,9 @@ profiles:
     dotfiles:
     - f_vimrc
     - f_vim_filetype.vim
-    - f_nvim_old_lsps.lua
-    - f_nvim_old_init.vim
-    - f_nvim_old_filetype.vim
+    - f_nvim_init.lua
+    - d_nvim_plugins
+    - d_nvim_config
     - f_fish_plugins
     - f_fish_user_key_bindings.fish
     - f_vars.fish
@@ -774,9 +783,9 @@ profiles:
     dotfiles:
     - f_vimrc
     - f_vim_filetype.vim
-    - f_nvim_old_lsps.lua
-    - f_nvim_old_init.vim
-    - f_nvim_old_filetype.vim
+    - f_nvim_init.lua
+    - d_nvim_plugins
+    - d_nvim_config
     - f_i3_config
     - f_i3pystatus_config.py
     - f_fish_plugins

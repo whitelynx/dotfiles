@@ -1,0 +1,168 @@
+--------------------------
+--- Filetype Detection ---
+--------------------------
+
+vim.cmd [[ autocmd BufRead,BufNewFile *.scad set filetype=openscad ]]
+
+-- autocmd! commands to set the filetype go here
+vim.cmd [[ autocmd! BufNewFile,BufRead *.bat,*.sys setfiletype dosbatch ]]
+
+-- Detect wscript files as Python code
+vim.cmd [[ autocmd! BufNewFile,BufRead wscript setfiletype python ]]
+
+-- Detect Pyrex/Cython files as Python code (even though that's only
+-- partially true)
+vim.cmd [[ autocmd! BufNewFile,BufRead *.pyx *.px[id] setfiletype python ]]
+
+-- Detect Scons files as Python code
+vim.cmd [[ autocmd! BufNewFile,BufRead Sconstruct setfiletype python ]]
+vim.cmd [[ autocmd! BufNewFile,BufRead Sconscript setfiletype python ]]
+
+-- Detect WSGI scripts as Python code
+vim.cmd [[ autocmd! BufNewFile,BufRead *.wsgi setfiletype python ]]
+
+-- Detect Twisted application files as Python code
+vim.cmd [[ autocmd! BufNewFile,BufRead *.tac setfiletype python ]]
+
+-- Detect JSON files
+vim.cmd [[ autocmd! BufNewFile,BufRead *.json,.jshintrc,.bowerrc,*.mml setfiletype json ]]
+-- Detect JSON files as JavaScript
+--autocmd! BufNewFile,BufRead *.json,.jshintrc,.bowerrc,*.mml setfiletype javascript
+
+-- Detect CSON files as CoffeeScript
+vim.cmd [[ autocmd! BufNewFile,BufRead *.cson setfiletype coffee ]]
+
+-- Detect YAML files
+--autocmd! BufNewFile,BufRead *.gyp,*.gypi setfiletype yaml
+vim.cmd [[ autocmd! BufNewFile,BufRead *.raml setfiletype yaml ]]
+
+-- Detect Riot.js tag files
+-- Using https://github.com/nicklasos/vim-jsx-riot:
+--autocmd! BufNewFile,BufRead *.tag setfiletype javascript | let b:syntastic_checkers = []
+-- Using my own syntax:
+vim.cmd [[ autocmd! BufNewFile,BufRead *.tag setfiletype htmlriot | let b:syntastic_checkers = ['jshint'] ]]
+
+-- Detect authrc files
+vim.cmd [[ autocmd! BufNewFile,BufRead .authrc setfiletype json ]]
+
+-- Detect Tumblr themes
+vim.cmd [[ autocmd! BufNewFile,BufRead *.tumblr.html setfiletype tumblr ]]
+
+-- Detect html files as Django templates (most of my HTML work is in Django)
+vim.cmd [[ autocmd! BufNewFile,BufRead *.html setfiletype htmldjango ]]
+
+-- Detect librocket's XHTML and CSS files correctly.
+vim.cmd [[ autocmd! BufNewFile,BufRead *.rml setfiletype xhtml ]]
+vim.cmd [[ autocmd! BufNewFile,BufRead *.rcss setfiletype css ]]
+
+-- Detect Weex components as Vue.js files.
+vim.cmd [[ autocmd! BufNewFile,BufRead *.we setfiletype vue.html.javascript.css ]]
+
+-- Detect configuration templates as straight configuration files
+vim.cmd [[ autocmd! BufNewFile,BufRead *.conf.in setfiletype cfg ]]
+
+-- freetds.conf is (mostly) in INI format
+vim.cmd [[ autocmd! BufNewFile,BufRead freetds.conf setfiletype dosini ]]
+
+-- cSound syntax and templates
+vim.cmd [[ autocmd! BufNewFile,BufRead *.orc,*.sco,*.csd source $VIMRUNTIME/syntax/csound.vim ]]
+vim.cmd [[ autocmd! BufNewFile,BufRead *.csd source $VIMRUNTIME/macros/csound_macros.vim ]]
+vim.cmd [[ autocmd! BufNewFile *.csd 0r $VIMRUNTIME/templates/template.csd ]]
+vim.cmd [[ autocmd! BufNewFile *.orc 0r $VIMRUNTIME/templates/template.orc ]]
+
+-- Piklab's project files are XML
+vim.cmd [[ autocmd! BufNewFile,BufRead *.piklab setfiletype xml ]]
+
+-- Drools (JBoss Rules) rules set
+vim.cmd [[ autocmd! BufNewFile,BufRead *.drl setfiletype drools ]]
+
+-- Extra Erlang file extensions not normally auto-detected
+vim.cmd [[ autocmd! BufNewFile,BufRead *.{xrl,yrl,app.src},rebar.config,reltool.config,app.config,.erlang setfiletype erlang ]]
+
+-- Markdown file extensions
+vim.cmd [[ autocmd! BufNewFile,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn setfiletype markdown ]]
+
+-- PEG.js grammar
+vim.cmd [[ autocmd! BufNewFile,BufRead *.pegjs setfiletype pegjs ]]
+
+-- Mail
+vim.cmd [[ autocmd! BufNewFile,BufRead *mutt-* setfiletype mail ]]
+
+-- PostgreSQL
+vim.cmd [[ autocmd! BufNewFile,BufRead *.psql setfiletype pgsql ]]
+vim.cmd [[ autocmd! BufNewFile,BufRead *.pgsql setfiletype pgsql ]]
+
+-- Google Protocol Buffers
+vim.cmd [[ autocmd! BufNewFile,BufRead *.proto setfiletype proto ]]
+
+-- Shaders
+vim.cmd [[ autocmd! BufNewFile,BufRead *.{cg,fx,sha} setfiletype cg ]]
+vim.cmd [[ autocmd! BufNewFile,BufRead *.{frag,vert,fp,vp,glsl} setfiletype glsl ]]
+
+-- DBus configuration
+vim.cmd [[ autocmd! BufNewFile,BufRead /etc/dbus-1/*.conf setfiletype xml ]]
+vim.cmd [[ autocmd! BufNewFile,BufRead /etc/dbus-1/{system,session}.d/*.conf setfiletype xml ]]
+
+-- Systemd configuration
+vim.cmd [[ autocmd! BufNewFile,BufRead */systemd/*.* setfiletype dosini ]]
+
+-- Nginx configuration
+vim.cmd [[ autocmd! BufNewFile,BufRead */nginx{,-*}/*,{,*.}nginx{,.*}.conf setfiletype nginx ]]
+
+-- Oracle SQL*Plus temporary file
+vim.cmd [[ autocmd! BufNewFile,BufRead afiedt.buf setfiletype plsql ]]
+
+-- Dockerfiles with suffixes
+vim.cmd [[ autocmd! BufNewFile,BufRead Dockerfile.*,Dockerfile-* setfiletype dockerfile ]]
+
+-- AWS config files
+vim.cmd [[ autocmd! BufNewFile,BufRead */{,.}aws/{config,credentials} setfiletype dosini ]]
+
+-- Salt project config files
+vim.cmd [[ autocmd! BufNewFile,BufRead *.sls setfiletype yaml ]]
+
+
+----------------------------------
+--- Per-Filetype Configuration ---
+----------------------------------
+
+-- PEP 80 indentation and sane autoindent for Python code
+vim.cmd [[ autocmd FileType python let python_highlight_all=1 | setl tabstop=4 softtabstop=4 shiftwidth=4 expandtab smarttab nosmartindent omnifunc=pythoncomplete#Complete foldtext=PythonFoldText() ]]
+-- omnifunc=pythonsyntaxcomplete#Complete
+
+-- Some tweaks for Erlang code
+vim.cmd [[ autocmd FileType erlang setl tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab smarttab nosmartindent ]]
+-- indentexpr=CustomErlangIndent(v:lnum)
+
+-- C# indentation
+vim.cmd [[ autocmd FileType cs setl tabstop=4 softtabstop=4 shiftwidth=4 expandtab smarttab nosmartindent ]]
+
+-- Similar for LUA
+vim.cmd [[ autocmd FileType lua setl tabstop=4 softtabstop=4 shiftwidth=4 expandtab smarttab nosmartindent ]]
+
+-- Google Protocol Buffers .proto files
+vim.cmd [[ autocmd FileType proto setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab smartindent ]]
+
+-- Delphi source files (.pas)
+vim.cmd [[ autocmd FileType pascal let pascal_delphi=1 | let pascal_symbol_operator=1 | setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab smartindent ]]
+
+-- Don't remove trailing whitespace if editing a file type for which it may be important.
+vim.cmd [[ autocmd FileType * let b:remove_trailing_whitespace_on_save=1 ]]
+vim.cmd [[ autocmd FileType diff let b:remove_trailing_whitespace_on_save=0 ]]
+vim.cmd [[ autocmd FileType markdown let b:remove_trailing_whitespace_on_save=0 ]]
+vim.cmd [[ autocmd FileType whitespace let b:remove_trailing_whitespace_on_save=0 ]]
+
+-- gtkrc indentation
+vim.cmd [[ autocmd FileType gtkrc setl tabstop=4 softtabstop=4 shiftwidth=4 expandtab smarttab nosmartindent cindent cinoptions=+0,c0,(s,#1,m1 cinkeys-=0# ]]
+
+-- Javascript indentation
+vim.cmd [[ autocmd FileType javascript setl tabstop=4 softtabstop=4 shiftwidth=4 expandtab smarttab nosmartindent cindent cinoptions=j1,J1,m1 ]]
+
+-- Nginx configuration files
+vim.cmd [[ autocmd FileType nginx setl tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab smarttab cindent cinoptions=j1,J1,m1 cinkeys-=0# ]]
+
+-- YAML files
+vim.cmd [[ autocmd FileType yaml setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab ]]
+
+-- AWS config files (dosini filetype)
+vim.cmd [[ autocmd FileType dosini let g:colorizer_hex_pattern = ['color\s*=\s*', '\%(\x\{3}\|\x\{6}\)', '\>'] | ColorHighlight! ]]
