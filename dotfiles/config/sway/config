@@ -32,6 +32,8 @@ set $wallpaper /usr/share/backgrounds/LogicWavelength_wood-logo.jpg
 set $wallpaper {{@@ env['HOME'] @@}}/Pictures/Wallpaper/WallpapersCraft/starry_sky_trees_stars_night_118267_3840x2400.jpg
 {%@@ elif profile == 'DE2NTB0027' @@%}
 set $wallpaper /usr/share/wallpapers/Path/contents/images/2560x1600.jpg
+{%@@ elif profile == 'nagahime-hatake' @@%}
+set $wallpaper /usr/share/wallpapers/cachyos-wallpapers/Skyscraper.png
 {%@@ else @@%}
 set $wallpaper /usr/share/backgrounds/lunix_manjaro059I3.jpg
 {%@@ endif @@%}
@@ -158,6 +160,15 @@ input "2362:597:UNIW0001:00_093A:0255_Touchpad" {
     scroll_method two_finger
     events disabled_on_external_mouse
 }
+{%@@ elif profile == 'nagahime-hatake' @@%}
+input "1267:12454:ELAN0406:00_04F3:30A6_Touchpad" {
+    dwt enabled
+    tap enabled
+    natural_scroll enabled
+    click_method clickfinger
+    scroll_method two_finger
+    #events disabled_on_external_mouse
+}
 {%@@ endif @@%}
 
 # For all machines:
@@ -170,6 +181,14 @@ input "1:1:AT_Translated_Set_2_keyboard" {
     xkb_options ctrl:nocaps,altwin:swap_lalt_lwin,lv3:ralt_switch,compose:lctrl,eurosign:5
     xkb_numlock enabled
 }
+{%@@ if profile == 'nagahime-hatake' @@%}
+input "5426:621:Razer_Razer_Blade_Keyboard" {
+    xkb_layout us
+    xkb_variant dvorak
+    xkb_options ctrl:nocaps,altwin:swap_lalt_lwin,lv3:ralt_switch,compose:lctrl,eurosign:5
+    xkb_numlock enabled
+}
+{%@@ endif @@%}
 
 input "19280:61325:KP_Republic_BM60_RGB_POKER" {
     #xkb_layout us,us,us,us

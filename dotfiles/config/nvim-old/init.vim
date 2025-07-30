@@ -200,6 +200,11 @@ set title
 set belloff=all " NO BELL >:o
 set mouse=a
 
+try
+	set guioptions+=c " Use console-style dialogs, instead of gui-style (e.g., for "File has changed since editing started")
+catch /^Vim\%((\a\+)\)\=:E519:/
+endtry
+
 " Change "cw" and "cW" to include the space after the word
 if has('nvim')
 	set cpoptions-=_
@@ -805,7 +810,7 @@ command! -nargs=0 ForceUseBuffers call UpdateHasTabs(0)
 " (get drift from http://artwizaleczapka.sourceforge.net/ or
 " http://sourceforge.net/projects/artwiz-latin1/)
 " For Neovim-qt, see `ginit.vim`.
-{%@@ if profile in ['DE2MCB0003', 'DE2NTB0027'] @@%}
+{%@@ if profile in ['DE2MCB0003', 'DE2NTB0027', 'nagahime-hatake'] @@%}
 let s:smallfonts = ['drift:h10', 'Spleen\ 6x12:h9', 'ProFont:h10', 'progsole:h10', 'ProggyTinyTTSZ:h16', 'Terminus:h12', 'League\ Mono\ Narrow:h11', 'Lucida\ Console:h8']
 let s:mediumfonts = ['Spleen\ 8x16:h12', 'Input\ Mono\ Narrow:h11', 'League\ Mono\ Narrow:h11']
 let s:largefonts = ['Spleen\ 12x24:h18', 'Input\ Mono\ Narrow:h11', 'League\ Mono\ Narrow:h11']
