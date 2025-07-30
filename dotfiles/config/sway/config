@@ -614,6 +614,7 @@ xwayland enable
 #
 for_window [title="^nmtui$"] floating enable, sticky enable
 for_window [app_id="^nm-tray$" title="^nm-tray$"] floating enable, sticky enable, border none, move position cursor
+for_window [app_id="^UnrealEditor$" title="^$"] floating enable, border none
 # Mark xwayland windows
 for_window [shell=".*"] title_format "%title :: %shell"
 
