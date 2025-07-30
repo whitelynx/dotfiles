@@ -29,6 +29,28 @@ pip3 install -r dotdrop/requirements.txt --user
 ```
 
 
+post-install
+------------
+
+After installing the packages and dotfiles, there's some manual setup commands that need to be run:
+
+### NeoVim
+
+- Install `vim-plug`:
+```bash
+curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+- Start `nvim`.
+- Run `:PlugInstall` and `:UpdateRemotePlugins` inside `nvim`.
+- You may also repeat the same steps with `vim` in place of `nvim`.
+
+### fish
+
+- `curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher`
+- `cp ~/dotfiles/dotfiles/config/fish/fish_plugins ~/.config/fish/`
+- `fisher update`
+
+
 packages
 --------
 
@@ -42,6 +64,7 @@ packages
 - [`rxvt-unicode`](http://software.schmorp.de/pkg/rxvt-unicode.html)
 - [`barrier`](https://github.com/debauchee/barrier)
 - [`ttf-input`](http://input.fontbureau.com)
+- [`otf-league-mono`](https://www.theleagueofmoveabletype.com/league-mono)
 - [`xonsh`](https://github.com/xonsh/xonsh)
 - [`eza`](https://eza.rocks/)
 - [`ripgrep`](https://github.com/BurntSushi/ripgrep)
