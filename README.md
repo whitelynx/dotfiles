@@ -36,13 +36,35 @@ After installing the packages and dotfiles, there's some manual setup commands t
 
 ### NeoVim
 
+My NeoVim config requires at least version 0.11.0. You might need to use [the Neovim Unstable PPA][] on Debian derivatives.
+
+It also requires some way of managing Python virtual environments; I use `pyenv` here.
+
+There's a few additional steps to get everything installed that my NeoVim config uses:
+
+```bash
+pyenv virtualenv default neovim
+pyenv activate neovim
+pip install pynvim neovim pyflakes yapf
+ln -s (pyenv which pyflakes) (pyenv which yapf) ~/bin/
+paru -S helm-ls-bin yaml-language-server php terraform-ls
+npm install -g awk-language-server bash-language-server dockerfile-language-server-nodejs @microsoft/compose-language-service fish-lsp vscode-langservers-extracted perlnavigator-server typescript typescript-language-server svelte-language-server sql-language-server vim-language-server @vue/language-server
+cargo install gitlab-ci-ls openscad-lsp tree-sitter-cli
+go install github.com/arduino/arduino-language-server@latest github.com/wader/jq-lsp@master
+~/.pyenv/versions/neovim/bin/pip install nginx-language-server "python-lsp-server[yapf]" rope
+curl -Lo ~/bin/phpactor https://github.com/phpactor/phpactor/releases/latest/download/phpactor.phar; chmod +x ~/bin/phpactor
+rustup component add rust-analyzer
+```
+
+[the Neovim Unstable PPA]: https://launchpad.net/~neovim-ppa/+archive/ubuntu/unstable
+
+### Vim
 - Install `vim-plug`:
 ```bash
-curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
-- Start `nvim`.
-- Run `:PlugInstall` and `:UpdateRemotePlugins` inside `nvim`.
-- You may also repeat the same steps with `vim` in place of `nvim`.
+- Start `vim`.
+- Run `:PlugInstall` inside `vim`.
 
 ### fish
 
