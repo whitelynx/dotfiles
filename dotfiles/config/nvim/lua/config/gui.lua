@@ -3,5 +3,9 @@
 -- let s:largefonts = ['Spleen\ 12x24:h18', 'Input\ Mono\ Narrow:h14', 'League\ Mono\ Narrow:h14']
 
 --vim.o.guifont = "drift,Spleen 6x12,ProFont,progsole,Terminus,League Mono Narrow,Lucida Console:h10"
+{%@@ if profile in ['DE2MCB0003', 'DE2NTB0027'] @@%}
+vim.o.guifont = "Spleen 8x16:h12"
+{%@@ else @@%}
 vim.o.guifont = "drift:h10"
+{%@@ endif @@%}
 vim.g.neovide_scale_factor = 1.0
