@@ -111,6 +111,7 @@ window#waybar.chromium {
 #custom-mako,
 #custom-scratchpad-indicator,
 #custom-random-wallpaper,
+#custom-weather,
 #mpd {
     padding: 0 10px;
     margin: 0 0 1px;
@@ -274,6 +275,11 @@ label:focus {
 #pulseaudio.muted {
     background-color: #90b1b1;
     color: #2a5c45;
+}
+
+#custom-weather {
+    background-color: #1d2426;
+    margin: 0 4px 1px 0;
 }
 
 #custom-media {
