@@ -2,6 +2,7 @@ return {
     { "echasnovski/mini.nvim", version = false },
     "folke/neodev.nvim",
     "folke/which-key.nvim",
+    "sheerun/vim-polyglot",
     {
         "https://gitlab.com/skewed-aspect/redux.vim.git",
         config = function()
