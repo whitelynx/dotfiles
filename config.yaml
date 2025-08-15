@@ -949,8 +949,8 @@ profiles:
     - f_swayexit
     - f_sway-help
     - f_foot.ini
-    - f_config
-    - f_style.css
+    - f_waybar_config
+    - f_waybar_style.css
     - f_xdg-desktop-portal-wlr_config
     - d_waybar_scripts
     - d_sway_scripts
