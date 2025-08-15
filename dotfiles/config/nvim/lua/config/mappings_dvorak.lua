@@ -7,34 +7,34 @@ pcall(function () vim.keymap.del('n',             '<C-k>') end) --  unknown
 pcall(function () vim.keymap.del('n',             '<C-l>') end) --  unknown
 
 -- Movement
---                         [new]     [old]       [description]
-vim.keymap.set({'n', 'v'}, 'h',      'h')     -- left
-vim.keymap.set({'n', 'v'}, 't',      'gj')    -- down (next display line)
-vim.keymap.set({'n', 'v'}, 'n',      'gk')    -- up (previous display line)
-vim.keymap.set({'n', 'v'}, 's',      'l')     -- right
-vim.keymap.set({'n', 'v'}, 'H',      '0')     -- beginning of line
-vim.keymap.set({'n', 'v'}, 'T',      'L')     -- bottom of screen
-vim.keymap.set({'n', 'v'}, 'N',      'H')     -- top of screen
-vim.keymap.set({'n', 'v'}, 'S',      '$')     -- end of line
-vim.keymap.set({'n', 'v'}, '<Down>', 'gj')    -- down (next display line)
-vim.keymap.set({'n', 'v'}, '<Up>',   'gk')    -- up (previous display line)
+--                         [new]     [old]          [description]
+vim.keymap.set({'n', 'v'}, 'h',      'h',  { desc = 'left' })
+vim.keymap.set({'n', 'v'}, 't',      'gj', { desc = 'down (next display line)' })
+vim.keymap.set({'n', 'v'}, 'n',      'gk', { desc = 'up (previous display line)' })
+vim.keymap.set({'n', 'v'}, 's',      'l',  { desc = 'right' })
+vim.keymap.set({'n', 'v'}, 'H',      '0',  { desc = 'beginning of line' })
+vim.keymap.set({'n', 'v'}, 'T',      'L',  { desc = 'bottom of screen' })
+vim.keymap.set({'n', 'v'}, 'N',      'H',  { desc = 'top of screen' })
+vim.keymap.set({'n', 'v'}, 'S',      '$',  { desc = 'end of line' })
+vim.keymap.set({'n', 'v'}, '<Down>', 'gj', { desc = 'down (next display line)' })
+vim.keymap.set({'n', 'v'}, '<Up>',   'gk', { desc = 'up (previous display line)' })
 
 -- Searching
---                         [new] [old]    [description]
-vim.keymap.set({'n', 'v'}, 'l',  'n')  -- repeat latest search
-vim.keymap.set({'n', 'v'}, 'L',  'N')  -- repeat latest search, reversed
+--                         [new] [old]          [description]
+vim.keymap.set({'n', 'v'}, 'l',  'n',  { desc = 'repeat latest search' })
+vim.keymap.set({'n', 'v'}, 'L',  'N',  { desc = 'repeat latest search, reversed' })
 
 -- Window Navigation
---                  [new]    [old]        [description]
-vim.keymap.set('n', '<C-h>', '<C-W>h') -- next window to the left of the current
-vim.keymap.set('n', '<C-t>', '<C-W>j') -- next window below the current
-vim.keymap.set('n', '<C-n>', '<C-W>k') -- next window above the current
-vim.keymap.set('n', '<C-s>', '<C-W>l') -- next window to the right of the current
+--                  [new]    [old]              [description]
+vim.keymap.set('n', '<C-h>', '<C-W>h', { desc = 'next window to the left of the current' })
+vim.keymap.set('n', '<C-t>', '<C-W>j', { desc = 'next window below the current' })
+vim.keymap.set('n', '<C-n>', '<C-W>k', { desc = 'next window above the current' })
+vim.keymap.set('n', '<C-s>', '<C-W>l', { desc = 'next window to the right of the current' })
 
 -- Folding
---                  [new]      [old]     [description]
-vim.keymap.set('n', '<space>', 'za')  -- toggle the fold under the cursor
-vim.keymap.set('v', '<space>', 'zf')  -- create a fold from the current visual selection
+--                  [new]      [old]          [description]
+vim.keymap.set('n', '<space>', 'za', { desc = 'toggle the fold under the cursor' })
+vim.keymap.set('v', '<space>', 'zf', { desc = 'create a fold from the current visual selection' })
 
 -- Buffer/tab switching
 -- Use Alt+[number] to switch to the numbered buffer
@@ -64,7 +64,7 @@ vim.keymap.set('n', '<C-u>', ':<C-u>bn<CR>')
 vim.keymap.set('n', '<C-o>', ':<C-u>bp<CR>')
 
 -- Random fixes
-vim.keymap.set('n', 'cs', 'cl') -- correct one character to the right
+vim.keymap.set('n', 'cs', 'cl', { desc = 'correct one character to the right' })
 
 -- if vim-surround is installed, this will keep it from stealing 'cs' (should be the same as c<Right>)
 --vim.api.nvim_create_autocmd('VimEnter',
