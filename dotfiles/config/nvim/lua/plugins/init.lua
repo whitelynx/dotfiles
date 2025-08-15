@@ -50,6 +50,18 @@ return {
         branch = "main",
         build = ":TSUpdate"
     },
+    {
+        "vimwiki/vimwiki",
+        init = function()
+            vim.g.vimwiki_list = {
+                {
+                    syntax = "markdown",
+                    ext = "md",
+                    path = "~/Nextcloud/Notes/",
+                }
+            }
+        end
+    },
     --"duane9/nvim-rg",
     {
         "ibhagwan/fzf-lua",
