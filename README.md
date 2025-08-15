@@ -43,16 +43,22 @@ It also requires some way of managing Python virtual environments; I use `pyenv`
 There's a few additional steps to get everything installed that my NeoVim config uses:
 
 ```bash
+nvm install 20
+nvm alias neovim 20
+nvm use 20
+npm install -g yarn
 pyenv virtualenv default neovim
 pyenv activate neovim
 pip install pynvim neovim pyflakes yapf
 ln -s (pyenv which pyflakes) (pyenv which yapf) ~/bin/
-paru -S helm-ls-bin yaml-language-server php terraform-ls
-npm install -g awk-language-server bash-language-server dockerfile-language-server-nodejs @microsoft/compose-language-service fish-lsp vscode-langservers-extracted perlnavigator-server typescript typescript-language-server svelte-language-server sql-language-server vim-language-server @vue/language-server
+paru -S php terraform-ls
+yarn global add awk-language-server bash-language-server dockerfile-language-server-nodejs @microsoft/compose-language-service fish-lsp vscode-langservers-extracted perlnavigator-server typescript typescript-language-server svelte-language-server sql-language-server vim-language-server @vue/language-server yaml-language-server
 cargo install gitlab-ci-ls openscad-lsp tree-sitter-cli
-go install github.com/arduino/arduino-language-server@latest github.com/wader/jq-lsp@master
+go install github.com/arduino/arduino-language-server@latest
+go install github.com/wader/jq-lsp@master
 ~/.pyenv/versions/neovim/bin/pip install nginx-language-server "python-lsp-server[yapf]" rope
 curl -Lo ~/bin/phpactor https://github.com/phpactor/phpactor/releases/latest/download/phpactor.phar; chmod +x ~/bin/phpactor
+curl -Lo ~/bin/helm_ls https://github.com/mrjosh/helm-ls/releases/download/master/helm_ls_linux_amd64; chmod +x ~/bin/helm_ls
 rustup component add rust-analyzer
 ```
 
