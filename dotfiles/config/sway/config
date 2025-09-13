@@ -85,8 +85,11 @@ output "Samsung Electric Company C49J89x HNTR100972" pos 760 360 res 3840x1080 s
 output DP-1 pos 2300 1080 res 3440x1440 scale 1
 {%@@ elif profile == 'DE2NTB0027' @@%}
 set $primary_output eDP-1
-output $primary_output pos 3840 400 res 2560x1600 scale 1
-output "LG Electronics LG ULTRAWIDE 0x000137E9" pos 0 0 res 3840x1600 scale 1
+output $primary_output pos 3840 1440 res 2560x1600 scale 1
+# Work:
+output "LG Electronics LG ULTRAWIDE 0x000137E9" pos 0 1040 res 3840x1600 scale 1
+# Home:
+output "LG Electronics LG ULTRAWIDE 0x00036AA7" pos 3400 0 res 3440x1440 scale 1
 #output "Ancor Communications Inc MX279 DALMRS001872" pos 0 0 res 1920x1080 scale 1
 #output "Ancor Communications Inc MX279 FCLMRS003146" pos 1920 0 res 1920x1080 scale 1
 {%@@ endif @@%}
