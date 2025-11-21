@@ -38,9 +38,12 @@ After installing the packages and dotfiles, there's some manual setup commands t
 
 My NeoVim config requires at least version 0.11.0. You might need to use [the Neovim Unstable PPA][] on Debian derivatives.
 
-It also requires some way of managing Python virtual environments; I use `pyenv` here.
+It requires these packages to be installed and configured:
+- [`nvm`][]  - do this manually in `$HOME` as outlined in the project's docs (don't use distro packages) and then: `nvm install --lts --default`
+- [`pyenv`][] - do this manually in `$HOME` as outlined in the project's docs (don't use distro packages)
+- [`rustup`][] - use distro package, and then: `rustup default stable`
 
-There's a few additional steps to get everything installed that my NeoVim config uses:
+Then, there's a few additional steps to get everything else installed that my NeoVim config uses:
 
 ```bash
 nvm install 20
@@ -96,12 +99,15 @@ packages
 - [`xonsh`](https://github.com/xonsh/xonsh)
 - [`eza`](https://eza.rocks/)
 - [`ripgrep`](https://github.com/BurntSushi/ripgrep)
-- [`nvm`](https://github.com/nvm-sh/nvm) (don't use distro package; install in `$HOME`)
-- [`pyenv`](https://github.com/pyenv/pyenv) (don't use distro package; install in `$HOME`)
+- [`nvm`][] (don't use distro package; install in `$HOME`)
+- [`pyenv`][] (don't use distro package; install in `$HOME`)
 - [`htop`](http://hisham.hm/htop)
 - [`pinfo`](http://pinfo.sourceforge.net)
 - [`jq`](https://stedolan.github.io/jq/)
 - [`yq`](https://github.com/kislyuk/yq)
+
+[`nvm`]: https://github.com/nvm-sh/nvm
+[`pyenv`]: https://github.com/pyenv/pyenv
 
 
 ### GNU/Linux only
