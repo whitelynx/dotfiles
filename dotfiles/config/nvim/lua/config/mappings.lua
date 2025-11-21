@@ -14,10 +14,13 @@ vim.keymap.set('n', '<Leader>sc', ':<C-u>call ScratchBuffer()<CR>', { desc = 'Op
 vim.keymap.set('n', '<Leader>p', ':<C-u>set paste!<CR>', { desc = 'Toggle `paste` setting' })
 
 -- Toggle the 'list' option (display whitespace characters)
-vim.keymap.set('n', '<Leader>d', ':<C-u>set list!<CR>', { desc = 'Toggle visual whitespace' })
+vim.keymap.set('n', '<Leader>w', ':<C-u>set list!<CR>', { desc = 'Toggle visual whitespace' })
 
 -- Join {motion} lines (like J, but accepts a {motion})
 vim.keymap.set('n', '<Leader>j', ':<C-u>set opfunc=JoinOperator<CR>g@', { desc = 'Join {motion} lines' })
+
+-- Reload NVim config
+vim.keymap.set('n', '<Leader>R', ':<C-u>source $MYVIMRC<CR>', { desc = 'Reload NVim config' })
 
 -- Navbuddy
 vim.keymap.set('n', '<Leader>n', ':<C-u>Navbuddy<CR>', { desc = 'Show Navbuddy' })
@@ -48,6 +51,13 @@ vim.keymap.set('n', '<Leader>C', function() FzfLua.lsp_outgoing_calls() end, { d
 -- mini.git
 vim.keymap.set({'n', 'v'}, '<Leader>gh', function() MiniGit.show_range_history() end, { desc = 'Show git history in range' })
 vim.keymap.set('n', '<Leader>gg', function() MiniGit.show_at_cursor() end, { desc = 'Show git history at cursor' })
+
+-- LSPs
+vim.keymap.set('n', '<Leader>k', function()
+    local new_config = not vim.diagnostic.config().virtual_lines
+    vim.diagnostic.config({ virtual_lines = new_config })
+end, { desc = 'Toggle diagnostic virtual_lines' })
+vim.keymap.set('n', '<leader>dd', function() vim.diagnostic.setloclist() end, { noremap = true, silent = true })
 
 --TODO:
 --vim.keymap.set('n', '<Leader>ha', '<Plug>(GitGutterStageHunk)')
