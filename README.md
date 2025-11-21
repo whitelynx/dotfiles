@@ -1,6 +1,12 @@
 dotfiles
 ========
 
+<div style="background-color: #800; color: #fff; font-weight: bold; padding: 10px; border-radius: 10px;">
+Moved to <a style="color: #ff0" href="https://codeberg.org/whitelynx/dotfiles">a new repository on Codeberg</a>.
+</div>
+
+---
+
 Managed using [dotdrop](https://github.com/deadc0de6/dotdrop).
 
 ![Screenshot](https://i.imgur.com/L6s9NaZ.png)
