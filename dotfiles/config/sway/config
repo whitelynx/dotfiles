@@ -77,6 +77,10 @@ output "LG Electronics LG ULTRAWIDE 0x00006BA7" pos 0 0 res 3440x1440 scale 1
 set $primary_output eDP-1
 output $primary_output pos 0 800 res 1920x1080 scale 1
 output DP-1 pos 1920 0 res 3440x1440 scale 1
+{%@@ elif profile == 'nagahime-hatake' @@%}
+set $primary_output eDP-2
+output $primary_output pos 0 1440 res 2560x1440 scale 1
+output "LG Electronics LG ULTRAWIDE 0x00036AA7" pos 840 0 res 3440x1440 scale 1
 {%@@ elif profile == 'nova' @@%}
 set $primary_output "LG Display 0x0621 Unknown"
 output $primary_output pos 380 1440 res 1920x1080 scale 1
