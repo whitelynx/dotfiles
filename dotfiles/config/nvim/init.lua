@@ -9,6 +9,7 @@ require("config.filetypes")
 
 require("config.treesitter")
 require("config.neovide")
+require("config.diagnostics")
 
 require("config.gui")
 require("config.mappings")
